@@ -9,6 +9,6 @@ public class TestController implements Controller {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        return "test";
+        return "home";
     }
 }

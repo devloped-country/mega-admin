@@ -7,12 +7,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>메가메가</title>
+<link rel="stylesheet" href="../../../css/header.css" />
 </head>
 <body>
-<hr>
-헤더임
-<a href="/index.jsp">Home</a>&nbsp;&nbsp;&nbsp;
-<a href="/sample/getUserList.do">샘플</a>&nbsp;&nbsp;&nbsp;
-<hr>
-<br>
+    <header class="HeaderWrapper">
+        <button class="logo-btn">
+            <img src="./logo.svg" alt="logo" class="logo" />
+        </button>
+        <button type="button" class="logout-btn">
+            <img src="./logout.svg" alt="logout" class="logout" />
+        </button>
+    </header>
+</body>
+</html>
