@@ -28,7 +28,7 @@ public class JDBCUtils {
                 config.setUsername(properties.getProperty("jdbc.user"));
                 config.setPassword(properties.getProperty("jdbc.password"));
 
-                config.setMaximumPoolSize(100); // TODO: 2023-09-12
+                config.setMaximumPoolSize(10);
                 config.setAutoCommit(true);
                 config.addDataSourceProperty("cachePrepStmts", "true");
                 config.addDataSourceProperty("prepStmtCacheSize", "250");
