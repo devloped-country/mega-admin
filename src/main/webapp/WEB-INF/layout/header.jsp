@@ -1,8 +1,15 @@
-<%@ page contentType="text/html; charset=UTF-8"
-         errorPage="errors/boardError.jsp"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 
+<<<<<<< HEAD
+<header class="HeaderWrapper">
+    <button class="logo-btn">
+        <img src="../../../images/logo.svg" alt="logo" class="logo"/>
+    </button>
+    <button type="button" class="logout-btn">
+        <img src="../../../images/logout.svg" alt="logout" class="logout"/>
+    </button>
+</header>
+=======
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,3 +27,4 @@
     </header>
 </body>
 </html>
+>>>>>>> de360d4db8bc676128781bb475beac71774ba340
