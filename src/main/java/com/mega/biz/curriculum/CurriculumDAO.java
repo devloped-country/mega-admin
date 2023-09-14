@@ -1,11 +1,8 @@
 package com.mega.biz.curriculum;
 
 import com.mega.biz.curriculum.model.CurriculumQuery;
-import com.mega.biz.curriculum.model.dto.CurriculumDTO;
 import com.mega.biz.curriculum.model.dto.CurriculumWithDetailDTO;
 import com.mega.biz.curriculum.model.dto.DetailSubjectDTO;
-import com.mega.biz.sample.model.SampleQuery;
-import com.mega.biz.sample.model.dto.SampleDTO;
 import com.mega.config.database.JDBCUtils;
 
 import javax.sql.DataSource;
@@ -23,6 +20,60 @@ public class CurriculumDAO {
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     private ResultSet rs = null;
+
+    public void deleteCurriculum(Long curriculumId) {
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.DELETE_CURRICULUM.getQuery());
+
+            pstmt.setLong(1, curriculumId);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+    }
+
+    public void insertDetail(Long curriculumId, DetailSubjectDTO detailSubjectDTO) {
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.INSERT_DETAIL.getQuery());
+
+            pstmt.setLong(1, curriculumId);
+            pstmt.setString(2, detailSubjectDTO.getContent());
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+
+    }
+
+    public void insertCurriculum(CurriculumWithDetailDTO curriculumWithDetailDTO) {
+
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.INSERT_CURRICULUM.getQuery());
+
+            pstmt.setString(1, curriculumWithDetailDTO.getSubject());
+            pstmt.setInt(2, curriculumWithDetailDTO.getTime());
+            pstmt.setDate(3, curriculumWithDetailDTO.getStartDate());
+            pstmt.setDate(4, curriculumWithDetailDTO.getEndDate());
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+    }
 
     public List<DetailSubjectDTO> getDetailByCurriculumId(Long curriculumId) {
         List<DetailSubjectDTO> detailList = new ArrayList<>();
@@ -50,6 +101,26 @@ public class CurriculumDAO {
         return detailList;
     }
 
+    public Long getMaxCurriculumId() {
+
+        Long maxId = 0L;
+
+        try {
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.GET_MAX_CURRICULUM_ID.getQuery());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                maxId = rs.getLong("max");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt, rs);
+        }
+        return maxId;
+    }
+
 
     // test 용
 
@@ -67,12 +138,11 @@ public class CurriculumDAO {
                 curriculumDTO.setId(rs.getLong("ID"));
                 curriculumDTO.setSubject(rs.getString("SUBJECT"));
                 curriculumDTO.setTime(rs.getInt("TIME"));
-                curriculumDTO.setStart_date(rs.getDate("START_DATE"));
-                curriculumDTO.setEnd_date(rs.getDate("END_DATE"));
+                curriculumDTO.setStartDate(rs.getDate("START_DATE"));
+                curriculumDTO.setEndDate(rs.getDate("END_DATE"));
 
                 curriculumDTOList.add(curriculumDTO);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -81,34 +151,6 @@ public class CurriculumDAO {
 
         return curriculumDTOList;
     }
-//    public List<CurriculumDTO> getAllCurriculum() {
-//        List<CurriculumDTO> curriculumDTOList = new ArrayList<>();
-//
-//        try {
-//            conn = dataSource.getConnection();
-//            pstmt = conn.prepareStatement(CurriculumQuery.CURRICULUM_LIST.getQuery());
-//            rs = pstmt.executeQuery();
-//
-//            while (rs.next()) {
-//                CurriculumDTO curriculumDTO = new CurriculumDTO();
-//
-//                curriculumDTO.setId(rs.getLong("ID"));
-//                curriculumDTO.setSubject(rs.getString("SUBJECT"));
-//                curriculumDTO.setTime(rs.getInt("TIME"));
-//                curriculumDTO.setStart_date(rs.getDate("START_DATE"));
-//                curriculumDTO.setEnd_date(rs.getDate("END_DATE"));
-//
-//                curriculumDTOList.add(curriculumDTO);
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            JDBCUtils.close(conn, pstmt, rs);
-//        }
-//
-//        return curriculumDTOList;
-//    }
 
     public List<DetailSubjectDTO> getDetail() {
         List<DetailSubjectDTO> detailList = new ArrayList<>();

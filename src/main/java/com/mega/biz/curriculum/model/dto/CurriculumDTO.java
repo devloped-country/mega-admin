@@ -12,6 +12,6 @@ public class CurriculumDTO {
     private Long id;
     private String subject;
     private int time;
-    private Date start_date;
-    private Date end_date;
+    private Date starDate;
+    private Date endDate;
 }

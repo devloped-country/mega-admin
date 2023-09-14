@@ -10,6 +10,21 @@ public class CurriculumService {
 
     CurriculumDAO dao = new CurriculumDAO();
 
+    public void deleteCurriculum(Long curriculumId) {
+        dao.deleteCurriculum(curriculumId);
+    }
+
+    public void registerCurriculum(CurriculumWithDetailDTO dto) {
+        dao.insertCurriculum(dto);
+
+        Long id = dao.getMaxCurriculumId();
+
+        List<DetailSubjectDTO> detailSubjectDTOList = dto.getDetailSubjectDTOList();
+        for (DetailSubjectDTO detailSubjectDTO : detailSubjectDTOList) {
+            dao.insertDetail(id, detailSubjectDTO);
+        }
+    }
+
     public List<CurriculumWithDetailDTO> getAllCurriculumWithDetail() {
 
         List<CurriculumWithDetailDTO> allCurriculum = dao.getAllCurriculum();

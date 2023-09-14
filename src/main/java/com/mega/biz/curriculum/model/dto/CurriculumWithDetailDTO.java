@@ -12,8 +12,8 @@ public class CurriculumWithDetailDTO {
     private Long id;
     private String subject;
     private int time;
-    private Date start_date;
-    private Date end_date;
+    private Date startDate;
+    private Date endDate;
 
     private List<DetailSubjectDTO> detailSubjectDTOList = new ArrayList<>();
 }

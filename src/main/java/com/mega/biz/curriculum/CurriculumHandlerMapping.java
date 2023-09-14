@@ -1,5 +1,6 @@
 package com.mega.biz.curriculum;
 
+import com.mega.biz.curriculum.controller.GetCurriculumListController;
 import com.mega.common.controller.Controller;
 import com.mega.common.controller.HandlerMapping;
 import com.mega.biz.curriculum.controller.TestController;
@@ -13,6 +14,7 @@ public class CurriculumHandlerMapping extends HandlerMapping {
 
     public CurriculumHandlerMapping() {
         mappings.put("/test.do", new TestController());
+        mappings.put("/getCurriculumList.do", new GetCurriculumListController());
     }
 
     @Override

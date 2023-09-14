@@ -5,6 +5,7 @@ import com.mega.biz.curriculum.model.dto.CurriculumWithDetailDTO;
 import com.mega.biz.curriculum.model.dto.DetailSubjectDTO;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,6 +36,23 @@ class CurriculumDAOTest {
         for (CurriculumWithDetailDTO curriculumDTO : allCurriculum) {
             System.out.println("curriculumDTO = " + curriculumDTO);
         }
+    }
+
+    @Test
+    void insertCurri() {
+        CurriculumWithDetailDTO dto = new CurriculumWithDetailDTO();
+        dto.setSubject("테스트");
+        dto.setTime(15);
+        dto.setStartDate(Date.valueOf("2023-09-01"));
+        dto.setEndDate(Date.valueOf("2023-09-15"));
+
+        dao.insertCurriculum(dto);
+    }
+
+    @Test
+    void getMax() {
+        Long maxCurriculumId = dao.getMaxCurriculumId();
+        System.out.println("maxCurriculumId = " + maxCurriculumId);
     }
 
 }
