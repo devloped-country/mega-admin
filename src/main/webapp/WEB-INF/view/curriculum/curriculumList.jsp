@@ -20,7 +20,7 @@
             <ul class="menu-list">
                 <li class="menu-item">
                     <button type="button" class="menu-btn notice-regi-btn"
-                            onclick="location.href='/curriculum/createForm.do'">과목 추가
+                            onclick="location.href='/curriculum/createCurriculumForm.do'">과목 추가
                     </button>
                 </li>
                 <li class="menu-item">

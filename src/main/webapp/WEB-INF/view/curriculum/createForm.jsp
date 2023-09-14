@@ -15,7 +15,7 @@
 <center>
 <h1>교과목명</h1>
 <hr>
-<form action="insertUser.do" method="post">
+<form action="createCurriculum.do" method="post">
 <table border="1" cellpadding="0" cellspacing="0">
 <tr>
 	<td width="90">과목추가</td>
@@ -38,14 +38,14 @@
     <td><input type="text" name="dto1" size="30"/></td>
 </tr>
 <tr>
-    <td><input type="text" name="dto1" size="30"/></td>
+    <td><input type="text" name="dto2" size="30"/></td>
 </tr>
 <tr>
-    <td><input type="text" name="dto1" size="30"/></td>
+    <td><input type="text" name="dto3" size="30"/></td>
 </tr>
 <tr>
 	<td colspan="2" align="center">
-		<input type="reset" value="취소"/>
+		<input type="submit" value="추가"/>
 	</td>
 </tr>
 </table>

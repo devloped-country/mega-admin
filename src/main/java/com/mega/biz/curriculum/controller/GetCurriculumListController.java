@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GetCurriculumListController implements Controller {
 
-    CurriculumService service = new CurriculumService();
+    private final CurriculumService service = new CurriculumService();
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
