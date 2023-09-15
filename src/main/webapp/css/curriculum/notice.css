@@ -100,43 +100,43 @@
 .NoticeWrapper
 .notice-table-header
 .notice-table-header-col-num {
-  width: 10%;
-}
-
-.NoticeWrapper
-.notice-table-header
-.notice-table-header-col-tag {
-  width: 10%;
+  width: 7%;
 }
 
 .NoticeWrapper
 .notice-table-header
 .notice-table-header-col-title {
-  width: 15%;
-}
-
-.NoticeWrapper
-.notice-table-header
-.notice-table-header-col-content {
   width: 25%;
 }
 
 .NoticeWrapper
 .notice-table-header
-.notice-table-header-col-author {
+.notice-table-header-col-detail {
+  width: 30%;
+}
+
+.NoticeWrapper
+.notice-table-header
+.notice-table-header-col-time {
   width: 10%;
 }
 
 .NoticeWrapper
 .notice-table-header
-.notice-table-header-col-date {
+.notice-table-header-col-period {
   width: 20%;
 }
+
+/* .NoticeWrapper
+.notice-table-header
+.notice-table-header-col-date {
+  width: 20%;
+} */
 
 .NoticeWrapper
 .notice-table-header
 .notice-table-header-col-selection {
-  width: 10%;
+  width: 8%;
 }
 
 .NoticeWrapper
@@ -315,15 +315,7 @@
 .notice-table
 .notice-table-body
 .notice-table-body-col-num {
-  width: 10%;
-}
-
-.NoticeWrapper
-.content
-.notice-table
-.notice-table-body
-.notice-table-body-col-tag {
-  width: 10%;
+  width: 7%;
 }
 
 .NoticeWrapper
@@ -331,24 +323,32 @@
 .notice-table
 .notice-table-body
 .notice-table-body-col-title {
-  width: 15%;
+  width: 25%;
 }
 
 .NoticeWrapper
 .content
 .notice-table
 .notice-table-body
-.notice-table-body-col-content {
-  width: 25%;
+.notice-table-body-col-detail {
+  width: 30%;
 }
 
 .NoticeWrapper
+.content
+.notice-table
+.notice-table-body
+.notice-table-body-col-time {
+  width: 10%;
+}
+
+/* .NoticeWrapper
 .content
 .notice-table
 .notice-table-body
 .notice-table-body-col-content
 .notice-table-body-content {
-  width: 25%;
+  width: 20%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -360,17 +360,17 @@
 .notice-table-body
 .notice-table-body-col-author {
   width: 10%;
-}
+} */
 
 .NoticeWrapper
 .content
 .notice-table
 .notice-table-body
-.notice-table-body-col-date {
+.notice-table-body-col-period {
   width: 20%;
 }
 
-.NoticeWrapper
+/* .NoticeWrapper
 .content
 .notice-table
 .notice-table-body
@@ -378,14 +378,14 @@
 .notice-table-body-col:last-child
 .notice-table-body-cell.notice-table-body-date {
   border-right: none;
-}
+} */
 
   .NoticeWrapper
 .content
 .notice-table
 .notice-table-body
 .notice-table-body-col-selection {
-  width: 10%;
+  width: 8%;
 }
 
 .NoticeWrapper

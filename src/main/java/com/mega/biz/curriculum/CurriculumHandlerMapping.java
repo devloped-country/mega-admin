@@ -1,11 +1,8 @@
 package com.mega.biz.curriculum;
 
-import com.mega.biz.curriculum.controller.CreateCurriculumController;
-import com.mega.biz.curriculum.controller.CreateCurriculumFormController;
-import com.mega.biz.curriculum.controller.GetCurriculumListController;
+import com.mega.biz.curriculum.controller.*;
 import com.mega.common.controller.Controller;
 import com.mega.common.controller.HandlerMapping;
-import com.mega.biz.curriculum.controller.TestController;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +16,8 @@ public class CurriculumHandlerMapping extends HandlerMapping {
         mappings.put("/getCurriculumList.do", new GetCurriculumListController());
         mappings.put("/createCurriculumForm.do", new CreateCurriculumFormController());
         mappings.put("/createCurriculum.do", new CreateCurriculumController());
+        mappings.put("/deleteCurriculum.do", new DeleteCurriculumController());
+        mappings.put("/updateCurriculum.do", new UpdateCurriculumController());
     }
 
     @Override
