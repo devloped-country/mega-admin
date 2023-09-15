@@ -6,74 +6,17 @@
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 
 
-  <html>
+<html>
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>공지사항</title>
+    <title>커리큘럼</title>
     <link />
     <link rel="stylesheet" href="../../../css/reset.css">
     <link rel="stylesheet" href="../../../css/curriculum/createNotice.css" type="text/css">
     <link rel="stylesheet" href="../../../css/header.css">
     <link rel="stylesheet" href="../../../css/footer.css">
-    <script>
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   document.querySelector(".tag-btn-box").addEventListener("click", () => {
-      //     document.querySelector(".tag-list").classList.toggle("active");
-      //   });
-
-      //   document.querySelector(".tag-list").addEventListener("click", ({target}) => {
-      //     document.querySelector('.tag-btn').textContent = target.value;
-      //     document.querySelector(".tag-list").classList.remove("active");
-      //     document.querySelector(".tag-btn").style.color = '#000';
-      //   });
-
-      //   document.querySelector(".CreateNoticeWrapper .create-form").addEventListener("submit", (e) => {
-      //     if(document.querySelector('.tag-btn').textContent === '선택') {
-      //       e.preventDefault();
-      //       document.querySelector('.CreateNoticeModal .backdrop').classList.add("active");
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-title').textContent = "태그 선택";
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-desc').textContent = "태그를 선택해주세요.";
-      //       return false;
-      //     } else if (document.querySelector('.notice-title').value === '') {
-      //       e.preventDefault();
-      //       document.querySelector('.CreateNoticeModal .backdrop').classList.add("active");
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-title').textContent = "제목 입력";
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-desc').textContent = "제목을 입력해주세요.";
-      //       return false;
-      //     } else if (document.querySelector('.notice-content').value === '') {
-      //       e.preventDefault();
-      //       document.querySelector('.CreateNoticeModal .backdrop').classList.add("active");
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-title').textContent = "내용 입력";
-      //       document.querySelector('.CreateNoticeModal .backdrop .modal-desc').textContent = "내용을 입력해주세요.";
-      //       return false;
-      //     }
-      //   });
-
-      //   document.querySelector(".CreateNoticeModal .backdrop .modal-btn-confirm").addEventListener("click", () => {
-      //     document.querySelector('.CreateNoticeModal .backdrop').classList.remove("active");
-      //   })
-
-
-
-
-
-
-
-
-
-
-      // document.querySelector(".notice-content").addEventListener("input", ({currentTarget}) => {
-      //   if(currentTarget.scrollHeight >= 600) {
-      //     return;
-      //   }
-      //
-      //   currentTarget.style.height = 'auto';
-      //   currentTarget.style.height = currentTarget.scrollHeight + 'px';
-      // })
-      // })
-    </script>
   </head>
 
   <body>
@@ -87,48 +30,60 @@
           <h3>과목 정보를 입력해 주세요</h3>
           <div class="content-header">
             <div class="content-header-right">
-              교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
-                autofocus />
+              <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50" autofocus /></label>
             </div>
           </div>
 
           <div class="content-header">
             <div class="content-header-right">
-              시간 <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50"
-                autofocus />
+              <label>시간 <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50" autofocus /></label>
             </div>
             <div class="content-header-right">
-              기간 <input type="date" max="2023-12-31" min="2023-05-25" name="startDate" />
+              <label>기간 <input type="date" max="2023-12-31" min="2023-05-25" name="startDate" /></label>
             </div>
             <div class="content-header-right">
-              ~ <input type="date" max="2023-12-31" min="2023-05-25" name="endDate" />
+              <label> ~ <input type="date" max="2023-12-31" min="2023-05-25" name="endDate" /></label>
             </div>
           </div>
 
-          상세 교과 내용
-          <div class="content-header">
+          상세 교과 내용🚩
+          <!-- <div class="content-header">
             <div class="content-header-right">
-              시간 <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-                autofocus />
+              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
+                autofocus /><input type="button" value="추가" onclick="add_inputbox()">
             </div>
-          </div>
+          </div> -->
           <div class="content-header">
             <div class="content-header-right">
-              시간 <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-                autofocus />
-            </div>
-          </div>
-          <div class="content-header">
-            <div class="content-header-right">
-              시간 <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-                autofocus />
+              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50" autofocus />
+              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
             </div>
           </div>
 
-          <!-- <div class="content-body">
-                    <textarea name="content" class="notice-content" placeholder="공지사항을 입력해주세요." wrap="on"></textarea>
-                  </div> -->
+          <div class="content-header">
+            <div class="content-header-right">
+              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50" autofocus />
+              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
+            </div>
+          </div>
+          <div class="content-header">
+            <div class="content-header-right">
+              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50" autofocus />
+              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
+            </div>
+          </div>
+
+          <!-- 새로운 input 추가 -->
+          <div id="additionalInputContainer">
+          </div>
+
           <div class="content-footer">
+            <div>
+              <button type="button" class="content-btn" onclick="add_inputbox()">
+                상세 교과 내용 추가
+              </button>
+            </div>
+
             <button type="button" class="content-btn" onclick="history.back()">
               취소
             </button>
@@ -138,9 +93,52 @@
       </form>
     </div>
 
+
+    <script>
+      function add_inputbox() {
+        // 새로운 div 요소를 생성 (포장용)
+        const newDiv = document.createElement("div");
+        newDiv.className = "content-header";
+
+        // 새로운 div 요소 내에 레이블과 input을 추가
+        const newLabel = document.createElement("div");
+        newLabel.className = "content-header-right";
+
+        const newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.className = "notice-title";
+        newInput.name = "detail";
+        newInput.placeholder = "상세교과내용을 입력해주세요.";
+        newInput.maxLength = "50";
+
+        // "제거" 버튼을 생성
+        const newButton = document.createElement("input");
+        newButton.type = "button";
+        newButton.value = "제거";
+        newButton.onclick = function() { remove_inputbox(newDiv); };
+
+        // 레이블과 input, 버튼을 새로운 div에 추가
+        newLabel.appendChild(newInput);
+        newLabel.appendChild(newButton);
+        newDiv.appendChild(newLabel);
+
+        // 추가할 컨테이너 선택
+        const container = document.getElementById("additionalInputContainer");
+
+        // 컨테이너에 새로운 div 요소 추가
+        container.appendChild(newDiv);
+      }
+
+      function remove_inputbox(divElement) {
+        divElement.remove();
+      }
+
+    </script>
+
+
   </body>
 
-  </html>
+</html>
 
 
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
