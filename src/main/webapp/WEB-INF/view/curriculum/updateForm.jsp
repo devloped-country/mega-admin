@@ -12,10 +12,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>커리큘럼</title>
   <link />
-  <link rel="stylesheet" href="../../../css/reset.css">
-  <link rel="stylesheet" href="../../../css/curriculum/updateCurriculum.css" type="text/css">
-  <link rel="stylesheet" href="../../../css/header.css">
-  <link rel="stylesheet" href="../../../css/footer.css">
+  <link rel="stylesheet" href="../../../style/reset.css">
+  <link rel="stylesheet" href="../../../style/curriculum/updateCurriculum.css" type="text/css">
+  <link rel="stylesheet" href="../../../style/header.css">
+  <link rel="stylesheet" href="../../../style/footer.css">
 </head>
 
 <body>
