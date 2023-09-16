@@ -47,12 +47,6 @@
           </div>
 
           상세 교과 내용🚩
-          <!-- <div class="content-header">
-            <div class="content-header-right">
-              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-                autofocus /><input type="button" value="추가" onclick="add_inputbox()">
-            </div>
-          </div> -->
           <div class="content-header">
             <div class="content-header-right">
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50" autofocus />
@@ -79,22 +73,59 @@
 
           <div class="content-footer">
             <div>
-              <button type="button" class="content-btn" onclick="add_inputbox()">
+              <button type="button" class="content-add-btn" onclick="add_inputbox()">
                 상세 교과 내용 추가
               </button>
             </div>
+          </div>
 
-            <button type="button" class="content-btn" onclick="history.back()">
+          <div class="content-footer">
+            <button type="button" class="content-btn">
               취소
             </button>
             <button type="submit" class="content-btn">추가</button>
           </div>
         </div>
+
+        <div class="CreateNoticeModal">
+          <div class="backdrop">
+              <div class="modal-wrapper">
+                  <div class="modal-desc-wrapper">
+                      <h2 class="modal-title">취소</h2>
+                      <p class="modal-desc">취소하시겠습니까?</p>
+                  </div>
+                  <div class="modal-btn-wrapper">
+                      <button class="modal-btn modal-btn-cancel" type="button">취소</button>
+                      <button class="modal-btn modal-btn-confirm" type="button">확인</button>
+                  </div>
+              </div>
+          </div>
+      </div>
       </form>
     </div>
 
 
     <script>
+
+      document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
+        document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
+      });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
+          "click", () => {
+            document.querySelector(".backdrop").classList.remove("active");
+
+          });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+        document.querySelector(".backdrop").classList.remove("active");
+
+        window.location.href = "/curriculum/getCurriculumList.do";
+      });
+
+
       function add_inputbox() {
         // 새로운 div 요소를 생성 (포장용)
         const newDiv = document.createElement("div");
@@ -115,7 +146,7 @@
         const newButton = document.createElement("input");
         newButton.type = "button";
         newButton.value = "제거";
-        newButton.onclick = function() { remove_inputbox(newDiv); };
+        newButton.onclick = function () { remove_inputbox(newDiv); };
 
         // 레이블과 input, 버튼을 새로운 div에 추가
         newLabel.appendChild(newInput);
