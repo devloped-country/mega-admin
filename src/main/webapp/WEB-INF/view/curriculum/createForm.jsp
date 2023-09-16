@@ -92,7 +92,7 @@
               <div class="modal-wrapper">
                   <div class="modal-desc-wrapper">
                       <h2 class="modal-title">취소</h2>
-                      <p class="modal-desc">취소하시겠습니까?</p>
+                      <p class="modal-desc">목록으로 돌아가시겠습니까?</p>
                   </div>
                   <div class="modal-btn-wrapper">
                       <button class="modal-btn modal-btn-cancel" type="button">취소</button>

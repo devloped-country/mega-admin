@@ -127,8 +127,8 @@
         <div class="backdrop">
             <div class="modal-wrapper">
                 <div class="modal-desc-wrapper">
-                    <h2 class="modal-title">공지사항 삭제</h2>
-                    <p class="modal-desc">공지사항을 삭제하시겠어요?</p>
+                    <h2 class="modal-title">교과목 삭제</h2>
+                    <p class="modal-desc">교과목을 삭제하시겠어요?</p>
                 </div>
                 <div class="modal-btn-wrapper">
                     <button class="modal-btn modal-btn-confirm" type="submit">확인</button>

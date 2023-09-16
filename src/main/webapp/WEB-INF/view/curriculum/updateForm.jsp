@@ -73,22 +73,59 @@
 
         <div class="content-footer">
           <div>
-            <button type="button" class="content-btn" onclick="add_inputbox()">
+            <button type="button" class="content-add-btn" onclick="add_inputbox()">
               상세 교과 내용 추가
             </button>
           </div>
+        </div>
 
-          <button type="button" class="content-btn" onclick="history.back()">
+        <div class="content-footer">
+
+          <button type="button" class="content-btn">
             취소
           </button>
           <button type="submit" class="content-btn">수정</button>
         </div>
       </div>
+
+      <div class="CreateNoticeModal">
+        <div class="backdrop">
+            <div class="modal-wrapper">
+                <div class="modal-desc-wrapper">
+                    <h2 class="modal-title">취소</h2>
+                    <p class="modal-desc">목록으로 돌아가시겠습니까?</p>
+                </div>
+                <div class="modal-btn-wrapper">
+                    <button class="modal-btn modal-btn-cancel" type="button">취소</button>
+                    <button class="modal-btn modal-btn-confirm" type="button">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </form>
   </div>
 
 
   <script>
+
+      document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
+        document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
+      });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
+          "click", () => {
+            document.querySelector(".backdrop").classList.remove("active");
+
+          });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+        document.querySelector(".backdrop").classList.remove("active");
+
+        window.location.href = "/curriculum/getCurriculumList.do";
+      });
+
     function add_inputbox() {
       const newDiv = document.createElement("div");
       newDiv.className = "content-header";

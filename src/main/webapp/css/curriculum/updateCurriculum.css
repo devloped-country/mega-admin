@@ -187,6 +187,14 @@
   color: #fff;
 }
 
+.CreateNoticeWrapper .content-footer .content-add-btn {
+  margin-top: 24px;
+  border-radius: 3px;
+  padding: 12px 830px;
+  background-color: #000;
+  color: #fff;
+}
+
 .CreateNoticeModal .backdrop {
   display: none;
 }
@@ -250,5 +258,4 @@
 .CreateNoticeModal .backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm {
   color: #fff;
   background-color: #000;
-  width: 382px;
 }
