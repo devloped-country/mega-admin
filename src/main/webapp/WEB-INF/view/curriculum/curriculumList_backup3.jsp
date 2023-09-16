@@ -24,7 +24,7 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-btn notice-update-btn" type="submit" value="update" onclick="if(!validateCheckboxForUpdate()) return false; form.action='/curriculum/updateCurriculumForm.do';">과목 수정</button>
+                    <button class="menu-btn notice-update-btn" type="submit" value="update" onclick="javascript: form.action='/curriculum/updateCurriculumForm.do';">과목 수정</button>
                 </li>
 
                 <li class="menu-item">
@@ -139,40 +139,28 @@
     </div>
 </form>
 <script>
+console.log("hello");
 
-    function validateCheckboxForUpdate() {
-        const checkedCheckboxes = Array.from(document.querySelectorAll('.notice-table-body-selection-checkbox'))
-            .filter(checkbox => checkbox.checked);
+  document.querySelector('.menu-item .menu-btn.notice-remove-btn').addEventListener("click", () => {
+    const filteredCheckboxes = Array.from(
+        document.querySelectorAll('.notice-table-body-selection-checkbox')).filter(
+        (e) => e.checked
+    )
 
-        if (checkedCheckboxes.length === 0) {
-            return false;
-        }
+    console.log(filteredCheckboxes.length);
 
-        return true;
+    if(!filteredCheckboxes.length) {
+      return;
     }
 
+    document.querySelector(".NoticeModal .backdrop").classList.add("active");
+  });
 
-
-    document.querySelector('.menu-item .menu-btn.notice-remove-btn').addEventListener("click", () => {
-        const filteredCheckboxes = Array.from(
-            document.querySelectorAll('.notice-table-body-selection-checkbox')).filter(
-                (e) => e.checked
-            )
-
-        console.log(filteredCheckboxes.length);
-
-        if (!filteredCheckboxes.length) {
-            return;
-        }
-
-        document.querySelector(".NoticeModal .backdrop").classList.add("active");
-    });
-
-    document.querySelector(
-        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
-            "click", () => {
-                document.querySelector(".backdrop").classList.remove("active");
-            });
+  document.querySelector(
+      '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
+      "click", () => {
+        document.querySelector(".backdrop").classList.remove("active");
+      });
 </script>
 </body>
 
