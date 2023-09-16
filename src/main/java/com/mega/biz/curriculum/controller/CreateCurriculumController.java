@@ -23,25 +23,12 @@ public class CreateCurriculumController implements Controller {
 
         CurriculumWithDetailDTO curriculumDto = new CurriculumWithDetailDTO(subject, time, Date.valueOf(startDate), Date.valueOf(endDate));
 
-
-//        String dto1 = request.getParameter("dto1");
-//        String dto2 = request.getParameter("dto2");
-//        String dto3 = request.getParameter("dto3");
-//
-//        DetailSubjectDTO detailSubjectDTO1 = new DetailSubjectDTO(dto1);
-//        DetailSubjectDTO detailSubjectDTO2 = new DetailSubjectDTO(dto2);
-//        DetailSubjectDTO detailSubjectDTO3 = new DetailSubjectDTO(dto3);
-
         String[] parameterValues = request.getParameterValues("detail");
 
         for (String parameterValue : parameterValues) {
             DetailSubjectDTO dto = new DetailSubjectDTO(parameterValue);
             curriculumDto.getDetailSubjectDTOList().add(dto);
         }
-
-//        curriculumDto.getDetailSubjectDTOList().add(detailSubjectDTO1);
-//        curriculumDto.getDetailSubjectDTOList().add(detailSubjectDTO2);
-//        curriculumDto.getDetailSubjectDTOList().add(detailSubjectDTO3);
 
         service.registerCurriculum(curriculumDto);
 

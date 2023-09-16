@@ -17,6 +17,7 @@ public class CurriculumHandlerMapping extends HandlerMapping {
         mappings.put("/createCurriculumForm.do", new CreateCurriculumFormController());
         mappings.put("/createCurriculum.do", new CreateCurriculumController());
         mappings.put("/deleteCurriculum.do", new DeleteCurriculumController());
+        mappings.put("/updateCurriculumForm.do", new UpdateCurriculumFormController());
         mappings.put("/updateCurriculum.do", new UpdateCurriculumController());
     }
 

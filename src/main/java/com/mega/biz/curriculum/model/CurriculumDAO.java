@@ -1,6 +1,5 @@
-package com.mega.biz.curriculum;
+package com.mega.biz.curriculum.model;
 
-import com.mega.biz.curriculum.model.CurriculumQuery;
 import com.mega.biz.curriculum.model.dto.CurriculumWithDetailDTO;
 import com.mega.biz.curriculum.model.dto.DetailSubjectDTO;
 import com.mega.config.database.JDBCUtils;
@@ -20,6 +19,90 @@ public class CurriculumDAO {
     private Connection conn = null;
     private PreparedStatement pstmt = null;
     private ResultSet rs = null;
+
+    public void updateDetail(String detailContent, Long curriculumId, Long detailId) {
+
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.UPDATE_DETAIL.getQuery());
+
+            pstmt.setString(1, detailContent);
+            pstmt.setLong(2, curriculumId);
+            pstmt.setLong(3, detailId);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+    }
+
+    public void updateCurriculum(Long curriculumId, CurriculumWithDetailDTO curriculumWithDetailDTO) {
+
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.UPDATE_CURRICULUM.getQuery());
+
+            pstmt.setString(1, curriculumWithDetailDTO.getSubject());
+            pstmt.setInt(2, curriculumWithDetailDTO.getTime());
+            pstmt.setDate(3, curriculumWithDetailDTO.getStartDate());
+            pstmt.setDate(4, curriculumWithDetailDTO.getEndDate());
+            pstmt.setLong(5, curriculumId);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+    }
+
+    public void deleteDetail(Long detailId) {
+        try {
+            DataSource dataSource = JDBCUtils.getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.DELETE_DETAIL.getQuery());
+
+            pstmt.setLong(1, detailId);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+    }
+
+    public CurriculumWithDetailDTO getCurriculumById(Long curriculumId) {
+
+        CurriculumWithDetailDTO curriculum = new CurriculumWithDetailDTO();
+
+        try {
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(CurriculumQuery.GET_CURRICULUM_BY_ID.getQuery());
+            pstmt.setLong(1, curriculumId);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                curriculum.setId(rs.getLong("ID"));
+                curriculum.setSubject(rs.getString("SUBJECT"));
+                curriculum.setTime(rs.getInt("TIME"));
+                curriculum.setStartDate(rs.getDate("START_DATE"));
+                curriculum.setEndDate(rs.getDate("END_DATE"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt, rs);
+        }
+
+        return curriculum;
+    }
 
     public void deleteCurriculum(Long curriculumId) {
         try {
@@ -75,12 +158,12 @@ public class CurriculumDAO {
         }
     }
 
-    public List<DetailSubjectDTO> getDetailByCurriculumId(Long curriculumId) {
+    public List<DetailSubjectDTO> getDetailListByCurriculumId(Long curriculumId) {
         List<DetailSubjectDTO> detailList = new ArrayList<>();
 
         try {
             conn = dataSource.getConnection();
-            pstmt = conn.prepareStatement(CurriculumQuery.DETAIL_BY_CURRICULUM_ID.getQuery());
+            pstmt = conn.prepareStatement(CurriculumQuery.DETAIL_LIST_BY_CURRICULUM_ID.getQuery());
             pstmt.setLong(1, curriculumId);
             rs = pstmt.executeQuery();
 

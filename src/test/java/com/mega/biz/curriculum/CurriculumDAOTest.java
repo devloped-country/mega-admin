@@ -1,14 +1,12 @@
 package com.mega.biz.curriculum;
 
-import com.mega.biz.curriculum.model.dto.CurriculumDTO;
+import com.mega.biz.curriculum.model.CurriculumDAO;
 import com.mega.biz.curriculum.model.dto.CurriculumWithDetailDTO;
 import com.mega.biz.curriculum.model.dto.DetailSubjectDTO;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CurriculumDAOTest {
 
@@ -24,7 +22,7 @@ class CurriculumDAOTest {
 
     @Test
     void test02() {
-        List<DetailSubjectDTO> detailByCurriculumId = dao.getDetailByCurriculumId(1L);
+        List<DetailSubjectDTO> detailByCurriculumId = dao.getDetailListByCurriculumId(1L);
         for (DetailSubjectDTO detailSubjectDTO : detailByCurriculumId) {
             System.out.println("detailSubjectDTO = " + detailSubjectDTO);
         }
@@ -53,6 +51,22 @@ class CurriculumDAOTest {
     void getMax() {
         Long maxCurriculumId = dao.getMaxCurriculumId();
         System.out.println("maxCurriculumId = " + maxCurriculumId);
+    }
+
+    @Test
+    void getCurriculumById() {
+        CurriculumWithDetailDTO curriculumById = dao.getCurriculumById(1L);
+        System.out.println("curriculumById = " + curriculumById);
+    }
+
+    @Test
+    void updateCurri() {
+        dao.updateCurriculum(2L, new CurriculumWithDetailDTO("333", 10, Date.valueOf("2023-06-01"), Date.valueOf("2023-06-02")));
+    }
+
+    @Test
+    void updateDetail() {
+//        dao.updateDetail(2L, );
     }
 
 }

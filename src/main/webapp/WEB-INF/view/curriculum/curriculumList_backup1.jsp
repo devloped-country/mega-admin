@@ -24,7 +24,7 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-btn notice-update-btn" type="submit" value="update" onclick="javascript: form.action='/curriculum/updateCurriculumForm.do';">과목 수정</button>
+                    <button class="menu-btn notice-update-btn" type="button">과목 수정</button>
                 </li>
 
                 <li class="menu-item">

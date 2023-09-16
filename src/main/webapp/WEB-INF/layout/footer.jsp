@@ -11,8 +11,10 @@
             <h4 class="menu-title">공지사항</h4>
         </li>
         <li class="menu-item">
-            <img src="../../../images/curriculum.svg" alt="커리큘럼" />
-            <h4 class="menu-title">커리큘럼</h4>
+            <a href="/curriculum/getCurriculumList.do" style="text-decoration: none; color: inherit;">
+                <img src="../../../images/curriculum.svg" alt="커리큘럼" />
+                <h4 class="menu-title">커리큘럼</h4>
+            </a>
         </li>
         <li class="menu-item">
             <img src="../../../images/users.svg" alt="회원" />

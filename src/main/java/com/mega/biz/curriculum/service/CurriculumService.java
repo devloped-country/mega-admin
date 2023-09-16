@@ -1,6 +1,6 @@
 package com.mega.biz.curriculum.service;
 
-import com.mega.biz.curriculum.CurriculumDAO;
+import com.mega.biz.curriculum.model.CurriculumDAO;
 import com.mega.biz.curriculum.model.dto.CurriculumWithDetailDTO;
 import com.mega.biz.curriculum.model.dto.DetailSubjectDTO;
 
@@ -8,7 +8,35 @@ import java.util.List;
 
 public class CurriculumService {
 
-    CurriculumDAO dao = new CurriculumDAO();
+    private final CurriculumDAO dao = new CurriculumDAO();
+
+    public void insertDetail(Long curriculumId, DetailSubjectDTO detailSubjectDTO) {
+        dao.insertDetail(curriculumId, detailSubjectDTO);
+    }
+
+    public void updateDetail(String detailContent, Long curriculumId, Long detailId) {
+        dao.updateDetail(detailContent, curriculumId, detailId);
+    }
+
+    public void updateCurriculum(Long curriculumId, CurriculumWithDetailDTO curriculumWithDetailDTO) {
+        dao.updateCurriculum(curriculumId, curriculumWithDetailDTO);
+    }
+
+    public void deleteDetail(Long detailId) {
+        dao.deleteDetail(detailId);
+    }
+
+    public CurriculumWithDetailDTO getCurriculumWithDetailById(Long curriculumId) {
+
+        CurriculumWithDetailDTO curriculum = dao.getCurriculumById(curriculumId);
+
+        List<DetailSubjectDTO> detailList = dao.getDetailListByCurriculumId(curriculumId);
+        for (DetailSubjectDTO detailSubjectDTO : detailList) {
+            curriculum.getDetailSubjectDTOList().add(detailSubjectDTO);
+        }
+
+        return curriculum;
+    }
 
     public void deleteCurriculum(Long curriculumId) {
         dao.deleteCurriculum(curriculumId);
@@ -30,7 +58,7 @@ public class CurriculumService {
         List<CurriculumWithDetailDTO> allCurriculum = dao.getAllCurriculum();
 
         for (CurriculumWithDetailDTO curriculumWithDetailDTO : allCurriculum) {
-            List<DetailSubjectDTO> detailByCurriculumId = dao.getDetailByCurriculumId(curriculumWithDetailDTO.getId());
+            List<DetailSubjectDTO> detailByCurriculumId = dao.getDetailListByCurriculumId(curriculumWithDetailDTO.getId());
             for (DetailSubjectDTO detailSubjectDTO : detailByCurriculumId) {
                 curriculumWithDetailDTO.getDetailSubjectDTOList().add(detailSubjectDTO);
             }

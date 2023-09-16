@@ -47,4 +47,9 @@ class CurriculumServiceTest {
         service.deleteCurriculum(2L);
     }
 
+    @Test
+    void getCurriById() {
+        CurriculumWithDetailDTO curriculumWithDetailById = service.getCurriculumWithDetailById(1L);
+        String test = "";
+    }
 }
