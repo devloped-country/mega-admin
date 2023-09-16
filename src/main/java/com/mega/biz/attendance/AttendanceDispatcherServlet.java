@@ -3,6 +3,7 @@ package com.mega.biz.attendance;
 import com.mega.common.controller.Controller;
 import com.mega.common.controller.HandlerMapping;
 import com.mega.common.controller.ViewResolver;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Slf4j
 @WebServlet("/attendance/*")
 public class AttendanceDispatcherServlet extends HttpServlet {
 
@@ -26,8 +28,31 @@ public class AttendanceDispatcherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String uri = request.getRequestURI();
+//        String[] queries = null;
+//        String page = "1";
+//
+//        log.info("request getQuery : {}",request.getQueryString() );
+//        log.info("boolean : {}",Boolean.valueOf(request.getQueryString()) );
+//
+//        if(request.getQueryString() != null) {
+//            queries = request.getQueryString().split("=");
+//            page = queries[1];
+//            log.info("quries : {}", queries);
+//            log.info("page : {}", page);
+//        }
+//        String path = uri.substring(uri.lastIndexOf("/"));
+
+        String page = "1";
+        if (request.getParameter("page") != null) {
+            page = request.getParameter("page");
+            log.info("page : {}", page);
+        }
+
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
+
+        request.setAttribute("currentPage", page);
 
         Controller ctrl = handlerMapping.getController(path);
 
