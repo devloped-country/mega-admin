@@ -16,7 +16,7 @@
 <form action="/curriculum/deleteCurriculum.do" method="post">
     <div class="NoticeWrapper">
         <div class="nav">
-            <h1 class="title">커리큘럼😜</h1>
+            <h1 class="title">커리큘럼</h1>
             <ul class="menu-list">
                 <li class="menu-item">
                     <button type="button" class="menu-btn notice-regi-btn"
@@ -91,14 +91,14 @@
 
                             <td class="notice-table-body-col notice-table-body-col-detail">
                                 <div class="notice-table-body-cell notice-table-body-detail">
-                                    🚩${detail.content}
+                                    ${detail.content}
                                 </div>
                             </td>
 
                             <c:if test="${status2.index == 0}">
                                 <td class="notice-table-body-col notice-table-body-col-time" rowspan="${fn:length(curriculum.detailSubjectDTOList)}">
                                     <div class="notice-table-body-cell notice-table-body-time">
-                                        ${curriculum.time}
+                                        ${curriculum.time}h
                                     </div>
                                 </td>
                                 <td class="notice-table-body-col notice-table-body-col-period" rowspan="${fn:length(curriculum.detailSubjectDTOList)}">
