@@ -10,6 +10,20 @@ public class CurriculumService {
 
     private final CurriculumDAO dao = new CurriculumDAO();
 
+    public List<CurriculumWithDetailDTO> getAllCurriculumWithDetail() {
+
+        List<CurriculumWithDetailDTO> allCurriculum = dao.getAllCurriculum();
+
+        for (CurriculumWithDetailDTO curriculumWithDetailDTO : allCurriculum) {
+            List<DetailSubjectDTO> detailsByCurriculumId = dao.getDetailListByCurriculumId(curriculumWithDetailDTO.getId());
+            for (DetailSubjectDTO detailSubjectDTO : detailsByCurriculumId) {
+                curriculumWithDetailDTO.getDetailSubjectDTOList().add(detailSubjectDTO);
+            }
+        }
+
+        return allCurriculum;
+    }
+
     public void insertDetail(Long curriculumId, DetailSubjectDTO detailSubjectDTO) {
         dao.insertDetail(curriculumId, detailSubjectDTO);
     }
@@ -51,19 +65,5 @@ public class CurriculumService {
         for (DetailSubjectDTO detailSubjectDTO : detailSubjectDTOList) {
             dao.insertDetail(id, detailSubjectDTO);
         }
-    }
-
-    public List<CurriculumWithDetailDTO> getAllCurriculumWithDetail() {
-
-        List<CurriculumWithDetailDTO> allCurriculum = dao.getAllCurriculum();
-
-        for (CurriculumWithDetailDTO curriculumWithDetailDTO : allCurriculum) {
-            List<DetailSubjectDTO> detailByCurriculumId = dao.getDetailListByCurriculumId(curriculumWithDetailDTO.getId());
-            for (DetailSubjectDTO detailSubjectDTO : detailByCurriculumId) {
-                curriculumWithDetailDTO.getDetailSubjectDTOList().add(detailSubjectDTO);
-            }
-        }
-
-        return allCurriculum;
     }
 }
