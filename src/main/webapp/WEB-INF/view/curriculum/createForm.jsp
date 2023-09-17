@@ -120,7 +120,7 @@
               <div class="modal-wrapper">
                   <div class="modal-desc-wrapper">
                       <h2 class="modal-title">입력 값 오류</h2>
-                      <p class="modal-desc">필수값이 입력되지 않았습니다.</p>
+                      <p class="modal-desc">필수값이 입력되지 않았거나 잘못 입력되었습니다.</p>
                   </div>
                   <div class="modal-btn-wrapper">
                       <button class="modal-btn modal-btn-confirm" type="button">확인</button>
@@ -137,23 +137,36 @@
         const form = document.getElementById('createForm');
 
         form.addEventListener('submit', function (event) {
-          const subject = form['subject'].value;
-          const time = form['time'].value;
-          const startDate = form['startDate'].value;
-          const endDate = form['endDate'].value;
+            const subject = form['subject'].value;
+            const time = form['time'].value;
+            const startDate = form['startDate'].value;
+            const endDate = form['endDate'].value;
 
-          if (!subject || !time || !startDate || !endDate) {
-            event.preventDefault(); // form의 submit을 막습니다.
-            // ValidationModal을 띄웁니다.
-            document.querySelector(".ValidationModal .backdrop").classList.add("active");}
+            let invalidInput = false;
+
+            // 기존의 빈 값 체크
+            if (!subject || !time || !startDate || !endDate) {
+                invalidInput = true;
+            }
+
+            // 숫자인지 체크
+            if (isNaN(time)) {
+                invalidInput = true;
+            }
+
+            if (invalidInput) {
+                event.preventDefault(); // form의 submit을 막습니다.
+                // ValidationModal을 띄웁니다.
+                document.querySelector(".ValidationModal .backdrop").classList.add("active");
+            }
         });
 
-        // 모달의 "확인" 버튼에 이벤트 리스너를 추가
-        document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+    // 모달의 "확인" 버튼에 이벤트 리스너를 추가
+    document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
         // 모달을 닫습니다.
         document.querySelector(".ValidationModal .backdrop").classList.remove("active");
-        });
-      });
+    });
+});
 
 
 
