@@ -40,11 +40,14 @@ public class SampleDispatcherServlet extends HttpServlet {
 
             if (!viewName.contains(".do")) {
                 if (viewName.equals("index")) {
+                    // index.jsp로 이동
                     view = viewName + ".jsp";
                 } else {
+                    // /WEB-INF/view/sample/qr.jsp로 이동
                     view = viewResolver.getView(viewName);
                 }
             } else {
+                // qr.do로 이동
                 view = viewName;
             }
 
