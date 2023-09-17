@@ -22,9 +22,9 @@
   <body>
     <div class="CreateNoticeWrapper">
       <div class="nav">
-        <h1 class="title">커리큘럼😜</h1>
+        <h1 class="title">커리큘럼</h1>
       </div>
-      <form action="createCurriculum.do" method="post" class="create-form">
+      <form id="createForm" action="createCurriculum.do" method="post" class="create-form">
         <div class="content">
           <h2>과목 추가</h2>
           <h3>과목 정보를 입력해 주세요</h3>
@@ -36,17 +36,30 @@
 
           <div class="content-header">
             <div class="content-header-right">
-              <label>시간 <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50" autofocus /></label>
-            </div>
-            <div class="content-header-right">
-              <label>기간 <input type="date" max="2023-12-31" min="2023-05-25" name="startDate" /></label>
-            </div>
-            <div class="content-header-right">
-              <label> ~ <input type="date" max="2023-12-31" min="2023-05-25" name="endDate" /></label>
+              <label>
+                시간
+                <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50" oninput="validateNumber(this)" />
+                <span id="timeError"></span>
+              </label>
+
             </div>
           </div>
 
-          상세 교과 내용🚩
+          <div class="content-header">
+            <div class="content-header-right">
+              <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" name="startDate" onchange="validateDate()" /></label>
+
+            </div>
+
+            <div class="content-header-right">
+              <label> ~ <input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" name="endDate" onchange="validateDate()" /></label>
+            </div>
+
+          </div>
+          <span id="dateError"></span>
+
+
+          상세 교과 내용
           <div class="content-header">
             <div class="content-header-right">
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50" autofocus />
@@ -100,12 +113,74 @@
                   </div>
               </div>
           </div>
-      </div>
+        </div>
+
+        <div class="ValidationModal">
+          <div class="backdrop">
+              <div class="modal-wrapper">
+                  <div class="modal-desc-wrapper">
+                      <h2 class="modal-title">입력 값 오류</h2>
+                      <p class="modal-desc">필수값이 입력되지 않았습니다.</p>
+                  </div>
+                  <div class="modal-btn-wrapper">
+                      <button class="modal-btn modal-btn-confirm" type="button">확인</button>
+                  </div>
+              </div>
+          </div>
+        </div>
       </form>
     </div>
 
 
     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('createForm');
+
+        form.addEventListener('submit', function (event) {
+          const subject = form['subject'].value;
+          const time = form['time'].value;
+          const startDate = form['startDate'].value;
+          const endDate = form['endDate'].value;
+
+          if (!subject || !time || !startDate || !endDate) {
+            event.preventDefault(); // form의 submit을 막습니다.
+            // ValidationModal을 띄웁니다.
+            document.querySelector(".ValidationModal .backdrop").classList.add("active");}
+        });
+
+        // 모달의 "확인" 버튼에 이벤트 리스너를 추가
+        document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+        // 모달을 닫습니다.
+        document.querySelector(".ValidationModal .backdrop").classList.remove("active");
+        });
+      });
+
+
+
+      function validateDate() {
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+        const errorElement = document.getElementById("dateError");
+
+        if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
+          errorElement.textContent = "시작 기간은 종료 기간보다 빨라야 합니다";
+        } else {
+          errorElement.textContent = "";
+        }
+      }
+
+
+      function validateNumber(inputElement) {
+        const value = inputElement.value;
+        const errorElement = document.getElementById("timeError");
+
+        if (isNaN(value)) {
+          errorElement.textContent = "숫자를 입력하시오";
+        } else {
+          errorElement.textContent = "";
+        }
+      }
+
 
       document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
         document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
@@ -120,10 +195,10 @@
 
       document.querySelector(
         '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
-        document.querySelector(".backdrop").classList.remove("active");
+          document.querySelector(".backdrop").classList.remove("active");
 
-        window.location.href = "/curriculum/getCurriculumList.do";
-      });
+          window.location.href = "/curriculum/getCurriculumList.do";
+        });
 
 
       function add_inputbox() {
