@@ -143,3 +143,7 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+body {
+  padding-top: 107px;
+  padding-bottom: 101px;
+}
