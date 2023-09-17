@@ -16,22 +16,29 @@ public class CreateCurriculumController implements Controller {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
+        CurriculumWithDetailDTO curriculumDto = getCurriculumWithDetailDTO(request);
+        String[] details = request.getParameterValues("detail");
+
+        for (String detail : details) {
+
+            if (!detail.equals("")) {
+                DetailSubjectDTO dto = new DetailSubjectDTO(detail);
+                curriculumDto.getDetailSubjectDTOList().add(dto);
+            }
+        }
+
+        service.registerCurriculum(curriculumDto);
+
+        return "getCurriculumList.do";
+    }
+
+    private CurriculumWithDetailDTO getCurriculumWithDetailDTO(HttpServletRequest request) {
         String subject = request.getParameter("subject");
         int time = Integer.parseInt(request.getParameter("time"));
         String startDate = request.getParameter("startDate");
         String endDate = request.getParameter("endDate");
 
         CurriculumWithDetailDTO curriculumDto = new CurriculumWithDetailDTO(subject, time, Date.valueOf(startDate), Date.valueOf(endDate));
-
-        String[] parameterValues = request.getParameterValues("detail");
-
-        for (String parameterValue : parameterValues) {
-            DetailSubjectDTO dto = new DetailSubjectDTO(parameterValue);
-            curriculumDto.getDetailSubjectDTOList().add(dto);
-        }
-
-        service.registerCurriculum(curriculumDto);
-
-        return "getCurriculumList.do";
+        return curriculumDto;
     }
 }

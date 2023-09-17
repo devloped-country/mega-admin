@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class UpdateCurriculumController implements Controller {
 
@@ -20,7 +19,7 @@ public class UpdateCurriculumController implements Controller {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         // 디테일 삭제 로직
-        String[] parameterValues = request.getParameterValues("removedDetails");
+        String[] parameterValues = request.getParameterValues("removeDetails");
 
         if (parameterValues != null) {
             for (String parameterValue : parameterValues) {
@@ -36,20 +35,21 @@ public class UpdateCurriculumController implements Controller {
 
         // 디테일 업데이트
         Map<String, String> detailMap = setDetailMap(request);
-        Set<String> detailIds = detailMap.keySet();
-        for (String detailId : detailIds) {
-            long id = Long.parseLong(detailId);
-            String detailContent = detailMap.get(detailId);
-
-            service.updateDetail(detailContent, curriculumId, id);
-        }
+        detailMap.entrySet().stream()
+                .forEach(entry -> {
+                    long id = Long.parseLong(entry.getKey());
+                    String detailContent = entry.getValue();
+                    service.updateDetail(detailContent, curriculumId, id);
+                });
 
         // 디테일 Insert
         String[] addDetailContentList = request.getParameterValues("addDetail");
         if (addDetailContentList != null) {
             for (String detail : addDetailContentList) {
-                DetailSubjectDTO dto = new DetailSubjectDTO(detail);
-                service.insertDetail(curriculumId, dto);
+                if (!detail.equals("")) {
+                    DetailSubjectDTO dto = new DetailSubjectDTO(detail);
+                    service.insertDetail(curriculumId, dto);
+                }
             }
         }
         return "getCurriculumList.do";
@@ -65,9 +65,9 @@ public class UpdateCurriculumController implements Controller {
         return curriculumDto;
     }
 
-    private Map<String, String > setDetailMap(HttpServletRequest request) {
-        String[] detailContents = request.getParameterValues("detail");
+    private Map<String, String> setDetailMap(HttpServletRequest request) {
         String[] detailIds = request.getParameterValues("detailId");
+        String[] detailContents = request.getParameterValues("detail");
 
         Map<String, String> detailMap = new HashMap<>();
 

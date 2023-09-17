@@ -21,7 +21,7 @@
 <body>
   <div class="CreateNoticeWrapper">
     <div class="nav">
-      <h1 class="title">커리큘럼😜-update</h1>
+      <h1 class="title">커리큘럼</h1>
     </div>
     <form id="updateForm" action="updateCurriculum.do" method="post" class="create-form">
       <div class="content">
@@ -59,7 +59,7 @@
         </div>
         <span id="dateError"></span>
 
-        <p>상세 교과 내용🚩</p>
+        <p>상세 교과 내용</p>
 
         <c:forEach var="detail" items="${curriculum.detailSubjectDTOList}" varStatus="status">
           <div class="content-header">
@@ -67,7 +67,7 @@
               <input type="hidden" name="detailId" value="${detail.id}"/>
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요."
                 maxlength="50" value="${detail.content}" autofocus />
-              <input type="button" value="제거🚩" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')">
+              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')">
             </div>
           </div>
         </c:forEach>
