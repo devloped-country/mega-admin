@@ -34,6 +34,9 @@ public class CurriculumDispatcherServlet extends HttpServlet {
         if (ctrl == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
             dispatcher.forward(request, response);
+        } else if (request.getMethod().equals("POST")) {
+            String view = ctrl.handleRequest(request, response);
+            response.sendRedirect(view);
         } else {
             String viewName = ctrl.handleRequest(request, response);
             String view = null;
