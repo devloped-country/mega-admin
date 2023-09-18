@@ -1,0 +1,192 @@
+.AttendanceStatWrapper {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.AttendanceStatWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.AttendanceStatWrapper::-webkit-scrollbar-thumb {
+  height: 30%;
+  border-radius: 10px;
+  background-color: #a59e9e;
+}
+
+.AttendanceStatWrapper::-webkit-scrollbar-track {
+  background-color: #cacaca;
+}
+
+.AttendanceStatWrapper .MainWrapper {
+  padding: 0 48px 48px;
+}
+
+.AttendanceStatWrapper .MainWrapper .nav {
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AttendanceStatWrapper .MainWrapper .nav .title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.AttendanceStatWrapper .MainWrapper .nav .btn {
+  padding: 12px 16px;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+}
+
+.AttendanceStatWrapper .MainWrapper .content {
+  background-color: #fff;
+  height: 586px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 20px 0 0;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .tab-list {
+  display: flex;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .tab-list .tab-item {
+  padding: 18px 0;
+  width: 50%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .table-header-list {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .table-header-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .table-header-list::-webkit-scrollbar-thumb {
+  width: 30%;
+  border-radius: 10px;
+  background-color: #a59e9e;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .table-header-list::-webkit-scrollbar-track {
+  background-color: #cacaca;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.table-header-list
+.table-header-item.table-header-item-name {
+  flex-shrink: 0;
+  width: 150px;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .table-header-list .table-header-item {
+  min-width: 100px;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: #000;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.table-header-list
+.table-header-item:last-child {
+  border-right: none;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .attendance-table-wrapper {
+  width: 100%;
+  height: calc(100% - 118px);
+  overflow: auto;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .attendance-table-wrapper::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper::-webkit-scrollbar-thumb {
+  width: 30%;
+  height: 30%;
+  border-radius: 10px;
+  background-color: #a59e9e;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper::-webkit-scrollbar-track {
+  background-color: #cacaca;
+}
+
+.AttendanceStatWrapper .MainWrapper .content .attendance-table-wrapper .attendance-table {
+  min-width: 3650px;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper
+.attendance-table
+.attendance-table-row {
+  border-bottom: 1px solid #cacaca;
+  position: relative;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper
+.attendance-table-row
+.attendance-table-col {
+  border-right: 1px solid #cacaca;
+  padding: 16px;
+  width: 100px;
+  text-align: center;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper
+.attendance-table-row
+.attendance-table-col.attendance-table-col-result {
+  background-color: #ffd6d6;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper
+.attendance-table-row
+.attendance-table-col:last-child {
+  border-right: none;
+}
+
+.AttendanceStatWrapper .MainWrapper
+.content
+.attendance-table-wrapper
+.attendance-table-row
+.attendance-table-col.attendance-table-col-name {
+  position: sticky;
+  left: 0;
+  width: 150px;
+  background-color: #000;
+  color: #fff;
+}
+
+.title-active {
+  color: #000;
+}
+
+.title-disabled {
+  color: #cacaca;
+}
