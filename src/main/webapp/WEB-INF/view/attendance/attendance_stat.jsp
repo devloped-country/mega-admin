@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
   User: uBeom
@@ -35,126 +36,12 @@
             </ul>
             <ul class="table-header-list">
                 <li class="table-header-item table-header-item-name">이름</li>
-                <li class="table-header-item">
-                    8/16
-                    <p>월</p>
-                </li>
-                <li class="table-header-item">
-                    8/17
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/18
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/19
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/20
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/21
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/22
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/23
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/24
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/25
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/26
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/27
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/28
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/29
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/30
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    8/31
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/1
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/2
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/3
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/5
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/6
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/7
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/8
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/9
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/10
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/11
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/12
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/13
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/14
-                    <p>화</p>
-                </li>
-                <li class="table-header-item">
-                    9/15
-                    <p>화</p>
-                </li>
+                <c:forEach var="attendanceDate" items="${attendanceDates}">
+                    <li class="table-header-item">
+                        ${fn:substring(attendanceDate.date, 5, 11)}
+                        <p>${attendanceDate.day}</p>
+                    </li>
+                </c:forEach>
                 <li class="table-header-item table-header-item-info">출석</li>
                 <li class="table-header-item">지각</li>
                 <li class="table-header-item">조퇴</li>
@@ -164,41 +51,41 @@
             <div class="attendance-table-wrapper">
                 <table class="attendance-table">
                     <tr class="attendance-table-row">
-                        <c:set var="searchKey" value="김유범" />
-                        <c:forEach var="attendanceInfo" items="${attendanceInfos[searchKey]}">
-                            <td class="attendance-table-col">${attendanceInfo.date}</td>
-                            <td class="attendance-table-col">${attendanceInfo.status}</td>
-                        </c:forEach>
-<%--                        <td class="attendance-table-col attendance-table-col-absent">${attendance.status}</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
-<%--                        <td class="attendance-table-col">출석</td>--%>
+<%--                        <c:set var="searchKey" value="김유범"/>--%>
+<%--                        <c:forEach var="attendanceInfo" items="${attendanceInfos[searchKey]}">--%>
+<%--                            <td class="attendance-table-col">${attendanceInfo.date}</td>--%>
+<%--                            <td class="attendance-table-col">${attendanceInfo.status}</td>--%>
+<%--                        </c:forEach>--%>
+                        <%--                        <td class="attendance-table-col attendance-table-col-absent">${attendance.status}</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
+                        <%--                        <td class="attendance-table-col">출석</td>--%>
                         <td class="attendance-table-col attendance-table-col-result">
                             20
                         </td>

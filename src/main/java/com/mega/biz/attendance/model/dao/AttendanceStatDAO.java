@@ -1,16 +1,24 @@
 package com.mega.biz.attendance.model.dao;
 
 import com.mega.biz.attendance.model.AttendanceStatQuery;
-import com.mega.biz.attendance.model.dto.AttendanceStatDTO;
+import com.mega.biz.attendance.model.dto.AttendanceDateDTO;
+import com.mega.biz.attendance.model.dto.AttendanceDatesDTO;
+import com.mega.biz.attendance.model.dto.AttendanceDetailInfoDTO;
+import com.mega.biz.attendance.model.dto.AttendanceInfoDTO;
 import com.mega.biz.attendance.model.dto.AttendanceUserDTO;
 import com.mega.config.database.JDBCUtils;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 import javax.sql.DataSource;
-
 
 public class AttendanceStatDAO {
 
@@ -41,22 +49,25 @@ public class AttendanceStatDAO {
     return attendanceUsersDTO;
   }
 
-  public ArrayList<AttendanceStatDTO> selectAttendanceInfo(AttendanceUserDTO attendanceUserDTO) {
-    ArrayList<AttendanceStatDTO> attendanceStatsDTO = new ArrayList<>();
+  public AttendanceInfoDTO selectAttendanceInfos(AttendanceUserDTO attendanceUserDTO) {
+    String name = attendanceUserDTO.getName();
+
+    AttendanceInfoDTO attendanceInfoDTO = new AttendanceInfoDTO();
+    attendanceInfoDTO.setName(name);
 
     try {
       DataSource dataSource = JDBCUtils.getDataSource();
       conn = dataSource.getConnection();
       pstmt = conn.prepareStatement(AttendanceStatQuery.ATTENDANCE_STAT_SELECT.getQuery());
-      pstmt.setString(1, attendanceUserDTO.getName());
+      pstmt.setString(1, name);
       rs = pstmt.executeQuery();
 
       while (rs.next()) {
-        AttendanceStatDTO dto = new AttendanceStatDTO();
-        dto.setStatus(rs.getInt("attendance_stat"));
-        dto.setDate(rs.getDate("start_date"));
+        AttendanceDetailInfoDTO attendanceDetailInfoDTO = new AttendanceDetailInfoDTO();
+        attendanceDetailInfoDTO.setStatus(rs.getInt("attendance_stat"));
+        attendanceDetailInfoDTO.setDate(rs.getDate("start_date"));
 
-        attendanceStatsDTO.add(dto);
+        attendanceInfoDTO.getAttendanceInfos().add(attendanceDetailInfoDTO);
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -64,6 +75,68 @@ public class AttendanceStatDAO {
       JDBCUtils.close(conn, pstmt);
     }
 
-    return attendanceStatsDTO;
+    return attendanceInfoDTO;
+  }
+
+  public AttendanceDatesDTO selectAttendanceDates() {
+    AttendanceDatesDTO attendanceDatesDTO = new AttendanceDatesDTO();
+
+    try {
+      DataSource dataSource = JDBCUtils.getDataSource();
+      conn = dataSource.getConnection();
+      pstmt = conn.prepareStatement(AttendanceStatQuery.ATTENDANCE_DURATION_SELECT.getQuery());
+      rs = pstmt.executeQuery();
+
+      if(rs.next()) {
+        int duration = rs.getInt("duration");
+
+        attendanceDatesDTO.setDuration(duration);
+
+        LocalDate date = LocalDate.now();
+        int year = date.getYear();
+        int month = date.getMonthValue();
+
+        Calendar cal = Calendar.getInstance();
+
+        for(int i=duration; i<=cal.getActualMaximum(Calendar.DAY_OF_MONTH); i++) {
+          AttendanceDateDTO attendanceDateDTO = new AttendanceDateDTO();
+
+          LocalDate localDate = LocalDate.of(year, (month-1), i);
+          DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+
+          if(dayOfWeek.toString().equals("SATURDAY") || dayOfWeek.toString().equals("SUNDAY")) {
+            continue;
+          }
+
+          attendanceDateDTO.setDate(Date.valueOf(localDate));
+          attendanceDateDTO.setDay(dayOfWeek.getDisplayName(TextStyle.NARROW, Locale.KOREAN));
+
+          attendanceDatesDTO.getAttendanceDates().add(attendanceDateDTO);
+        }
+
+        for(int i=1; i<duration; i++) {
+          AttendanceDateDTO attendanceDateDTO = new AttendanceDateDTO();
+
+          LocalDate localDate = LocalDate.of(year, month, i);
+          DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+
+          if(dayOfWeek.toString().equals("SATURDAY") || dayOfWeek.toString().equals("SUNDAY")) {
+            continue;
+          }
+
+          attendanceDateDTO.setDate(Date.valueOf(localDate));
+          attendanceDateDTO.setDay(dayOfWeek.getDisplayName(TextStyle.NARROW, Locale.KOREAN));
+
+          attendanceDatesDTO.getAttendanceDates().add(attendanceDateDTO);
+        }
+      }
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      JDBCUtils.close(conn, pstmt);
+    }
+
+    return attendanceDatesDTO;
   }
 }
