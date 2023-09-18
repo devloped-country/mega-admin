@@ -39,12 +39,16 @@ public class HomeDispatcherServlet extends HttpServlet {
             String view = null;
 
             if (!viewName.contains(".do")) {
+                // mapping이 .do로 끝나지 않는다면
                 if (viewName.equals("index")) {
+                    // index라면 index.jsp
                     view = viewName + ".jsp";
                 } else {
+                    // index가 아니라면 /WEB-INF/view/home/{viewName}.jsp
                     view = viewResolver.getView(viewName);
                 }
             } else {
+                // mapping이 .do로 끝난다면
                 view = viewName;
             }
 
