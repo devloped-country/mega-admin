@@ -132,7 +132,7 @@
 }
 
 .AttendanceStatWrapper .MainWrapper .content .attendance-table-wrapper .attendance-table {
-  min-width: 3650px;
+  /*min-width: 3650px;*/
 }
 
 .AttendanceStatWrapper .MainWrapper
@@ -151,7 +151,7 @@
 .attendance-table-col {
   border-right: 1px solid #cacaca;
   padding: 16px;
-  width: 100px;
+  min-width: 100px;
   text-align: center;
 }
 
@@ -178,7 +178,7 @@
 .attendance-table-col.attendance-table-col-name {
   position: sticky;
   left: 0;
-  width: 150px;
+  min-width: 150px;
   background-color: #000;
   color: #fff;
 }

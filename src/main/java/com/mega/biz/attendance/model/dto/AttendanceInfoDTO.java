@@ -1,22 +1,32 @@
 package com.mega.biz.attendance.model.dto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class AttendanceInfoDTO {
+
   private String name;
   private ArrayList<AttendanceDetailInfoDTO> attendanceInfo;
-  private int attendance;
-  private int late;
-  private int earlyLeave;
-  private int officialLeave;
-  private int absent;
+  private TreeMap<String, Integer> attendanceInfoo;
+  private ArrayList<Integer> statCounts;
 
   public AttendanceInfoDTO() {
     this.attendanceInfo = new ArrayList<>();
+    this.attendanceInfoo = new TreeMap<>();
+    this.statCounts = new ArrayList<>();
   }
 
   public String getName() {
     return name;
+  }
+
+  public TreeMap<String, Integer> getAttendanceInfoo() {
+    return attendanceInfoo;
+  }
+
+  public void setAttendanceInfoo(TreeMap<String, Integer> attendanceInfoo) {
+    this.attendanceInfoo = attendanceInfoo;
   }
 
   public void setName(String name) {
@@ -27,8 +37,7 @@ public class AttendanceInfoDTO {
     return attendanceInfo;
   }
 
-  public void setAttendanceInfos(
-      ArrayList<AttendanceDetailInfoDTO> attendanceInfos) {
+  public void setAttendanceInfos(ArrayList<AttendanceDetailInfoDTO> attendanceInfos) {
     this.attendanceInfo = attendanceInfos;
   }
 
@@ -36,48 +45,15 @@ public class AttendanceInfoDTO {
     return attendanceInfo;
   }
 
-  public void setAttendanceInfo(
-      ArrayList<AttendanceDetailInfoDTO> attendanceInfo) {
+  public void setAttendanceInfo(ArrayList<AttendanceDetailInfoDTO> attendanceInfo) {
     this.attendanceInfo = attendanceInfo;
   }
 
-  public int getAttendance() {
-    return attendance;
+  public ArrayList<Integer> getStatCounts() {
+    return statCounts;
   }
 
-  public void setAttendance(int attendance) {
-    this.attendance = attendance;
-  }
-
-  public int getLate() {
-    return late;
-  }
-
-  public void setLate(int late) {
-    this.late = late;
-  }
-
-  public int getEarlyLeave() {
-    return earlyLeave;
-  }
-
-  public void setEarlyLeave(int earlyLeave) {
-    this.earlyLeave = earlyLeave;
-  }
-
-  public int getOfficialLeave() {
-    return officialLeave;
-  }
-
-  public void setOfficialLeave(int officialLeave) {
-    this.officialLeave = officialLeave;
-  }
-
-  public int getAbsent() {
-    return absent;
-  }
-
-  public void setAbsent(int absent) {
-    this.absent = absent;
+  public void setStatCounts(ArrayList<Integer> statCounts) {
+    this.statCounts = statCounts;
   }
 }
