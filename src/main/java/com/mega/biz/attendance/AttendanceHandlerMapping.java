@@ -6,6 +6,7 @@ import com.mega.biz.attendance.controller.SetDurationController;
 import com.mega.biz.attendance.controller.UpdateAttendanceController;
 import com.mega.common.controller.Controller;
 import com.mega.common.controller.HandlerMapping;
+import com.mega.biz.attendance.controller.AttendanceStatController;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,7 @@ public class AttendanceHandlerMapping extends HandlerMapping {
         mappings.put("/attendanceDetail.do", new GetAttendanceDetailListController());
         mappings.put("/attendanceUpdate.do", new UpdateAttendanceController());
         mappings.put("/setDuration.do", new SetDurationController());
+        mappings.put("/attendance_stat", new AttendanceStatController());
     }
 
     @Override

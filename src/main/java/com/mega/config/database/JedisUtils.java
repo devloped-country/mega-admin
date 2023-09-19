@@ -10,10 +10,22 @@ public class JedisUtils {
 
   public static void connect() {
     try {
-      pool = new JedisPool("mega.6abnjx.clustercfg.apn2.cache.amazonaws.com", 6379);
+      pool = new JedisPool("localhost", 6379);
       jedis = pool.getResource();
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  public static Jedis getJedis() {
+    return jedis;
+  }
+
+  public static void close() {
+    if(jedis != null) {
+      jedis.close();
+    }
+
+    pool.close();
   }
 }

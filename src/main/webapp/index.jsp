@@ -6,6 +6,9 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" href="../../../style/reset.css">
+    <link rel="stylesheet" href="../../../style/header.css">
+    <link rel="stylesheet" href="../../../style/footer.css">
 </head>
 <body>
 <c:set var="name" value="test" />
