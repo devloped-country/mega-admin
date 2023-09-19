@@ -8,9 +8,20 @@ public enum AttendanceQuery {
 
     ATTENDANCE_DETAIL_LIST(" SELECT a.*, u.name FROM ( SELECT * FROM attendance WHERE email=? ) a LEFT JOIN user u ON a.email = u.email ORDER BY start_date LIMIT ? OFFSET ? "),
     ATTENDANCE_STATUS_COUNT(" SELECT count(*) FROM attendance WHERE email=? "),
-    ATTENDANCE_UPDATE_ATTENDANCE(" UPDATE attendance SET attendance_status=?, start_date=?, end_date=?, reason=? WHERE id=? "),
+    ATTENDANCE_UPDATE(" UPDATE attendance SET attendance_stat=?, start_date=?, end_date=?, reason=? WHERE id=? "),
 
-    GET_ATTENDANCE_NAME( " SELECT name FROM user WHERE email=? ");
+    ATTENDANCE_DATE_LIST(" SELECT a.*, u.name \n" +
+            "FROM ( SELECT * FROM attendance \n" +
+            "WHERE email=? && start_date BETWEEN ? AND ? ) a \n" +
+            "LEFT JOIN user u \n" +
+            "ON a.email = u.email\n" +
+            "ORDER BY start_date \n" +
+            "LIMIT ? OFFSET ? "),
+    ATTENDANCE_DATE_COUNT(" SELECT count(*) FROM attendance WHERE email=? && start_date BETWEEN ? AND ? "),
+
+    GET_ATTENDANCE_DURATION(" SELECT duration FROM attendance_duration WHERE id='1' "),
+    DURATION_UPDATE(" UPDATE attendance_duration SET duration=? WHERE id='1' ");
+
 
     private final String query;
 

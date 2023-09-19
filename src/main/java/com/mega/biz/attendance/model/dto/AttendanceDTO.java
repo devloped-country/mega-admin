@@ -20,5 +20,9 @@ public class AttendanceDTO {
     private String start_date;
     private String end_date;
     private String reason;
+    private int attendance_duration;
+
+    private String start_month;
+    private String end_month;
 
 }

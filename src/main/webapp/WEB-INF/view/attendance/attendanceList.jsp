@@ -35,32 +35,35 @@ change this template use File | Settings | File Templates. --%>
   <div id="modal-wrapper">
     <div class="modal-back"></div>
     <div class="modal-content">
-      <div>
-        <h2>단위기간 설정</h2>
-        <p class="ex-text">
-          ex) 15일은 5월 16일부터 6월 15일까지 기간을 조회합니다.
-        </p>
-      </div>
-      <div class="get-date">
-        <p>날짜<a class="star">*</a></p>
-        <input
-                type="text"
-                id="insert-date"
-                name="selectDuration"
-                placeholder="ex) 15"
-        />
-        <div class="modal-button">
-          <form method="post">
-            <button class="close-modal">취소</button>
-            <input type="submit" class="update-modal" value="확인" />
-          </form>
+      <form method="post" action="/attendance/setDuration.do">
+        <div>
+          <h2>단위기간 설정</h2>
+          <p class="ex-text">
+            ex) 15일은 5월 16일부터 6월 15일까지 기간을 조회합니다.
+          </p>
         </div>
-      </div>
+        <div class="get-date">
+          <p>날짜<a class="star">*</a></p>
+          <div>
+            <input
+                    type="text"
+                    id="insert-date"
+                    name="getDuration"
+                    placeholder="ex) 15"
+            />
+            <div class="modal-button">
+              <button type="button" id="close-modal">취소</button>
+              <button type="submit" class="update-modal">확인</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <div class="content-wrapper">
     <div class="select-bar">
-      <%-- 인원 / 통계 바 추가 --%>
+      <button type="button" id="select-personnel">인원</button>
+      <button type="button" id="select-statics">통계</button>
     </div>
     <div class="table-wrapper">
       <div>
@@ -111,8 +114,8 @@ change this template use File | Settings | File Templates. --%>
                 <li><a href="?page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
-            <c:if test="${ currentPageBlock + 4 > endNum }">
-              <c:forEach var="i" begin="0" end="${ currentPageBlock - startNum }">
+            <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0 }">
+              <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
                 <li><a href="?page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
@@ -154,8 +157,8 @@ change this template use File | Settings | File Templates. --%>
                 <li><a href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
-            <c:if test="${ currentPageBlock + 4 > endNum }">
-              <c:forEach var="i" begin="0" end="${ currentPageBlock - startNum }">
+            <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0 }">
+              <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
                 <li><a href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>

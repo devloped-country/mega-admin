@@ -20,4 +20,13 @@ public class AttendanceService {
 
     public List<AttendanceDTO> getDetailList(String email, PageDTO pageDTO) { return dao.getDetailList(email, pageDTO); }
 
+    public AttendanceDTO updateAttendance(AttendanceDTO attendanceDTO) { return dao.updateAttendance(attendanceDTO); }
+
+    public List<AttendanceDTO> getDateList(String email, String startMonth, String endMonth, PageDTO pageDTO) { return dao.getDateList(email, startMonth, endMonth, pageDTO); }
+
+    public int getDuration() { return dao.getDuration(); }
+
+    public int getDateCount(String email, String startMonth, String endMonth) { return dao.getDateCount(email, startMonth, endMonth); }
+
+    public int updateDuration(int duration) { return dao.updateDuration(duration); }
 }

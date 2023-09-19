@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Slf4j
@@ -19,6 +20,7 @@ public class GetAttendanceListController implements Controller {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         String keyword = request.getParameter("keyword");
         String currentPage = request.getAttribute("currentPage").toString();
+//        int getDuration = Integer.parseInt(request.getParameter("getDuration"));
 
         log.info("keyword : {}", keyword);
 
@@ -35,12 +37,12 @@ public class GetAttendanceListController implements Controller {
 
         if (keyword == null) {
             List<AttendanceDTO> attendanceList = service.getAttendanceList(pageDTO);
-            log.info("keyword = null !!");
+//            log.info("keyword = null !!");
             request.setAttribute("attendanceList", attendanceList);
         } else {
             attendanceDTO.setName(keyword.replace(" ", ""));
             List<AttendanceDTO> searchList = service.getSearchList(keyword, pageDTO);
-            log.info("keyword != null !!");
+//            log.info("keyword != null !!");
             request.setAttribute("attendanceList", searchList);
         }
 
