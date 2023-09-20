@@ -5,9 +5,9 @@
 <html>
 <head>
     <title>Mega - Home</title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
+    <link rel="stylesheet" href="../../../style/reset.css">
+    <link rel="stylesheet" href="../../../style/header.css">
+    <link rel="stylesheet" href="../../../style/footer.css">
     <link rel="stylesheet" href="../../../css/home.css">
 </head>
 <body>

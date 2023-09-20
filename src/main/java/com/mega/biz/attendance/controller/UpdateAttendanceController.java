@@ -74,7 +74,7 @@ public class UpdateAttendanceController implements Controller {
         request.setAttribute("month", month);
         request.setAttribute("email", email);
 
-        return "attendanceDetail.do";
-//        return "attendanceDetail.do?email=" + email + "&page=" + currentPage + "&month=" + month;
+//        return "attendanceDetail.do";
+        return "attendanceDetail.do?email=" + email + "&page=" + currentPage + "&month=" + month;
     }
 }

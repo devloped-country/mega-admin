@@ -21,8 +21,10 @@
             <h4 class="menu-title">회원</h4>
         </li>
         <li class="menu-item">
-            <img src="../../../images/attendance.svg" alt="출결관리" />
-            <h4 class="menu-title">출결관리</h4>
+            <a href="/attendance/attendance.do" style="text-decoration: none; color: inherit;">
+                <img src="../../../images/attendance.svg" alt="출결관리" />
+                <h4 class="menu-title">출결관리</h4>
+            </a>
         </li>
         <li class="menu-item">
             <img src="../../../images/qrcode.svg" alt="QR 코드" />

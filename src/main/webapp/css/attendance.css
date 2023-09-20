@@ -3,8 +3,8 @@
 
 /* 바디 */
 .body-wrapper {
-    width: 1344px;
     margin: 0 auto;
+    padding: 0 48px 146px;
 }
 
 .content-wrapper {
@@ -15,13 +15,15 @@
 
 /* 상단바 */
 
-h1 {
-    font-size: 24px;
+.top-bar {
+    display: flex;
+    margin-top: 25px;
 }
 
-.top-bar {
-    display: inline-flex;
-    margin-top: 28px;
+h1 {
+    margin-top: 7px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .search-bar {
@@ -30,41 +32,61 @@ h1 {
     border-radius: 3px;
     border: 1px solid #CACACA;
     display: flex;
+    background-color: #FFFFFF;
+    padding-left: 12px;
+}
+
+#keyword {
+    width: 143px;
+    border: none;
 }
 
 #search-img {
+    margin-top: 9px;
+    margin-right: 8px;
     width: 18px;
     height: 18px;
 }
 
+.top-bar-right {
+    margin-left: auto;
+    display: flex;
+}
+
 #search-button {
+    margin-left: 24px;
     width: 78px;
     height: 38px;
     color: #FFFFFF;
     background-color: black;
     border-radius: 3px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 #open-modal {
+    margin-left: 24px;
     width: 115px;
     height: 38px;
     color: #FFFFFF;
     background-color: black;
     border-radius: 3px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 #select-personnel {
     width: 50%;
     height: 54px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 #select-statics {
     width: 49%;
     height: 54px;
     font-size: 16px;
+    font-weight: 600;
     color: #CACACA;
 }
 
@@ -98,6 +120,7 @@ h1 {
 }
 
 h2 {
+    font-weight: 600;
     font-size: 24px;
 }
 
@@ -105,6 +128,8 @@ h2 {
     margin-top: 6px;
     color: #BBBABA;
     font-size: 16px;
+    font-weight: 600;
+
 }
 
 .get-date {
@@ -114,6 +139,7 @@ h2 {
 .star {
     color: #FF0000;
     font-size: 18px;
+    font-weight: 600;
 }
 
 #insert-date {
@@ -134,6 +160,7 @@ h2 {
     border-radius: 3px;
     color: black;
     margin-left: 162px;
+    font-weight: 600;
 }
 
 .modal-button .update-modal {
@@ -145,6 +172,7 @@ h2 {
     background-color: black;
     color: white;
     margin-left: 11px;
+    font-weight: 600;
 }
 
 /* 인원, 통계 바 부분 구현 */
@@ -152,15 +180,10 @@ h2 {
     height: 54px;
     background-color: #FFFFFF;
     border-radius: 20px 20px 0 0;
-    margin-top: 28px;
+    margin-top: 23px;
 }
 
 /* 내용 부분 */
-
-.table-wrapper {
-    max-height: 635px;
-    font-size: 16px;
-}
 
 .table-bar {
     display: table;
@@ -185,6 +208,11 @@ th {
 }
 
 td {
+    white-space: nowrap; /* 텍스트를 한 줄에 표시 */
+    overflow: hidden;    /* 내용이 넘치는 경우 숨김 */
+    text-overflow: ellipsis; /* "..."으로 생략 */
+
+
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -193,13 +221,13 @@ td {
 /* 페이지네이션 */
 
 .page-wrapper {
+    padding-top: 32px;
     width: 100%;
     height: 95px;
     background-color: #FFFFFF;
     border-radius: 0 0 20px 20px;
     display: inline-flex;
     justify-content: center;
-    padding-top: 32px;
 }
 
 .page-number {
@@ -207,9 +235,11 @@ td {
 }
 
 .page-number li a {
+    padding: 7px 12px;
     width: 32px;
     height: 32px;
     font-size: 16px;
+    font-weight: 600;
     border-radius: 3px;
     background-color: #FFFFFF;
     color: black;
@@ -231,12 +261,15 @@ p {
 }
 
 .open-modal-2 {
+    font-size: 14px;
+    font-weight: 600;
     width: 94px;
     height: 31px;
     background-color: #FFFFFF;
     border-radius: 3px;
     border: 1px black solid;
-    box-shadow: 0 4px 4px 0 #000000;
+    box-shadow: 0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
 }
 
 #modal-wrapper .modal-content-2 {
@@ -299,6 +332,7 @@ p {
 
 .modal-reason {
     padding-left: 12px;
+    padding-top: 22px;
     margin-top: 6px;
     background-color: #F2F4F6;
     width: 507px;
@@ -306,6 +340,7 @@ p {
     border-radius: 3px;
     border: none;
     color: #000;
+    resize: none;
 }
 
 .modal-button {
@@ -320,11 +355,13 @@ p {
     border-radius: 3px;
     border: 1px solid black;
     font-size: 18px;
+    font-weight: 600;
     margin-right: 12px;
 }
 
 #currentMonth {
-    padding-left: 32px;
+    padding-left: 23px;
+    padding-right: 10px;
     background-color: #FFFFFF;
     margin-left: 24px;
     width: 147px;
@@ -338,23 +375,25 @@ p {
     height: 38px;
     margin-left: 12px;
     font-size: 16px;
+    font-weight: 600;
     color: #FFFFFF;
     background-color: black;
     border-radius: 3px;
 }
 
 .go-list {
-    margin-left: 892px;
+    margin-left: auto;
     width: 69px;
     height: 38px;
     color: #FFFFFF;
     background-color: black;
     border-radius: 3px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 .content-wrapper {
-    margin-top: 28px;
+    margin-top: 23px;
 }
 
 .table-wrapper-2 {

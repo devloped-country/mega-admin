@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 
 <html>
@@ -14,9 +15,9 @@
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
 <head>
     <title>출결관리상세</title>
-    <link rel="stylesheet" href="../../../css/reset.css" />
-    <link rel="stylesheet" href="../../../css/header.css" />
-    <link rel="stylesheet" href="../../../css/footer.css" />
+    <link rel="stylesheet" href="../../../style/reset.css" />
+    <link rel="stylesheet" href="../../../style/header.css" />
+    <link rel="stylesheet" href="../../../style/footer.css" />
     <link rel="stylesheet" href="../../../css/attendance.css" />
 </head>
 <body>
@@ -66,7 +67,7 @@
                         </div>
                         <div>
                             <p>이유<a class="star">*</a></p>
-                            <input type="text" name="updateReason" class="modal-reason">
+                            <textarea name="updateReason" class="modal-reason"></textarea>
                         </div>
                         <div class="modal-button">
                             <button id="close-modal" type="button">취소</button>

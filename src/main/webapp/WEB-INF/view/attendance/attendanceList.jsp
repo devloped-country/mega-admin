@@ -4,31 +4,32 @@ change this template use File | Settings | File Templates. --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
 <!DOCTYPE html>
 <html>
-<%@ include file="/WEB-INF/layout/header.jsp" %>
-<%@ include file="/WEB-INF/layout/footer.jsp" %>
 <head>
   <title>출결관리</title>
-  <link rel="stylesheet" href="../../../css/reset.css" />
-  <link rel="stylesheet" href="../../../css/header.css" />
-  <link rel="stylesheet" href="../../../css/footer.css" />
+  <link rel="stylesheet" href="../../../style/reset.css" />
+  <link rel="stylesheet" href="../../../style/header.css" />
+  <link rel="stylesheet" href="../../../style/footer.css" />
   <link rel="stylesheet" href="../../../css/attendance.css" />
 </head>
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
 <div class="body-wrapper">
   <div>
     <div>
       <div class="top-bar">
         <h1 id="title">출결관리</h1>
-        <div class="search-bar">
-          <img id="search-img" src="../../../images/search.svg">
-          <input
-                  type="text"
-                  id="keyword"
-                  placeholder="회원명을 입력해주세요"
-          />
+        <div class="top-bar-right">
+          <div class="search-bar">
+            <img id="search-img" src="../../../images/search.svg">
+            <input
+                    type="text"
+                    id="keyword"
+                    placeholder="회원명을 입력해주세요"
+            />
+          </div>
+          <input type="button"  id="search-button" onclick="getKeyword()" value="조회" />
+          <button type="button" id="open-modal">단위기간 설정</button>
         </div>
-        <input type="button"  id="search-button" onclick="getKeyword()" value="조회" />
-        <button type="button" id="open-modal">단위기간 설정</button>
       </div>
     </div>
   </div>
@@ -181,6 +182,7 @@ change this template use File | Settings | File Templates. --%>
   </div>
   </div>
 </div>
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 <script>
   document.getElementById("open-modal").onclick = function () {
     document.getElementById("modal-wrapper").style.display = "block";
