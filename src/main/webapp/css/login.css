@@ -1,0 +1,100 @@
+
+body{
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    /*align-content: center;*/
+
+
+}
+.LoginWrapper2{
+    text-align: center;
+
+    display: flex;
+    width: 559px;
+    height: 515px;
+    background-color: white;
+    /*justify-items: center;*/
+    flex-direction: column;
+    /*margin-top: 10%;*/
+    justify-content: center;
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    /*justify-content: center;*/
+    /*align-content: center;*/
+}
+
+/*.LoginWrapper2 .Main .loginTab */
+.alert-box{
+    color: red;
+    background-color: #ffd6d6;
+}
+
+.LoginWrapper .Main{
+
+
+    /*justify-content: center;*/
+    /*align-content: center;*/
+    margin: auto;
+    /*flex-direction: column;*/
+}
+
+h1 {
+
+    font-size: 56px;
+    font-weight: bold;
+}
+
+
+.logo{
+   margin-left: 44%;
+
+    /*text-align: center;*/
+}
+
+.loginTab{
+    margin: auto;
+}
+
+.Mega{
+    padding-bottom: 50px;
+}
+
+.idBox2{
+    padding-top: 20px;
+}
+
+.idBox3{
+
+    height: 48px;
+    width: 495px;
+    background-color: #f2f4f6;
+}
+
+.pwBox2
+{
+
+   padding-top: 20px;
+}
+
+.pwBox3
+{
+
+    height: 48px;
+    width: 495px;
+    background-color: #f2f4f6;
+}
+
+.loginBtn2{
+    padding-top: 40px;
+
+}
+
+.loginBtn3
+{
+    background-color: black;
+    color: #FFFFFF;
+    height: 48px;
+    width: 495px;
+}

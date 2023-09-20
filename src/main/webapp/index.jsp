@@ -14,7 +14,28 @@
 <c:set var="name" value="test" />
 <p>Name: <c:out value="${name}" /></p>
 
-</body>
-</html>
+<%--<img src="images" width="100" height="80">--%>
 
-<%@ include file="/WEB-INF/layout/footer.jsp" %>
+<h1>Mega</h1>
+
+<hr>
+<form action="login.do" method="post">
+    <%--        login_proc.jsp을 login.do로--%>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td bgcolor="orange">아이디</td>
+            <td><input type="text" name="account"/></td>
+        </tr>
+        <tr>
+            <td bgcolor="orange">비밀번호</td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="로그인"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<hr>

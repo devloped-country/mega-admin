@@ -15,11 +15,11 @@ import java.io.IOException;
 @WebServlet("/user/*")
 public class UserDispatcherServlet extends HttpServlet {
 
-    private HandlerMapping handlerMapping;
+    private UserHandlerMapping userHandlerMapping;
     private ViewResolver viewResolver;
 
     public void init() throws ServletException {
-        handlerMapping = new UserHandlerMapping();
+        userHandlerMapping = new UserHandlerMapping();
         viewResolver = new ViewResolver();
         viewResolver.setPrefix("/WEB-INF/view/user/");
     }
@@ -28,8 +28,8 @@ public class UserDispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
-
-        Controller ctrl = handlerMapping.getController(path);
+        System.out.println(path);
+        Controller ctrl = userHandlerMapping.getController(path);
 
         if (ctrl == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
