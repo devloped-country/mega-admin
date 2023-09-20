@@ -46,6 +46,7 @@ public class LoginDAO {
                 admin.setAccount(rs.getString("ACCOUNT"));
                 admin.setPassword(rs.getString("PASSWORD"));
                 admin.setName(rs.getString("NAME"));
+                admin.setSalt(rs.getString("SALT"));
             }
 
 //            }
