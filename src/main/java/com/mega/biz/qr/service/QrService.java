@@ -3,7 +3,7 @@ package com.mega.biz.qr.service;
 import com.google.zxing.WriterException;
 import com.mega.biz.qr.model.QrDAO;
 import com.mega.common.qr.QRUtils;
-import com.mega.common.sha256.SHA256;
+import com.mega.common.encrypt.sha256.SHA256;
 import java.io.IOException;
 import java.util.Objects;
 
