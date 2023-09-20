@@ -1,4 +1,4 @@
-package com.mega.common.sha256;
+package com.mega.common.encrypt.sha256;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
