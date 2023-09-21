@@ -2,14 +2,16 @@ package com.mega.biz.user.model;
 
 public enum UserQuery {
 
-    ADMIN_USER_DELETE_ATTENDANCE("delete from attendance where email=?"),
+    ADMIN_USER_DELETE_ATTENDANCE("delete from user1 where email=?"),
 
-    ADMIN_USER_DELETE_USER("delete from user where email=?"),
+    ADMIN_USER_DELETE_USER("delete from user1 where email=?"),
 
-    USER_LIST("select email, password, name, phone, user_status  from user"),
+    USER_LIST("select email, password, name, phone, user_status  from user1"),
 
-    ADMIN_USER_APPROVE("update user set user_status=2 where email=?");
+    ADMIN_USER_APPROVE("update user1 set user_status=2 where email=?");
 //    ADMIN_USER_APPROVE_STUTES("update board set title=?, content=? where seq=?");
+
+
 
     private final String query;
 

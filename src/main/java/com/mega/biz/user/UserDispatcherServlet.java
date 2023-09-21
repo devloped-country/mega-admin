@@ -26,14 +26,26 @@ public class UserDispatcherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String page = "1";
+        if (request.getParameter("page") != null) {
+            page = request.getParameter("page");
+//            log.info("page : {}", page);
+        }
+
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
-        System.out.println(path);
+
+        request.setAttribute("currentPage", page);
+
         Controller ctrl = userHandlerMapping.getController(path);
 
         if (ctrl == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
             dispatcher.forward(request, response);
+        } else if (request.getMethod().equals("POST")) {
+            String view = ctrl.handleRequest(request, response);
+            response.sendRedirect(view);
         } else {
             String viewName = ctrl.handleRequest(request, response);
             String view = null;
@@ -53,3 +65,37 @@ public class UserDispatcherServlet extends HttpServlet {
         }
     }
 }
+
+
+
+
+
+
+
+//        String uri = request.getRequestURI();
+//        String path = uri.substring(uri.lastIndexOf("/"));
+//        System.out.println(path);
+//        Controller ctrl = userHandlerMapping.getController(path);
+//
+//        if (ctrl == null) {
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
+//            dispatcher.forward(request, response);
+//        } else {
+//            String viewName = ctrl.handleRequest(request, response);
+//            String view = null;
+//
+//            if (!viewName.contains(".do")) {
+//                if (viewName.equals("index")) {
+//                    view = viewName + ".jsp";
+//                } else {
+//                    view = viewResolver.getView(viewName);
+//                }
+//            } else {
+//                view = viewName;
+//            }
+//
+//            RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+//            dispatcher.forward(request, response);
+//        }
+//    }
+//}

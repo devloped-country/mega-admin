@@ -1,7 +1,6 @@
 package com.mega.biz.user.model;
 
 
-
 import com.mega.biz.login.model.LoginDTO;
 import com.mega.biz.sample.model.SampleQuery;
 import com.mega.config.database.JDBCUtils;
@@ -17,6 +16,8 @@ import java.util.List;
 
 import static com.mega.biz.login.model.LoginQuery.ADMIN_GET;
 import static com.mega.biz.sample.model.SampleQuery.USER_LIST;
+import static com.mega.config.database.JDBCUtils.dataSource;
+import static com.mega.config.database.JDBCUtils.getDataSource;
 
 public class UserDAO {
 
@@ -36,7 +37,6 @@ public class UserDAO {
     //// ,근데 회원승인해주는 메서드에서 한번에 회원상태아이디를 1->2로 ,상태를 0->1로 만들어야 되겠지??
 
 
-
     // 회원가입 승인 (회원정보 수정)
     public void userApprove(UserDTO vo) {
         try {
@@ -50,7 +50,7 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(conn,pstmt);
+            JDBCUtils.close(conn, pstmt);
         }
 
     }
@@ -60,12 +60,12 @@ public class UserDAO {
         try {
             DataSource dataSource = JDBCUtils.getDataSource();
             conn = dataSource.getConnection();
-            pstmt = conn.prepareStatement(UserQuery. ADMIN_USER_DELETE_ATTENDANCE.getQuery());
+            pstmt = conn.prepareStatement(UserQuery.ADMIN_USER_DELETE_ATTENDANCE.getQuery());
             pstmt.setString(1, vo.getEmail());
             pstmt.executeUpdate();
 
             conn = dataSource.getConnection();
-            pstmt = conn.prepareStatement(UserQuery. ADMIN_USER_DELETE_USER.getQuery());
+            pstmt = conn.prepareStatement(UserQuery.ADMIN_USER_DELETE_USER.getQuery());
             pstmt.setString(1, vo.getEmail());
             pstmt.executeUpdate();
 
@@ -84,7 +84,7 @@ public class UserDAO {
             conn = JDBCUtils.getDataSource().getConnection();
             pstmt = conn.prepareStatement(UserQuery.USER_LIST.getQuery());
             rs = pstmt.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 UserDTO user = new UserDTO();
                 user.setEmail(rs.getString("EMAIL"));
                 user.setPassword(rs.getString("PASSWORD"));
@@ -96,10 +96,85 @@ public class UserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(conn,pstmt);
+            JDBCUtils.close(conn, pstmt);
         }
         return userList;
     }
+
+
+    public List<UserDTO> selectAllMember(int page) {
+        //1번 페이지 1~10
+        //2번 페이지 11~20
+        int startNum = (page - 1) * 10 + 1;
+//        int endNum = page * 10;
+//        String sql = "SELECT * FROM user1  ORDER BY name LIMIT 10 OFFSET ?";
+        List<UserDTO> userList = new ArrayList<UserDTO>();
+        try {
+            conn = JDBCUtils.getDataSource().getConnection();
+            pstmt = conn.prepareStatement(UserPageQuery.USER_LIST.getQuery());
+            pstmt.setInt(1, startNum);
+//            pstmt.setInt(2, endNum);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                UserDTO user = new UserDTO();
+                user.setEmail(rs.getString("EMAIL"));
+                user.setPassword(rs.getString("PASSWORD"));
+                user.setName(rs.getString("NAME"));
+                user.setPhone(rs.getString("PHONE"));
+                user.setUser_status(rs.getInt("USER_STATUS"));
+                userList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt);
+        }
+        return userList;
+    }
+
+    public int getTotalUser() {
+        int count = 0;
+
+        try {
+//            if (keyword != null) {
+//                conn = dataSource.getConnection();
+//                pstmt = conn.prepareStatement(UserPageQuery.ATTENDANCE_USER_COUNT.getQuery() + "WHERE name LIKE ?");
+//                pstmt.setString(1, "%" + keyword + "%");
+//            } else
+            DataSource dataSource = getDataSource();
+            conn = dataSource.getConnection();
+            pstmt = conn.prepareStatement(UserPageQuery.USER_COUNT.getQuery());
+
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                count = rs.getInt("count(*)");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, pstmt, rs);
+        }
+
+        return count;
+    }
+
+
+    //■ 전체 페이지 구하는 메소드
+    public int getPageCount(int numPerPage, int dataCount) {
+        int pageCount = 0;
+
+        pageCount = dataCount / numPerPage;
+
+        if (dataCount % numPerPage != 0)
+            pageCount++;
+
+
+        return pageCount;
+    }
+
+
 
 }
 

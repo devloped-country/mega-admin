@@ -22,12 +22,13 @@
 <body>
 
 <div class="UserWrapper">
-    <div class="nav">
-        <h1 class="title">회원 관리</h1>
-    </div>
     <div class="main">
+        <div class="nav">
+            <h1 class="title">회원 관리</h1>
+        </div>
         <table class="table">
-            <div class="header">
+            <div class="top">
+
                 <tr class="header-row">
                     <th class="header-col1" width="100">연번</th>
                     <th class="header-col" width="100">이메일</th>
@@ -39,13 +40,14 @@
                 </tr>
             </div>
 
+
             <div class="content">
                 <c:forEach var="user" items="${userList}" varStatus="loop">
                     <%--        //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★--%>
 
-                    <tr class="content-row">
-                            <%--            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★--%>
-                                                    <form method="post" action="/user/userapprove.do">
+                <tr class="content-row">
+                        <%--            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★--%>
+                    <form method="post" action="/user/userapprove.do">
                         <td class="content-col">
                             <p>${loop.index + 1}</p>
                         </td>
@@ -62,126 +64,143 @@
                                 </c:when>
                             </c:choose></td>
                         <td class="content-col">
-                            <button type="submit" class="openModalBtn1" data-status="${user.user_status}" >가입 승인</button>
+                            <button type="submit" class="openModalBtn1" data-status="${user.user_status}">가입 승인
+                            </button>
                             <input type="hidden" name="OK" value="${user.email }"/>
                                 <%--                    후에 가입승인되었습니다 문구만--%>
                         </td>
-                                                    </form>
-                            <%--            여길누르면 모달창이 따야함 바로 삭제되면안되고!!--%>
-                        <td class="content-col">
-                            <button type="submit" class="openModalBtn2" data-email="${user.email}">회원 탈퇴</button>
-                            <input type="hidden" name="NO" value="${user.email }"/>
-                                <%--                    이건 모달창에서 '확인' 누르면 요청보내주도록--%>
-                        </td>
-                    </tr>
+                    </form>
+                        <%--            여길누르면 모달창이 따야함 바로 삭제되면안되고!!--%>
+                    <td class="content-col">
+                        <button type="submit" class="openModalBtn2" data-email="${user.email}">회원 탈퇴</button>
+                        <input type="hidden" name="NO" value="${user.email }"/>
+                            <%--                    이건 모달창에서 '확인' 누르면 요청보내주도록--%>
+                    </td>
+                </tr>
                     <%--        const userStatus = ${user.user_status};--%>
                     <%--        const data-eamil = ${user.email};--%>
-
-                </c:forEach>
             </div>
+            </c:forEach>
+
+
         </table>
     </div>
 </div>
 
-        <%--<div id="modal1" style="display: none;" >--%>
-        <%--    <div class="modal-content">--%>
-        <%--        <h2>모달 제목</h2>--%>
-        <%--        <p>모달 내용을 여기에 추가하세요.</p>--%>
-        <%--        <input type='button' value='확인' id="confirmButton1"/>--%>
-        <%--        <input type='button' value='취소' id="cancelButton1"/>--%>
-        <%--    </div>--%>
-        <%--</div>--%>
 
-        <div class="modal2">
-            <div class="modal-content2">
-                <div class="modal-content2-area1">
-                    <h2 class="modal-content2-title">회원 탈퇴</h2>
-                    <p class="modal-content2-info">해당 회원을 탈퇴처리 하시겠습니까?.</p>
-                </div>
-                <div class="modal-content2-area2">
-                    <form method="post" action="/user/deleteuser.do">
-                        <td>
-                            <button type="submit" id="openModalBtn2">확인</button>
-                            <input type="hidden" name="NO" value="${user.email}"/>
-                        </td>
-                    </form>
-                    <%--        <input type='button' value='취소' id="cancelButton1"/>--%>
-                    <button type='button' class="cancelButton2">취소</button>
+<%--    페이징구현--%>
+<div class="paging">
+    <c:url var="action" value="/user/getuserlist.do"/>
+    <c:if test="${paging.prev}">
+        <a href="${action}?page=${paging.beginPage-1}">prev</a>
+    </c:if>
+    <c:forEach begin="${paging.beginPage}" end="${paging.endPage}" step="1" var="index">
+        <c:choose>
+            <c:when test="${paging.page==index}">
+                ${index}
+            </c:when>
+            <c:otherwise>
+                <a href="${action}?page=${index}">${index}</a>
+            </c:otherwise>
+        </c:choose>
+    </c:forEach>
+    <c:if test="${paging.next}">
+        <a href="${action}?page=${paging.endPage+1}">next</a>
+    </c:if>
+</div>
 
-                </div>
-            </div>
+
+
+<div class="modal2">
+    <div class="modal-content2">
+        <div class="modal-content2-area1">
+            <h2 class="modal-content2-title">회원 탈퇴</h2>
+            <p class="modal-content2-info">해당 회원을 탈퇴처리 하시겠습니까?.</p>
         </div>
+        <div class="modal-content2-area2">
+            <form method="post" action="/user/deleteuser.do">
+                <td>
+                    <button type="submit" id="openModalBtn2">확인</button>
+                    <input type="hidden" name="NO" value="${user.email}"/>
+                </td>
+            </form>
+            <%--        <input type='button' value='취소' id="cancelButton1"/>--%>
+            <button type='button' class="cancelButton2">취소</button>
 
-            <%@ include file="/WEB-INF/layout/footer.jsp" %>
+        </div>
+    </div>
+</div>
 
-            <script>
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 
-
-                // 모달창2 열기
-                const openModalBtn2 = document.querySelectorAll(".openModalBtn2");
-                const modal2 = document.querySelector(".modal2");
-                const cancelButton2 = document.querySelector(".cancelButton2");
-
-                openModalBtn2.forEach((button) => {
-                    button.addEventListener("click", () => {
-                        //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-                        const email = button.getAttribute("data-email"); // 사용자의 이메일 가져오기
-                        const emailInput = modal2.querySelector('input[name="NO"]'); // 숨겨진 입력 필드 선택
-                        emailInput.value = email; // 이메일 값을 숨겨진 입력 필드에 할당
-                        modal2.style.display = "block";
-                    });
-                });
-                // 모달창2 닫기
-                cancelButton2.addEventListener("click", () => {
-                    modal2.style.display = "none";
-                });
-
-                //승인 (name=OK 버튼) 의 활성,비활성여부----------------------------------
-                // function btnActive() {
-                //     const userStatus = button.getAttribute("data-user_status"); // getUserStatus는 사용자 상태를 가져오는 함수로 가정합니다.
-                //     const target = document.getElementById('openModalBtn1');
-                //
-                //     if (userStatus === 1) {
-                //         target.disabled = false;
-                //     } else if (userStatus === 2) {
-                //         target.disabled = true;
-                //     }
-                //
-
-                function btnActive() {
-                    const buttons = document.querySelectorAll('.openModalBtn1'); // 모든 '가입 승인' 버튼을 가져옵니다.
-
-                    buttons.forEach(button => {
-                        const userStatus = button.getAttribute("data-status"); // 버튼의 data-user_status 속성을 가져옵니다.
-
-                        if (userStatus === '2') { // userStatus가 문자열로 설정되어 있으므로 문자열로 비교합니다.
-                            button.disabled = true; // user_status가 2이면 버튼을 비활성화합니다.
-                        } else {
-                            button.disabled = false; // 그 외의 경우에는 버튼을 활성화합니다.
-                        }
-                    });
-                }
+<script>
 
 
-                    function getUserStatus() {
+    // 모달창2 열기
+    const openModalBtn2 = document.querySelectorAll(".openModalBtn2");
+    const modal2 = document.querySelector(".modal2");
+    const cancelButton2 = document.querySelector(".cancelButton2");
 
-                        //승인 (name=OK 버튼) 의 활성,비활성여부----------------------------------
+    openModalBtn2.forEach((button) => {
+        button.addEventListener("click", () => {
+            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+            const email = button.getAttribute("data-email"); // 사용자의 이메일 가져오기
+            const emailInput = modal2.querySelector('input[name="NO"]'); // 숨겨진 입력 필드 선택
+            emailInput.value = email; // 이메일 값을 숨겨진 입력 필드에 할당
+            modal2.style.display = "block";
+        });
+    });
+    // 모달창2 닫기
+    cancelButton2.addEventListener("click", () => {
+        modal2.style.display = "none";
+    });
 
-                        function btnDisabled() {
-                            const target = document.getElementById('target_btn');
-                            target.disabled = true;
-                        }
+    //승인 (name=OK 버튼) 의 활성,비활성여부----------------------------------
+    // function btnActive() {
+    //     const userStatus = button.getAttribute("data-user_status"); // getUserStatus는 사용자 상태를 가져오는 함수로 가정합니다.
+    //     const target = document.getElementById('openModalBtn1');
+    //
+    //     if (userStatus === 1) {
+    //         target.disabled = false;
+    //     } else if (userStatus === 2) {
+    //         target.disabled = true;
+    //     }
+    //
+
+    function btnActive() {
+        const buttons = document.querySelectorAll('.openModalBtn1'); // 모든 '가입 승인' 버튼을 가져옵니다.
+
+        buttons.forEach(button => {
+            const userStatus = button.getAttribute("data-status"); // 버튼의 data-user_status 속성을 가져옵니다.
+
+            if (userStatus === '2') { // userStatus가 문자열로 설정되어 있으므로 문자열로 비교합니다.
+                button.disabled = true; // user_status가 2이면 버튼을 비활성화합니다.
+            } else {
+                button.disabled = false; // 그 외의 경우에는 버튼을 활성화합니다.
+            }
+        });
+    }
+
+
+    function getUserStatus() {
+
+        //승인 (name=OK 버튼) 의 활성,비활성여부----------------------------------
+
+        function btnDisabled() {
+            const target = document.getElementById('target_btn');
+            target.disabled = true;
+        }
 
 
 //모달1창에서 확인버튼 누를시 ->
-                        function approveUser() {
-                            //회원승인하는 userapprove.do 이런쪽으로 가게만듬
-                        }
+        function approveUser() {
+            //회원승인하는 userapprove.do 이런쪽으로 가게만듬
+        }
 
-                }
+    }
 
 
-            </script>
+</script>
 </body>
 </html>
 <%--페이지네이션----------------------------------------------------%>
