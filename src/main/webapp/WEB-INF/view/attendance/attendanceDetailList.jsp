@@ -122,7 +122,7 @@
                             <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
                             <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
                             <td class="table-col-reason">${ attendanceDTO.reason }</td>
-                            <td><button type="button" class="open-modal-2" data-idx="modal-${index}">출결 관리</button></td>
+                            <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}"><a>출결 관리</a></button></td>
                         </tr>
                         <c:set var="index" value="${ index + 1 }"></c:set>
                     </c:forEach>
@@ -140,76 +140,76 @@
                     <c:when test="${ month } == null">
                         <div>
                             <c:if test="${ startNum >= 6 }">
-                                <a href="?email=${ email }&page=1"><img src="../../../images/angle-double-small-left.svg" alt="처음 페이지로"></a>
+                                <a class="page-nav" href="?email=${ email }&page=1"><img src="../../../images/angle-double-small-left.svg" alt="처음 페이지로"></a>
                             </c:if>
                         </div>
                         <%-- 이전 블록 --%>
                         <div>
                             <c:if test="${ startNum - 1 > 0 }">
-                                <a href="?email=${ email }&page=${ startNum - 1 }"><img src="../../../images/angle-small-left.svg" alt="이전"></a>
+                                <a class="page-nav" href="?email=${ email }&page=${ startNum - 1 }"><img src="../../../images/angle-small-left.svg" alt="이전"></a>
                             </c:if>
                         </div>
                         <%-- 블록 번호 --%>
                         <ul class="page-number">
                             <c:if test="${ currentPageBlock + 4 <= endNum }">
                                 <c:forEach var="i" begin="0" end="4">
-                                    <li><a href="?email=${ email }&page=${ startNum + i }">${ startNum + i }</a></li>
+                                    <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?email=${ email }&page=${ startNum + i }">${ startNum + i }</a></li>
                                 </c:forEach>
                             </c:if>
                             <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0}">
                                 <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
-                                    <li><a href="?email=${ email }&page=${ startNum + i }">${ startNum + i }</a></li>
+                                    <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?email=${ email }&page=${ startNum + i }">${ startNum + i }</a></li>
                                 </c:forEach>
                             </c:if>
                         </ul>
                         <%-- 다음 블록 --%>
                         <div>
                             <c:if test="${ startNum + 4 < endNum }">
-                                <a href="?email=${ email }&page=${ startNum + 5 }"><img src="../../../images/angle-small-right.svg" alt="다음"></a>
+                                <a class="page-nav" href="?email=${ email }&page=${ startNum + 5 }"><img src="../../../images/angle-small-right.svg" alt="다음"></a>
                             </c:if>
                         </div>
                         <%-- 마지막 블록 --%>
                         <div>
                             <c:if test="${ startNum + 4 < endNum }">
-                                <a href="?email=${ email }&page=${ endNum }"><img src="../../../images/angle-double-small-right.svg" alt=" 마지막 페이지로"></a>
+                                <a class="page-nav" href="?email=${ email }&page=${ endNum }"><img src="../../../images/angle-double-small-right.svg" alt=" 마지막 페이지로"></a>
                             </c:if>
                         </div>
                     </c:when>
                     <c:otherwise>
                         <div>
                             <c:if test="${ startNum >= 6 }">
-                                <a href="?email=${ email }&page=1&month=${ month }"><img src="../../../images/angle-double-small-left.svg" alt="처음 페이지로"></a>
+                                <a class="page-nav" href="?email=${ email }&page=1&month=${ month }"><img src="../../../images/angle-double-small-left.svg" alt="처음 페이지로"></a>
                             </c:if>
                         </div>
                         <%-- 이전 블록 --%>
                         <div>
                             <c:if test="${ startNum - 1 > 0 }">
-                                <a href="?email=${ email }&page=${ startNum - 1 }&month=${ month }"><img src="../../../images/angle-small-left.svg" alt="이전"></a>
+                                <a class="page-nav" href="?email=${ email }&page=${ startNum - 1 }&month=${ month }"><img src="../../../images/angle-small-left.svg" alt="이전"></a>
                             </c:if>
                         </div>
                         <%-- 블록 번호 --%>
                         <ul class="page-number">
                             <c:if test="${ currentPageBlock + 4 <= endNum }">
                                 <c:forEach var="i" begin="0" end="4">
-                                    <li><a href="?email=${ email }&page=${ startNum + i }&month=${ month }">${ startNum + i }</a></li>
+                                    <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?email=${ email }&page=${ startNum + i }&month=${ month }">${ startNum + i }</a></li>
                                 </c:forEach>
                             </c:if>
                             <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0 }">
                                 <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
-                                    <li><a href="?email=${ email }&page=${ startNum + i }&month=${ month }">${ startNum + i }</a></li>
+                                    <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?email=${ email }&page=${ startNum + i }&month=${ month }">${ startNum + i }</a></li>
                                 </c:forEach>
                             </c:if>
                         </ul>
                         <%-- 다음 블록 --%>
                         <div>
                             <c:if test="${ startNum + 4 < endNum }">
-                                <a href="?email=${ email }&page=${ startNum + 5 }&month=${ month }"><img src="../../../images/angle-small-right.svg" alt="다음"></a>
+                                <span class="page-nav" href="?email=${ email }&page=${ startNum + 5 }&month=${ month }"><img src="../../../images/angle-small-right.svg" alt="다음"></span>
                             </c:if>
                         </div>
                         <%-- 마지막 블록 --%>
                         <div>
                             <c:if test="${ startNum + 4 < endNum }">
-                                <a href="?email=${ email }&page=${ endNum }&month=${ month }"><img src="../../../images/angle-double-small-right.svg" alt=" 마지막 페이지로"></a>
+                                <a class="page-nav" href="?email=${ email }&page=${ endNum }&month=${ month }"><img src="../../../images/angle-double-small-right.svg" alt=" 마지막 페이지로"></a>
                             </c:if>
                         </div>
                     </c:otherwise>
@@ -255,6 +255,9 @@
     document.getElementById("close-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "none";
     };
+    document.getElementById("page-number-button").onclick = function () {
+        document.getElementById("modal-wrapper").style.display = "none";
+    }
 </script>
 </body>
 </html>

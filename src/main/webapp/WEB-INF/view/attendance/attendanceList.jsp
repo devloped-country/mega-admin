@@ -64,7 +64,7 @@ change this template use File | Settings | File Templates. --%>
   <div class="content-wrapper">
     <div class="select-bar">
       <button type="button" id="select-personnel">인원</button>
-      <button type="button" id="select-statics">통계</button>
+      <button type="button" id="select-statics" onclick="location.href='/attendance/attendance_stat'">통계</button>
     </div>
     <div class="table-wrapper">
       <div>
@@ -112,12 +112,12 @@ change this template use File | Settings | File Templates. --%>
           <ul class="page-number">
             <c:if test="${ currentPageBlock + 4 <= endNum }">
               <c:forEach var="i" begin="0" end="4">
-                <li><a href="?page=${ startNum + i }">${ startNum + i }</a></li>
+                <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
             <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0 }">
               <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
-                <li><a href="?page=${ startNum + i }">${ startNum + i }</a></li>
+                <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
           </ul>
@@ -155,12 +155,12 @@ change this template use File | Settings | File Templates. --%>
           <ul class="page-number">
             <c:if test="${ currentPageBlock + 4 <= endNum }">
               <c:forEach var="i" begin="0" end="4">
-                <li><a href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
+                <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
             <c:if test="${ currentPageBlock + 4 > endNum && endNum != 0 }">
               <c:forEach var="i" begin="0" end="${ endNum - currentPageBlock }">
-                <li><a href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
+                <li><a class="${page == (startNum + i) ? "page-number-button-on" : ""}" href="?keyword=${ keyword }&page=${ startNum + i }">${ startNum + i }</a></li>
               </c:forEach>
             </c:if>
           </ul>
