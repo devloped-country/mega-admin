@@ -20,7 +20,7 @@ public class AttendanceHandlerMapping extends HandlerMapping {
         mappings.put("/attendanceDetail.do", new GetAttendanceDetailListController());
         mappings.put("/attendanceUpdate.do", new UpdateAttendanceController());
         mappings.put("/setDuration.do", new SetDurationController());
-        mappings.put("/attendance_stat", new AttendanceStatController());
+        mappings.put("/attendanceStat.do", new AttendanceStatController());
     }
 
     @Override

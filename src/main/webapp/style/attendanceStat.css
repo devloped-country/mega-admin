@@ -19,6 +19,7 @@
 
 .AttendanceStatWrapper .MainWrapper {
   padding: 0 48px 48px;
+  /*height: 100%;*/
 }
 
 .AttendanceStatWrapper .MainWrapper .nav {
@@ -42,7 +43,7 @@
 
 .AttendanceStatWrapper .MainWrapper .content {
   background-color: #fff;
-  height: 586px;
+  height: 100%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 20px 20px 0 0;
 }
@@ -107,7 +108,7 @@
 
 .AttendanceStatWrapper .MainWrapper .content .attendance-table-wrapper {
   width: 100%;
-  height: calc(100% - 118px);
+  height: 100%;
   overflow: auto;
 }
 
@@ -153,6 +154,7 @@
   padding: 16px;
   min-width: 100px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .AttendanceStatWrapper .MainWrapper
@@ -185,8 +187,10 @@
 
 .title-active {
   color: #000;
+  cursor: default;
 }
 
 .title-disabled {
   color: #cacaca;
+  cursor: pointer;
 }

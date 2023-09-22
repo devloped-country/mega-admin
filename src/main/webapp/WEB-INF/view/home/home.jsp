@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">
-    <link rel="stylesheet" href="../../../css/home.css">
+    <link rel="stylesheet" href="../../../style/home.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 <div class="HomeWrapper">
     <main class="MainWrapper">
         <nav class="nav">
-            <h2 class="title">김예진 님 안녕하세요 👋🏼</h2>
+            <h2 class="title">${name} 님 안녕하세요 👋🏼</h2>
         </nav>
         <section class="content">
             <section class="attendance">

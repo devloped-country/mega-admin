@@ -14,7 +14,7 @@ public class QrHandlerMapping extends HandlerMapping {
     private Map<String, Controller> mappings = new HashMap<>();
 
     public QrHandlerMapping() {
-        mappings.put("/code", new QrController());
+        mappings.put("/code.do", new QrController());
         mappings.put("/qrImg", new QrImgController());
     }
 

@@ -75,7 +75,7 @@ public class HomeDAO {
         dto.setTitle(rs.getString("title"));
         dto.setContent(rs.getString("content"));
         dto.setAuthor(rs.getString("author"));
-        dto.setCreated_date(rs.getDate("created_date"));
+        dto.setCreated_date(rs.getDate("createdDate"));
 
         dtos.add(dto);
       }
