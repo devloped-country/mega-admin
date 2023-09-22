@@ -12,13 +12,15 @@
         </li>
         <li class="menu-item">
             <a href="/curriculum/getCurriculumList.do" style="text-decoration: none; color: inherit;">
-                <img src="../../../images/curriculum.svg" alt="커리큘럼" />
-                <h4 class="menu-title">커리큘럼</h4>
+            <img src="../../../images/curriculum.svg" alt="커리큘럼" />
+            <h4 class="menu-title">커리큘럼</h4>
             </a>
         </li>
         <li class="menu-item">
+            <a href="/user/getuserlist.do" style="text-decoration: none; color: inherit;">
             <img src="../../../images/users.svg" alt="회원" />
             <h4 class="menu-title">회원</h4>
+            </a>
         </li>
         <li class="menu-item">
             <a href="/attendance/attendance.do" style="text-decoration: none; color: inherit;">

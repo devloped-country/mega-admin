@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class JDBCUtils {
 
-    private static DataSource dataSource;
+    public static DataSource dataSource;
 
     public static DataSource getDataSource() {
         if (dataSource == null) {
