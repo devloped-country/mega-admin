@@ -19,8 +19,6 @@ public class EncryptUtils {
         for (byte b : salt) {
             sb.append(String.format("%02x", b));
         }
-
-
         return sb.toString();
     }
 
