@@ -32,6 +32,6 @@ public class AttendanceStatController implements Controller {
         request.setAttribute("attendanceDates", attendanceDatesDTO.getAttendanceDates());
         request.setAttribute("attendanceInfos", attendanceInfosDTO.getAttendanceInfos());
 
-        return "attendance_stat";
+        return "attendanceStat";
     }
 }

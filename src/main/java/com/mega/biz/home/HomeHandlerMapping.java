@@ -13,7 +13,7 @@ public class HomeHandlerMapping extends HandlerMapping {
     private Map<String, Controller> mappings = new HashMap<>();
 
     public HomeHandlerMapping() {
-        mappings.put("/home", new HomeController());
+        mappings.put("/home.do", new HomeController());
     }
 
     @Override

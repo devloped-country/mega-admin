@@ -8,13 +8,10 @@
 <html>
 <head>
     <title>Mega - USER</title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <link rel="stylesheet" href="../../../style/user.css">
 
     <%--    <link rel="stylesheet" href="../../../css/user.css" type="text/css">--%>
 

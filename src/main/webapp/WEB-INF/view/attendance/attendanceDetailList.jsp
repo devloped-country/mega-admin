@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../../../style/reset.css" />
     <link rel="stylesheet" href="../../../style/header.css" />
     <link rel="stylesheet" href="../../../style/footer.css" />
-    <link rel="stylesheet" href="../../../css/attendance.css" />
+    <link rel="stylesheet" href="../../../style/attendance.css" />
 </head>
 <body>
 <div class="body-wrapper">

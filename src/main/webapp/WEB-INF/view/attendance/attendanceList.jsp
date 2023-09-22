@@ -9,7 +9,7 @@ change this template use File | Settings | File Templates. --%>
   <link rel="stylesheet" href="../../../style/reset.css" />
   <link rel="stylesheet" href="../../../style/header.css" />
   <link rel="stylesheet" href="../../../style/footer.css" />
-  <link rel="stylesheet" href="../../../css/attendance.css" />
+  <link rel="stylesheet" href="../../../style/attendance.css" />
 </head>
 <body>
 <%@ include file="/WEB-INF/layout/header.jsp" %>
@@ -64,7 +64,7 @@ change this template use File | Settings | File Templates. --%>
   <div class="content-wrapper">
     <div class="select-bar">
       <button type="button" id="select-personnel">인원</button>
-      <button type="button" id="select-statics" onclick="location.href='/attendance/attendance_stat'">통계</button>
+      <button type="button" id="select-statics" onclick="location.href='/attendance/attendanceStat.do'">통계</button>
     </div>
     <div class="table-wrapper">
       <div>

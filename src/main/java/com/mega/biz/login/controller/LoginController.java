@@ -57,7 +57,7 @@ public class LoginController implements Controller {
             session.setAttribute("name", admin.getName());
 
             // 글 목록 화면으로 이동한다.
-            return "WEB-INF/view/home/home";   //index 아니면 이걸로
+            return "/home/home.do";   //index 아니면 이걸로
         } else {
             request.setAttribute("loginError", "아이디 또는 비밀번호가 일치하지 않습니다.");
             return "index";
