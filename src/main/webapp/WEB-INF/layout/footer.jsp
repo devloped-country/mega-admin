@@ -7,8 +7,10 @@
             <h4 class="menu-title">홈</h4>
         </li>
         <li class="menu-item">
+            <a href="/notice/getNoticeList.do" style="text-decoration: none; color: inherit;">
             <img src="../../../images/notice.svg" alt="공지사항" />
             <h4 class="menu-title">공지사항</h4>
+            </a>
         </li>
         <li class="menu-item">
             <a href="/curriculum/getCurriculumList.do" style="text-decoration: none; color: inherit;">

@@ -5,22 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406503f2-41e6-410b-857b-f0f9b9d8b7dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/GetNoticeDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/GetNoticeListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/dto/NoticeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/dto/PageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/createNotice.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/detailNotice.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/noticeList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/notice/createNotice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/notice/detailNotice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/notice/notice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mega/biz/notice/model/NoticeDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/LoginDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/LoginDispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/LoginHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/LoginHandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/model/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/login/model/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/UserDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/UserDispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/controller/UserApproveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/controller/UserApproveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/controller/UserDeleteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/controller/UserDeleteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserPageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserPageDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/common/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/common/filter/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeDispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeHandlerMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -62,9 +67,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "feature-login",
     "jdk.selected.JAVA_MODULE": "corretto-11",
-    "last_opened_file_path": "C:/mega-admin-feature-attendance (2)",
+    "last_opened_file_path": "C:/dev/project/1_project/mega-admin/src/main/webapp/style/notice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,13 +85,54 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\project\1_project\mega-admin\src\main\webapp\style\notice" />
+      <recent name="C:\dev\project\1_project\mega-admin\src\main\webapp\WEB-INF\view\notice" />
       <recent name="C:\megaAPP3\mega-admin\src\main\webapp\style" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.mega.biz.notice.model" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mega.biz.notice.model.dto" />
       <recent name="com.mega.biz.user.controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Smart Tomcat.mega8088">
+    <configuration name="NoticeDAOTest.count" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mega" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mega.biz.notice.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mega.biz.notice.model" />
+      <option name="MAIN_CLASS_NAME" value="com.mega.biz.notice.model.NoticeDAOTest" />
+      <option name="METHOD_NAME" value="count" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoticeDAOTest.getOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mega" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mega.biz.notice.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mega.biz.notice.model" />
+      <option name="MAIN_CLASS_NAME" value="com.mega.biz.notice.model.NoticeDAOTest" />
+      <option name="METHOD_NAME" value="getOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="mega8088" type="com.poratu.idea.plugins.tomcat">
       <log_file alias="Tomcat Catalina Log" path="$USER_HOME$/.SmartTomcat/mega-admin/mega/logs/catalina.*" />
       <log_file alias="Tomcat Manager Log" path="$USER_HOME$/.SmartTomcat/mega-admin/mega/logs/manager.*" />
@@ -93,7 +141,7 @@
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <option name="adminPort" value="8010" />
       <option name="contextPath" value="/" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="docBase" value="C:\dev\project\1_project\mega-admin\src\main\webapp" />
       <option name="envOptions">
         <map />
       </option>
@@ -102,7 +150,7 @@
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.79" />
-          <option name="path" value="$PROJECT_DIR$/../../apache-tomcat-9.0.79" />
+          <option name="path" value="$PROJECT_DIR$/../../../../Program Files/Apache Software Foundation/Tomcat 9.0" />
           <option name="version" value="9.0.79.0" />
         </TomcatInfo>
       </option>
@@ -112,6 +160,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.NoticeDAOTest.count" />
+      <item itemvalue="JUnit.NoticeDAOTest.getOne" />
+      <item itemvalue="Smart Tomcat.mega8088" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NoticeDAOTest.getOne" />
+        <item itemvalue="JUnit.NoticeDAOTest.count" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
