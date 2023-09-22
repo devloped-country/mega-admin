@@ -64,10 +64,19 @@
                                 </c:when>
                             </c:choose></td>
                         <td class="content-col">
+
+                            <c:if test="${ user.user_status  == 1}">
                             <button type="submit" class="openModalBtn1" data-status="${user.user_status}">가입 승인
                             </button>
                             <input type="hidden" name="OK" value="${user.email }"/>
                                 <%--                    후에 가입승인되었습니다 문구만--%>
+                            </c:if>
+                            <c:if test="${ user.user_status  != 1}">
+                                <button type="button" class="closeBtn">가입 승인
+                                </button>
+                                <input type="hidden" name="OK" value="${user.email }"/>
+                                <%--                    후에 가입승인되었습니다 문구만--%>
+                            </c:if>
                         </td>
                     </form>
                         <%--            여길누르면 모달창이 따야함 바로 삭제되면안되고!!--%>
@@ -77,12 +86,9 @@
                             <%--                    이건 모달창에서 '확인' 누르면 요청보내주도록--%>
                     </td>
                 </tr>
-                    <%--        const userStatus = ${user.user_status};--%>
-                    <%--        const data-eamil = ${user.email};--%>
+
             </div>
             </c:forEach>
-
-
         </table>
     </div>
 </div>
@@ -197,17 +203,7 @@
         modal2.style.display = "none";
     });
 
-    //승인 (name=OK 버튼) 의 활성,비활성여부----------------------------------
-    // function btnActive() {
-    //     const userStatus = button.getAttribute("data-user_status"); // getUserStatus는 사용자 상태를 가져오는 함수로 가정합니다.
-    //     const target = document.getElementById('openModalBtn1');
-    //
-    //     if (userStatus === 1) {
-    //         target.disabled = false;
-    //     } else if (userStatus === 2) {
-    //         target.disabled = true;
-    //     }
-    //
+
 
     function btnActive() {
         const buttons = document.querySelectorAll('.openModalBtn1'); // 모든 '가입 승인' 버튼을 가져옵니다.
@@ -245,72 +241,3 @@
 </script>
 </body>
 </html>
-<%--페이지네이션----------------------------------------------------%>
-<%--const pageGroup = 1--%>
-<%--const pageCount = 5--%>
-<%--const totalPage = 11--%>
-
-<%--let lastNumber = pageGroup * pageCount // 5--%>
-<%--if (lastNumber > totalPage) {--%>
-<%--    lastNumber = totalPage--%>
-<%--}--%>
-<%--let firstNumber = lastNumber - (pageCount - 1) // 1--%>
-
-<%--const next = lastNumber + 1 // 6--%>
-<%--const prev = firstNumber - 1 // 0--%>
-
-<%--// 1~5만큼 페이지네이션 그려줌--%>
-<%--for (let i = firstNumber; i <= lastNumber; i++) {--%>
-<%--    html += `<button class="pageNumber" id="page_${i}">${i}</button>`--%>
-<%--}--%>
-<%--const pageGroup = 3--%>
-<%--const pageCount = 5--%>
-<%--const totalPage = 11--%>
-
-<%--let lastNumber = pageGroup * pageCount // 15--%>
-<%--if (lastNumber > totalPage) {--%>
-<%--    lastNumber = totalPage // 11--%>
-<%--}--%>
-<%--let firstNumber = lastNumber - (pageCount - 1) // 7--%>
-
-<%--const next = lastNumber + 1 // 12--%>
-<%--const prev = firstNumber - 1 // 6--%>
-
-<%--    &lt;%&ndash;페이지네이션--------------------------------------------------&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const pageGroup = 1&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const pageCount = 5&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const totalPage = 11&ndash;%&gt;--%>
-
-<%--    &lt;%&ndash;let lastNumber = pageGroup * pageCount // 5&ndash;%&gt;--%>
-<%--    &lt;%&ndash;if (lastNumber > totalPage) {&ndash;%&gt;--%>
-<%--    &lt;%&ndash;    lastNumber = totalPage&ndash;%&gt;--%>
-<%--    &lt;%&ndash;}&ndash;%&gt;--%>
-<%--    &lt;%&ndash;let firstNumber = lastNumber - (pageCount - 1) // 1&ndash;%&gt;--%>
-
-<%--    &lt;%&ndash;const next = lastNumber + 1 // 6&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const prev = firstNumber - 1 // 0&ndash;%&gt;--%>
-
-<%--    &lt;%&ndash;// 1~5만큼 페이지네이션 그려줌&ndash;%&gt;--%>
-<%--    &lt;%&ndash;for (let i = firstNumber; i <= lastNumber; i++) {&ndash;%&gt;--%>
-<%--    &lt;%&ndash;    html += `<button class="pageNumber" id="page_${i}">${i}</button>`&ndash;%&gt;--%>
-<%--    &lt;%&ndash;}&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const pageGroup = 3&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const pageCount = 5&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const totalPage = 11&ndash;%&gt;--%>
-
-<%--    &lt;%&ndash;let lastNumber = pageGroup * pageCount // 15&ndash;%&gt;--%>
-<%--    &lt;%&ndash;if (lastNumber > totalPage) {&ndash;%&gt;--%>
-<%--    &lt;%&ndash;    lastNumber = totalPage // 11&ndash;%&gt;--%>
-<%--    &lt;%&ndash;}&ndash;%&gt;--%>
-<%--    &lt;%&ndash;let firstNumber = lastNumber - (pageCount - 1) // 7&ndash;%&gt;--%>
-
-<%--    &lt;%&ndash;const next = lastNumber + 1 // 12&ndash;%&gt;--%>
-<%--    &lt;%&ndash;const prev = firstNumber - 1 // 6&ndash;%&gt;--%>
-
-<%--</script>--%>
-
-
-<%--<%@ include file="/WEB-INF/layout/footer.jsp" %>--%>
-
-
-<%--&lt;%&ndash;&lt;%&ndash;-----------------------------------------------------------------------------------------&ndash;%&gt;&ndash;%&gt;--%>

@@ -191,6 +191,16 @@
 
 }
 
+.closeBtn{
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: grey;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: default;
+
+}
+
 
 .modal-content2 #openModalBtn2:hover {
     padding: 10px 20px;
@@ -203,6 +213,7 @@
 
 
 
+
 .cancelButton2:hover {
     padding: 10px 20px;
     border-radius: 3px;
@@ -211,8 +222,6 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
-
-
 
 .openModalBtn1:hover {
 
@@ -354,7 +363,7 @@
 
 .current-page {
     padding: 7px 12px;
-    width: 32px;
+    /*width: 32px;*/
     height: 32px;
     font-size: 16px;
     font-weight: 600;

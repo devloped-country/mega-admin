@@ -8,6 +8,7 @@ body{
 
 }
 .LoginWrapper2{
+    position: relative;
     text-align: center;
 
     display: flex;
@@ -25,17 +26,22 @@ body{
     /*align-content: center;*/
 }
 
+.login-form{
+    position: relative;
+}
+
 /*.LoginWrapper2 .Main .loginTab */
 .alert-box{
     color: red;
     /*background-color: #ffd6d6;*/
     position: absolute;
-    top: 61%;
-    left: 39.5%;
+    /*    position: relative;*/
+    top: 148px;
+    left: 37.5px;
 }
 
 .Mega .Main{
-    position: relative;
+
 
 }
 

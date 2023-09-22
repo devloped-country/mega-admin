@@ -160,21 +160,5 @@ public class UserDAO {
         return count;
     }
 
-
-//    //■ 전체 페이지 구하는 메소드
-//    public int getPageCount(int numPerPage, int dataCount) {
-//        int pageCount = 0;
-//
-//        pageCount = dataCount / numPerPage;
-//
-//        if (dataCount % numPerPage != 0)
-//            pageCount++;
-//
-//
-//        return pageCount;
-//    }
-//
-
-
 }
 

@@ -20,6 +20,8 @@ import java.io.PrintWriter;
 
 public class LoginController implements Controller {
 
+
+
     @Override
     public String handleRequest(HttpServletRequest request,
                                 HttpServletResponse response) {
@@ -42,6 +44,8 @@ public class LoginController implements Controller {
         String dbPassword =  admin.getPassword();
 
         String finalPassword = encryptUtils.getEncrypt(password, salt );
+
+
 
 
         // 3. 화면 이동

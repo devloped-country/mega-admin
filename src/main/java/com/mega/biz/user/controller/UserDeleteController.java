@@ -57,12 +57,6 @@ public class UserDeleteController implements Controller {
         request.setAttribute("paging", paging);
         request.setAttribute("page", page);
 
-
-//        return "userManagement";
-
-
-
-
         return "getuserlist.do?page=" + page ;
     }
 }

@@ -23,6 +23,7 @@ public class AuthenticationFilter extends HttpFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession();
+        session.setMaxInactiveInterval(-1);
         if (session.getAttribute("admin") == null) {
             res.sendRedirect("/");
         } else {

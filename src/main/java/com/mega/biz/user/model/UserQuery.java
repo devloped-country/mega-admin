@@ -11,13 +11,6 @@ public enum UserQuery {
     ADMIN_USER_APPROVE("update user1 set user_status=2 where email=?");
 
 
-
-
-
-//    ADMIN_USER_APPROVE_STUTES("update board set title=?, content=? where seq=?");
-
-
-
     private final String query;
 
     UserQuery(String query) {

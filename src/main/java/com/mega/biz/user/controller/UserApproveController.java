@@ -39,9 +39,6 @@ public class UserApproveController implements Controller {
 
         // 3. 화면 이동
 
-//        UserDAO userDAO = new UserDAO();
-
-
         int page = 1;
 
         if (request.getParameter("page") != null) {
@@ -63,11 +60,6 @@ public class UserApproveController implements Controller {
         request.setAttribute("userList", list);
         request.setAttribute("paging", paging);
         request.setAttribute("page", page);
-
-
-//        return "userManagement";
-
-
 
 
             return "getuserlist.do?page=" + page ;

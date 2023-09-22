@@ -27,7 +27,7 @@
 
 
         <div class="Main">
-            <form action="login.do" method="post">
+            <form action="login.do" method="post" class="login-form">
                 <%--        login_proc.jsp을 login.do로--%>
                 <table class="loginTab">
 

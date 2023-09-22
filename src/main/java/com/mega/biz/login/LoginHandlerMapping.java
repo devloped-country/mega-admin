@@ -14,6 +14,8 @@ public class LoginHandlerMapping extends HandlerMapping {
     public LoginHandlerMapping() {
         mappings.put("/login.do", new LoginController());
 
+
+
     }
 
     @Override

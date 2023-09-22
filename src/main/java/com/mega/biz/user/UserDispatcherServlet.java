@@ -66,36 +66,3 @@ public class UserDispatcherServlet extends HttpServlet {
     }
 }
 
-
-
-
-
-
-
-//        String uri = request.getRequestURI();
-//        String path = uri.substring(uri.lastIndexOf("/"));
-//        System.out.println(path);
-//        Controller ctrl = userHandlerMapping.getController(path);
-//
-//        if (ctrl == null) {
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
-//            dispatcher.forward(request, response);
-//        } else {
-//            String viewName = ctrl.handleRequest(request, response);
-//            String view = null;
-//
-//            if (!viewName.contains(".do")) {
-//                if (viewName.equals("index")) {
-//                    view = viewName + ".jsp";
-//                } else {
-//                    view = viewResolver.getView(viewName);
-//                }
-//            } else {
-//                view = viewName;
-//            }
-//
-//            RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-//            dispatcher.forward(request, response);
-//        }
-//    }
-//}
