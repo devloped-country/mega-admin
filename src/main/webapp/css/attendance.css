@@ -1,0 +1,472 @@
+/* 스크롤바 기능 */
+
+/* 가로 스크롤바를 숨기는 방법 */
+/*.hide-scrollbar {*/
+/*    overflow-x: hidden;*/
+/*    overflow-y: auto;*/
+/*    scrollbar-width: none; !* Firefox에서 스크롤바 숨김 *!*/
+/*}*/
+
+.body-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.body-wrapper::-webkit-scrollbar-thumb {
+    height: 30%;
+    border-radius: 10px;
+    background-color: #a59e9e;
+}
+
+.body-wrapper::-webkit-scrollbar-track {
+    background-color: #cacaca;
+}
+
+/* attendanceList */
+
+
+/* 바디 */
+.body-wrapper {
+    height: 100%;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 0 48px 146px;
+}
+
+.content-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+}
+
+/* 상단바 */
+
+.top-bar {
+    display: flex;
+    margin-top: 25px;
+}
+
+h1 {
+    margin-top: 7px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.search-bar {
+    width: 203px;
+    height: 36px;
+    border-radius: 3px;
+    border: 1px solid #CACACA;
+    display: flex;
+    background-color: #FFFFFF;
+    padding-left: 12px;
+}
+
+#keyword {
+    width: 143px;
+    border: none;
+    outline: none;
+}
+
+#search-img {
+    margin-top: 9px;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+}
+
+.top-bar-right {
+    margin-left: auto;
+    display: flex;
+}
+
+#search-button {
+    margin-left: 24px;
+    width: 78px;
+    height: 38px;
+    color: #FFFFFF;
+    background-color: black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#open-modal {
+    margin-left: 24px;
+    width: 115px;
+    height: 38px;
+    color: #FFFFFF;
+    background-color: black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#select-personnel {
+    width: 50%;
+    height: 54px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#select-statics {
+    width: 49%;
+    height: 54px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #CACACA;
+}
+
+/* 모달 */
+
+#modal-wrapper {
+    display: none;
+}
+
+#modal-wrapper .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 571px;
+    height: 296px;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+#modal-wrapper .modal-back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.ex-text {
+    margin-top: 6px;
+    color: #BBBABA;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.get-date {
+    margin-top: 28px;
+}
+
+.star {
+    color: #FF0000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#insert-date {
+    width: 507px;
+    height: 48px;
+    margin-top: 6px;
+    background-color: #F2F4F6;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 32px;
+}
+
+.modal-button .close-modal {
+    font-size: 18px;
+    width: 86px;
+    height: 43px;
+    border: black 1px solid;
+    border-radius: 3px;
+    color: black;
+    margin-left: 162px;
+    font-weight: 600;
+}
+
+.modal-button .update-modal {
+    font-size: 18px;
+    width: 86px;
+    height: 43px;
+    border: black 1px solid;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    margin-left: 11px;
+    font-weight: 600;
+}
+
+/* 인원, 통계 바 부분 구현 */
+.select-bar {
+    height: 54px;
+    background-color: #FFFFFF;
+    border-radius: 20px 20px 0 0;
+    margin-top: 23px;
+}
+
+/* 내용 부분 */
+
+.table-bar {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 54px;
+    color: #FFFFFF;
+    background-color: black;
+}
+
+th {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table-content {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 54px;
+    background-color: #FFFFFF;
+}
+
+td {
+    white-space: nowrap; /* 텍스트를 한 줄에 표시 */
+    overflow: hidden;    /* 내용이 넘치는 경우 숨김 */
+    text-overflow: ellipsis; /* "..."으로 생략 */
+
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 페이지네이션 */
+
+.page-wrapper {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-height: 95px;
+    background-color: #FFFFFF;
+    border-radius: 0 0 20px 20px;
+    display: inline-flex;
+    justify-content: center;;
+}
+
+.page-number {
+    margin-top: 7px;
+    display: inline-flex;
+}
+
+.page-number li a {
+    padding: 7px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.page-number li a:hover,.page-number li a:focus {
+    background-color: black;
+    color: #FFFFFF;
+}
+
+.page-wrapper .page-number .page-number-button-on {
+    padding: 7px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 8px;
+    background-color: black;
+    color: #FFFFFF;
+}
+
+/* attendanceDetailList */
+
+p {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.table-col-button button:hover, .table-col-button button:focus {
+    background-color: black;
+    color: white;
+}
+
+.open-modal-2 {
+    font-size: 14px;
+    font-weight: 600;
+    width: 94px;
+    height: 31px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px black solid;
+    box-shadow: 0 4px 4px 0 rgb(0, 0, 0, 0.25);
+
+}
+
+#modal-wrapper .modal-content-2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 571px;
+    height: 779px;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.modal-title {
+    margin-top: 29px;
+}
+
+.modal-attendance-row {
+    margin-top: 13px;
+    display: inline-flex;
+}
+
+.modal-attendance-row-1 {
+    margin-right: 24px;
+}
+
+.modal-attendance-stat {
+    padding-left: 12px;
+    margin-top: 6px;
+    background-color: #F2F4F6;
+    width: 107px;
+    height: 48px;
+    border-radius: 3px;
+    border: none;
+}
+
+.modal-name {
+    padding-left: 12px;
+    margin-top: 6px;
+    background-color: #F2F4F6;
+    width: 376px;
+    height: 48px;
+    border-radius: 3px;
+    border: none;
+    color: #000;
+}
+
+.modal-email, .modal-start-date, .modal-end-date {
+    padding-left: 12px;
+    margin-top: 6px;
+    background-color: #F2F4F6;
+    width: 507px;
+    height: 48px;
+    border-radius: 3px;
+    border: none;
+    color: #000;
+}
+
+.modal-reason {
+    padding-left: 12px;
+    padding-top: 22px;
+    margin-top: 6px;
+    background-color: #F2F4F6;
+    width: 507px;
+    height: 126px;
+    border-radius: 3px;
+    border: none;
+    color: #000;
+    resize: none;
+}
+
+.modal-button {
+    margin-top: 16px;
+    margin-left: 162px;
+}
+
+#close-modal {
+    background-color: #FFFFFF;
+    width: 86px;
+    height: 43px;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+#currentMonth {
+    padding-left: 23px;
+    padding-right: 10px;
+    background-color: #FFFFFF;
+    margin-left: 24px;
+    width: 147px;
+    height: 36px;
+    border-radius: 3px;
+    border: #CACACA solid 1px;
+    outline: none;
+}
+
+.set-month {
+    width: 69px;
+    height: 38px;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.go-list {
+    margin-left: auto;
+    width: 69px;
+    height: 38px;
+    color: #FFFFFF;
+    background-color: black;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content-wrapper {
+    margin-top: 23px;
+}
+
+.table-wrapper-2 {
+    max-height: 689px;
+    font-size: 16px;
+}
+
+.table-bar-2 {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 54px;
+    color: #FFFFFF;
+    background-color: black;
+    border-radius: 20px 20px 0 0;
+}
+
+.table-col-name, .table-col-date, .table-col-attendance-stat, .table-col-start-time,
+.table-col-end-time,  .table-col-button, .table-col-button-bar .table-col-idx {
+    width: 10%;
+}
+
+.table-col-email {
+    width: 15%;
+}
+
+.table-col-reason {
+    width: 15%;
+}
