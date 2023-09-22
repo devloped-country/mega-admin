@@ -10,7 +10,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 
-<html>
+<html class="hide-scrollbar">
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
 <head>
@@ -100,21 +100,21 @@
             <div>
                 <table>
                     <tr class="table-bar-2">
-                        <th>연번</th>
-                        <th>이름</th>
-                        <th>이메일</th>
-                        <th>일시</th>
-                        <th>출결</th>
-                        <th>입실 시간</th>
-                        <th>퇴실 시간</th>
-                        <th>이유</th>
-                        <th></th>
+                        <th class="table-col-idx">연번</th>
+                        <th class="table-col-name">이름</th>
+                        <th class="table-col-email">이메일</th>
+                        <th class="table-col-date">일시</th>
+                        <th class="table-col-attendance-stat">출결</th>
+                        <th class="table-col-start-time">입실 시간</th>
+                        <th class="table-col-end-time">퇴실 시간</th>
+                        <th class="table-col-reason">이유</th>
+                        <th class="table-col-button-bar"></th>
                     </tr>
                     <c:set var="page" value="${ (param.page == null ) ? 1 : param.page }" />
                     <c:set var="index" value="${ (page - 1) * 9 + index + 1 }"/>
                     <c:forEach var="attendanceDTO" items="${ detailList }">
                         <tr class="table-content table-row-${page}${index}" data-id="${ attendanceDTO.id }">
-                            <td>${ index }</td>
+                            <td class="table-col-idx">${ index }</td>
                             <td class="table-col-name">${ attendanceDTO.name }</td>
                             <td class="table-col-email" data-email="${attendanceDTO.email}">${ attendanceDTO.email }</td>
                             <td class="table-col-date">${ attendanceDTO.date }</td>
