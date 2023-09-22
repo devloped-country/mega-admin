@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Slf4j
-public class GetUserListController implements Controller {
+public class GetUserListControllerPage implements Controller {
     private final UserService service = new UserService();
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
@@ -20,9 +20,8 @@ public class GetUserListController implements Controller {
 
         UserDAO userDAO = new UserDAO();
 
-        int page = 1; //현제페이지를 여기넣고 +  추가로 다른 곳에서 처음오면 1페이로 가게만들기???
-//        int page = Integer.parseInt(request.getParameter("page")); //현제페이지를 여기넣고 +  추가로 다른 곳에서 처음오면 1페이로 가게만들기???
-//        System.out.println("page="+ page);
+        int page = Integer.parseInt(request.getParameter("page")); //현제페이지를 여기넣고 +  추가로 다른 곳에서 처음오면 1페이로 가게만들기???
+        System.out.println("page="+ page);
 
 
         if (request.getParameter("page") != null) {
@@ -43,9 +42,6 @@ public class GetUserListController implements Controller {
         // request에 사용자 리스트와 페이징 정보를 설정
         request.setAttribute("userList", list);
         request.setAttribute("paging", paging);
-        request.setAttribute("page" ,page);
-
-
 
 
         return "userManagement";

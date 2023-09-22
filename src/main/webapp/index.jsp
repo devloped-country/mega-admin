@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
+<%--<%@ include file="/WEB-INF/layout/header.jsp" %>--%>
 
 <html>
 <head>

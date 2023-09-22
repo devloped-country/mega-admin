@@ -49,6 +49,8 @@ public class LoginController implements Controller {
         if (admin != null && finalPassword.equals(dbPassword)) {
             // 상태 정보를 세션에 저장한다.
             session.setAttribute("admin", admin);
+            session.setAttribute("name", admin.getName());
+
             // 글 목록 화면으로 이동한다.
             return "WEB-INF/view/home/home";   //index 아니면 이걸로
         } else {

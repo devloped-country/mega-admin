@@ -6,11 +6,13 @@ import com.mega.biz.login.model.LoginDAO;
 import com.mega.biz.login.model.LoginDTO;
 import com.mega.biz.user.model.UserDAO;
 import com.mega.biz.user.model.UserDTO;
+import com.mega.biz.user.model.UserPageDTO;
 import com.mega.common.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 public class UserApproveController implements Controller {
@@ -37,7 +39,38 @@ public class UserApproveController implements Controller {
 
         // 3. 화면 이동
 
-            return "getuserlist.do";
+//        UserDAO userDAO = new UserDAO();
+
+
+        int page = 1;
+
+        if (request.getParameter("page") != null) {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+        System.out.println("page : " + page);
+        // UserPageDTO를 사용하여 페이징 정보 설정
+        UserPageDTO paging = new UserPageDTO();
+        paging.setPage(page);
+        // 전체 사용자 수를 설정 (이 값을 실제 DB에서 가져와야 함)
+        int totalCount = dao.getTotalUser(); // 예시로 메서드 호출
+        System.out.println(totalCount);
+        paging.setTotalCount(totalCount);
+
+        // 사용자 리스트를 페이징된 결과로 가져옴
+        List<UserDTO> list = dao.selectAllMember(page);
+
+        // request에 사용자 리스트와 페이징 정보를 설정
+        request.setAttribute("userList", list);
+        request.setAttribute("paging", paging);
+        request.setAttribute("page", page);
+
+
+//        return "userManagement";
+
+
+
+
+            return "getuserlist.do?page=" + page ;
         }
     }
 

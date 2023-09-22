@@ -28,7 +28,15 @@ body{
 /*.LoginWrapper2 .Main .loginTab */
 .alert-box{
     color: red;
-    background-color: #ffd6d6;
+    /*background-color: #ffd6d6;*/
+    position: absolute;
+    top: 61%;
+    left: 39.5%;
+}
+
+.Mega .Main{
+    position: relative;
+
 }
 
 .LoginWrapper .Main{
@@ -66,10 +74,52 @@ h1 {
 }
 
 .idBox3{
-
+    border: none;
+    padding: 12px 16px;
+    outline-style: none;
     height: 48px;
     width: 495px;
     background-color: #f2f4f6;
+}
+
+/*.idBox3 input{*/
+/*    border: none;*/
+/*    padding: 12px 16px;*/
+/*    outline-style: none;*/
+/*    height: 48px;*/
+/*    width: 495px;*/
+/*    background-color: #f2f4f6;*/
+/*}*/
+
+/*.idBox2 td{*/
+/*    border: none;*/
+/*    padding: 12px 16px;*/
+/*    outline-style: none;*/
+/*    height: 48px;*/
+/*    width: 495px;*/
+/*    background-color: #f2f4f6;*/
+/*}*/
+
+
+/*.idBox2 td{*/
+/*    border: none;*/
+/*    padding: 12px 16px;*/
+/*    outline-style: none;*/
+/*    height: 48px;*/
+/*    width: 495px;*/
+/*    background-color: #f2f4f6;*/
+/*}*/
+
+
+
+
+
+
+
+.idBox1 td {
+    border: none;
+    padding: 12px 16px;
+    outline-style: none;
 }
 
 .pwBox2
@@ -80,7 +130,9 @@ h1 {
 
 .pwBox3
 {
-
+    border: none;
+    padding: 12px 16px;
+    outline-style: none;
     height: 48px;
     width: 495px;
     background-color: #f2f4f6;

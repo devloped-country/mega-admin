@@ -9,6 +9,11 @@ public enum UserQuery {
     USER_LIST("select email, password, name, phone, user_status  from user1"),
 
     ADMIN_USER_APPROVE("update user1 set user_status=2 where email=?");
+
+
+
+
+
 //    ADMIN_USER_APPROVE_STUTES("update board set title=?, content=? where seq=?");
 
 

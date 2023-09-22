@@ -1,37 +1,37 @@
 
-
-.UserWrapper{
+.UserWrapper {
     display: flex;
     padding: 0 48px 48px;
     height: calc(100vh - 272px);
     justify-content: center;
 }
 
-.UserWrapper .main{
+.UserWrapper .main {
     padding: 0 48px 48px;
     height: calc(100vh - 190px);
 }
 
 .UserWrapper .nav {
+    font-weight: bold;
+    font-size: 24px;
     padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.UserWrapper .main{
+.UserWrapper .main {
     /*font-size: 24px;*/
     /*font-weight: 600;*/
     width: 100%;
 }
 
 
-
-.table{
-width: 100%;
+.table {
+    width: 100%;
 }
 
-.content2{
+.content2 {
     width: 100%;
     height: calc(100% - 84px - 80px - 48px);
     background-color: #fff;
@@ -39,27 +39,25 @@ width: 100%;
     overflow: auto;
 }
 
-.UserWrapper .main .table{
+.UserWrapper .main .table {
     margin: auto;
     /*max-height: 600px;*/
     padding: 0 48px 48px;
     /*height: calc(100vh - 190px);*/
 }
 
-.header-row
-{
+.header-row {
     padding: 24px;
     background-color: #000;
     color: #fff;
 }
 
-.header-row .header-col1
-{
+.header-row .header-col1 {
     border-radius: 20px 0 0 0;
     padding: 12px;
 }
-.header-row .header-col7
-{
+
+.header-row .header-col7 {
     border-radius: 0 20px 0 0;
     padding: 12px;
 }
@@ -73,13 +71,11 @@ width: 100%;
 }
 
 
-
 /*.UserWrapper*/
 /*.main*/
 /*.table*/
 /*!*.content*!*/
-.content-row .content-col
-{
+.content-row .content-col {
     padding-top: 17px;
     padding-bottom: 17px;
     /*display: flex;*/
@@ -103,6 +99,7 @@ width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
 }
+
 .modal-content2 {
     background-color: #fefefe;
     margin: 15% auto;
@@ -115,7 +112,7 @@ width: 100%;
 
 }
 
-.openModalBtn1{
+.openModalBtn1 {
     padding: 10px 20px;
     border-radius: 3px;
     border: 2px solid #000;
@@ -133,8 +130,7 @@ width: 100%;
 /*    color: #fff;*/
 /*}=====활성화될경우는 이걸======*/
 
-.openModalBtn2
-{
+.openModalBtn2 {
     padding: 10px 20px;
     border-radius: 3px;
     border: 2px solid #000;
@@ -145,37 +141,43 @@ width: 100%;
 
 }
 
-.modal-content2-area1
-{
+.modal-content2-area1 {
     display: flex;
     flex-direction: column;
-    padding:30px;
+    padding: 27px;
+    align-items: flex-start;
 
 
 }
 
-.modal-content2-area2{
+.modal-content2-area2 {
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding:65px;
+    padding: 65px;
 }
 
-.modal-content2-title
-{
+.modal-content2-title {
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 29px;
 
 }
-.modal-content2-info{
+
+.modal-content2-info {
     text-align: center;
 
-
+    margin-top: 5px;
+    font-size: 19px;
+    color: gray;
 }
 
-.modal-content2 #openModalBtn2{
+
+
+
+
+.modal-content2 #openModalBtn2 {
     width: 179px;
     height: 64px;
     padding: 21px 0px 22px 0px;
@@ -189,15 +191,39 @@ width: 100%;
 
 }
 
-.openModalBtn1:hover {
 
-        padding: 10px 20px;
-        border-radius: 3px;
-        background-color: #000;
-        color: #fff;
+.modal-content2 #openModalBtn2:hover {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 }
+
+
+
+.cancelButton2:hover {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+.openModalBtn1:hover {
+
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
 .openModalBtn2:hover {
 
     padding: 10px 20px;
@@ -208,7 +234,7 @@ width: 100%;
 
 }
 
-.modal-content2 .cancelButton2{
+.modal-content2 .cancelButton2 {
 
     width: 179px;
     height: 64px;
@@ -224,13 +250,13 @@ width: 100%;
 }
 
 
-
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: black;
@@ -239,7 +265,7 @@ width: 100%;
 }
 
 
-.pageNav2 h1{
+.pageNav2 h1 {
     font-weight: bold;
     /*margin: auto;*/
     display: flex;
@@ -252,10 +278,91 @@ width: 100%;
 
 }
 
-.paging{
+/*.paging{*/
+/*    !*display: flex;*!*/
+/*    !*align-content: center;*!*/
+/*    !*font-size: 30px;*!*/
+/*    !*margin: auto;*!*/
+/*    !*justify-content: center;*!*/
+
+/*    margin-top: 32px;*/
+/*    margin-bottom: 32px;*/
+/*    width: 100%;*/
+/*    max-height: 95px;*/
+/*    background-color: #FFFFFF;*/
+/*    border-radius: 0 0 20px 20px;*/
+/*    display: inline-flex;*/
+/*    justify-content: center;;*/
+/*}*/
+
+
+.page-wrapper {
     display: flex;
-    align-content: center;
-    font-size: 30px;
+    /* align-content: center; */
+    font-size: 28px;
     margin: auto;
+    /* justify-content: center; */
+    /* margin-top: 32px; */
+    margin-bottom: 32px;
+    width: 100%;
+    max-height: 95px;
+    /* background-color: #FFFFFF; */
+    border-radius: 0 0 20px 20px;
+    display: inline-flex;
     justify-content: center;
 }
+
+.page-number {
+    margin-top: 7px;
+    display: inline-flex;
+}
+
+.page-number .page-num li a {
+    padding: 7px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    /*background-color: #FFFFFF;*/
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.page-num li a:hover,
+.page-num li a:focus {
+    background-color: black;
+    color: #FFFFFF;
+}
+
+/*.page-wrapper .page-number */
+.page-number-button-on {
+    padding: 7px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 8px;
+    background-color: black;
+    color: #FFFFFF;
+}
+
+.current-page {
+    padding: 7px 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 8px;
+    background-color: black;
+    color: #FFFFFF;
+}
+

@@ -30,11 +30,11 @@
             <div class="top">
 
                 <tr class="header-row">
-                    <th class="header-col1" width="100">연번</th>
-                    <th class="header-col" width="100">이메일</th>
-                    <th class="header-col" width="150">이름</th>
-                    <th class="header-col" width="150">phone</th>
-                    <th class="header-col" width="150">가입유무</th>
+                    <th class="header-col1" width="54">연번</th>
+                    <th class="header-col" width="275">이메일</th>
+                    <th class="header-col" width="182">이름</th>
+                    <th class="header-col" width="307">phone</th>
+                    <th class="header-col" width="132">가입유무</th>
                     <th class="header-col" width="150"></th>
                     <th class="header-col7" width="150"></th>
                 </tr>
@@ -47,7 +47,7 @@
 
                 <tr class="content-row">
                         <%--            //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★--%>
-                    <form method="post" action="/user/userapprove.do">
+                    <form method="post" action="/user/userapprove.do?page=${page}">
                         <td class="content-col">
                             <p>${loop.index + 1}</p>
                         </td>
@@ -88,28 +88,70 @@
 </div>
 
 
-<%--    페이징구현--%>
-<div class="paging">
-    <c:url var="action" value="/user/getuserlist.do"/>
-    <c:if test="${paging.prev}">
-        <a href="${action}?page=${paging.beginPage-1}">prev</a>
-    </c:if>
-    <c:forEach begin="${paging.beginPage}" end="${paging.endPage}" step="1" var="index">
-        <c:choose>
-            <c:when test="${paging.page==index}">
-                ${index}
-            </c:when>
-            <c:otherwise>
-                <a href="${action}?page=${index}">${index}</a>
-            </c:otherwise>
-        </c:choose>
-    </c:forEach>
+<%--   기존 페이징구현--%>
+<%--<div class="paging">--%>
+<%--    <c:url var="action" value="/user/getuserlist.do"/>--%>
+<%--    <c:if test="${paging.prev}">--%>
+<%--        <a href="${action}?page=${paging.beginPage-1}">prev</a>--%>
+<%--    </c:if>--%>
+
+<%--    <ul class="page-number">--%>
+
+<%--    <c:forEach begin="${paging.beginPage}" end="${paging.endPage}" step="1" var="index">--%>
+<%--        <c:choose>--%>
+<%--            <c:when test="${paging.page==index}">--%>
+<%--                ${index}--%>
+<%--            </c:when>--%>
+<%--            <c:otherwise>--%>
+<%--                <a class=href="${action}?page=${index}">${index}</a>--%>
+<%--            </c:otherwise>--%>
+<%--        </c:choose>--%>
+<%--    </c:forEach>--%>
+<%--    </ul>--%>
+<%--    <c:if test="${paging.next}">--%>
+<%--        <a href="${action}?page=${paging.endPage+1}">next</a>--%>
+<%--    </c:if>--%>
+<%--</div>--%>
+<%--   기존 페이징구현--%>
+
+
+<%--신상페이지네이션--%>
+<div class="page-wrapper">
+
+    <%--    <c:url var="action" value="/user/getuserlist.do"/>--%>
+    <%--    <c:if test="${paging.prev}">--%>
+    <%--        <a href="${action}?page=${paging.prevPage}">prev</a>--%>
+    <%--    </c:if>--%>
+
+
+    <ul class="page-number">
+        <li><a href="${action}?page=${paging.firstPage}"><img src="../../../images/angle-double-small-left.svg"
+                                                              alt="처음 페이지로"></a></li>
+        <li><a href="${action}?page=${paging.prevPage}"><img src="../../../images/angle-small-left.svg" alt="이전"></a>
+        </li>
+        <c:forEach begin="${paging.beginPage}" end="${paging.endPage}" step="1" var="index">
+            <c:choose>
+                <c:when test="${paging.page==index}">
+                    <li class="current-page">${index}</li>
+                </c:when>
+                <c:otherwise>
+                    <div class="page-num">
+                        <li><a class="${page == index ? "page-number-button-on" : ""}"
+                               href="${action}?page=${index}">${index}</a></li>
+                    </div>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+        <li><a href="${action}?page=${paging.nextPage}"><img src="../../../images/angle-small-right.svg" alt="다음"></a>
+        </li>
+        <li><a href="${action}?page=${paging.lastPage}"><img src="../../../images/angle-double-small-right.svg"
+                                                             alt=" 마지막 페이지로"></a></li>
+    </ul>
+
     <c:if test="${paging.next}">
-        <a href="${action}?page=${paging.endPage+1}">next</a>
+        <a href="${action}?page=${paging.nextPage}">next</a>
     </c:if>
 </div>
-
-
 
 <div class="modal2">
     <div class="modal-content2">
@@ -118,14 +160,14 @@
             <p class="modal-content2-info">해당 회원을 탈퇴처리 하시겠습니까?.</p>
         </div>
         <div class="modal-content2-area2">
-            <form method="post" action="/user/deleteuser.do">
+            <form method="post" action="/user/deleteuser.do?page=${page}">
                 <td>
                     <button type="submit" id="openModalBtn2">확인</button>
                     <input type="hidden" name="NO" value="${user.email}"/>
                 </td>
             </form>
             <%--        <input type='button' value='취소' id="cancelButton1"/>--%>
-            <button type='button' class="cancelButton2">취소</button>
+            <button type='submit' class="cancelButton2">취소</button>
 
         </div>
     </div>

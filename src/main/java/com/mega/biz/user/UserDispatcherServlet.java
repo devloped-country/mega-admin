@@ -36,7 +36,7 @@ public class UserDispatcherServlet extends HttpServlet {
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
 
-        request.setAttribute("currentPage", page);
+        request.setAttribute("page", page);
 
         Controller ctrl = userHandlerMapping.getController(path);
 
