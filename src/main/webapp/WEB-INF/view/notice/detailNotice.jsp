@@ -96,7 +96,10 @@
                 <p class="modal-desc">공지사항을 삭제하시겠어요?</p>
             </div>
             <div class="modal-btn-wrapper">
-                <button class="modal-btn modal-btn-confirm">확인</button>
+                <form action="/notice/deleteNotice.do" method="post">
+                    <input type="hidden" name="id" value="${notice.id}">
+                    <button class="modal-btn modal-btn-confirm" type="submit">확인</button>
+                </form>
                 <button class="modal-btn modal-btn-cancel" type="button">취소</button>
             </div>
         </div>

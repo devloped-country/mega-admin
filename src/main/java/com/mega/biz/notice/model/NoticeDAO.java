@@ -121,4 +121,21 @@ public class NoticeDAO {
 
         return count;
     }
+
+    public void deleteNotice(NoticeDTO dto) {
+        try (
+                Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(
+                        NoticeQuery.NOTICE_DELETE.getQuery())
+        ) {
+            pstmt.setLong(1, dto.getId());
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, psmt);
+        }
+    }
+
 }
