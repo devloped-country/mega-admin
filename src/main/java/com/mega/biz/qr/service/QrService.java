@@ -10,7 +10,7 @@ import java.util.Objects;
 public class QrService {
 
   private final static int RANDOM_DIGIT = 1000000;
-  private final static String QR_URL = "http://localhost:8080/qr/auth?qr=";
+  private final static String QR_URL = "http://ec2-43-201-1-228.ap-northeast-2.compute.amazonaws.com/qr/auth?qr=";
   private final static int QR_SIZE = 400;
   private final QrDAO dao = new QrDAO();
 
