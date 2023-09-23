@@ -5,17 +5,17 @@
 <html>
 <head>
     <title>Mega - QR</title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
-    <link rel="stylesheet" href="../../../css/qr.css">
+    <link rel="stylesheet" href="../../../style/reset.css">
+    <link rel="stylesheet" href="../../../style/header.css">
+    <link rel="stylesheet" href="../../../style/footer.css">
+    <link rel="stylesheet" href="../../../style/qr.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 <main class="QRWrapper">
     <nav class="nav">
         <h2 class="title">QR 코드</h2>
-        <button class="qr-btn" type="button" onclick="location.href='/qr/code'">QR 생성</button>
+        <button class="qr-btn" type="button" onclick="location.href='/qr/code.do'">QR 생성</button>
     </nav>
     <section class="content">
         <img src="/qr/qrImg" alt="qr" class="qr"/>

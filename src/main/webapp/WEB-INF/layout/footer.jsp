@@ -3,8 +3,10 @@
 <footer class="FooterWrapper">
     <ul class="menu-list">
         <li class="menu-item">
+            <a href="/home/home.do" class="menu-item-link">
             <img src="../../../images/home.svg" alt="홈" />
             <h4 class="menu-title">홈</h4>
+            </a>
         </li>
         <li class="menu-item">
             <a href="/notice/getNoticeList.do" style="text-decoration: none; color: inherit;">
@@ -31,8 +33,10 @@
             </a>
         </li>
         <li class="menu-item">
+            <a href="/qr/code.do" class="menu-item-link">
             <img src="../../../images/qrcode.svg" alt="QR 코드" />
             <h4 class="menu-title">QR 코드</h4>
+            </a>
         </li>
     </ul>
 </footer>

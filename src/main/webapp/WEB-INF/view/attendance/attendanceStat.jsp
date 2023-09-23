@@ -1,4 +1,4 @@
-`<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
@@ -12,10 +12,10 @@
 <html>
 <head>
     <title>Mega - attendance-stat</title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
-    <link rel="stylesheet" href="../../../css/attendance-stat.css">
+    <link rel="stylesheet" href="../../../style/reset.css">
+    <link rel="stylesheet" href="../../../style/header.css">
+    <link rel="stylesheet" href="../../../style/footer.css">
+    <link rel="stylesheet" href="../../../style/attendanceStat.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/layout/header.jsp" %>
@@ -28,7 +28,7 @@
         <section class="content">
             <ul class="tab-list">
                 <li class="tab-item">
-                    <h3 class="tab-title title-disabled">인원</h3>
+                    <h3 class="tab-title title-disabled" onclick="location.href='/attendance/attendance.do'">인원</h3>
                 </li>
                 <li class="tab-item">
                     <h3 class="tab-title title-active">통계</h3>

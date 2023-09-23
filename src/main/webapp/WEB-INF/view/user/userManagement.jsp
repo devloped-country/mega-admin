@@ -8,13 +8,10 @@
 <html>
 <head>
     <title>Mega - USER</title>
-    <link rel="stylesheet" href="../../../css/reset.css">
-    <link rel="stylesheet" href="../../../css/header.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/user.css">
+    <link rel="stylesheet" href="../../../style/user.css">
 
     <%--    <link rel="stylesheet" href="../../../css/user.css" type="text/css">--%>
 
@@ -166,6 +163,7 @@
             <p class="modal-content2-info">해당 회원을 탈퇴처리 하시겠습니까?.</p>
         </div>
         <div class="modal-content2-area2">
+            <button type='submit' class="cancelButton2">취소</button>
             <form method="post" action="/user/deleteuser.do?page=${page}">
                 <td>
                     <button type="submit" id="openModalBtn2">확인</button>
@@ -173,7 +171,6 @@
                 </td>
             </form>
             <%--        <input type='button' value='취소' id="cancelButton1"/>--%>
-            <button type='submit' class="cancelButton2">취소</button>
 
         </div>
     </div>
