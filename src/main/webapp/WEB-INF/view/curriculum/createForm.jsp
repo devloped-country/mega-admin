@@ -26,16 +26,14 @@
     </div>
     <form id="createForm" action="createCurriculum.do" method="post" class="create-form">
       <div class="content">
-        <h2>과목 추가</h2>
-        <h6>과목 정보를 입력해 주세요</h6>
+        <h2 class="add-text">과목 추가</h2>
+        <h6 class="add-text-info">과목 정보를 입력해 주세요</h6>
         <div class="content-header">
           <div class="content-header-right">
             <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
                 autofocus /></label>
           </div>
-        </div>
 
-        <div class="content-header">
           <div class="content-header-right">
             <label>
               시간
@@ -45,9 +43,34 @@
             </label>
 
           </div>
+
+          <div class="content-header-right">
+            <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
+                name="startDate" onchange="validateDate()" /></label>
+
+          </div>
+
+          <p class="center">~</p>
+
+          <div class="content-header-right">
+            <label><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
+                name="endDate" onchange="validateDate()" /></label>
+          </div>
         </div>
 
-        <div class="content-header">
+        <!-- <div class="content-header">
+          <div class="content-header-right">
+            <label>
+              시간
+              <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50"
+                oninput="validateNumber(this)" />
+              <span id="timeError"></span>
+            </label>
+
+          </div>
+        </div> -->
+
+        <!-- <div class="content-header">
           <div class="content-header-right">
             <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
                 name="startDate" onchange="validateDate()" /></label>
@@ -59,7 +82,7 @@
                 name="endDate" onchange="validateDate()" /></label>
           </div>
 
-        </div>
+        </div> -->
         <span id="dateError"></span>
 
 
