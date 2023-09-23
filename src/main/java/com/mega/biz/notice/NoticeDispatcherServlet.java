@@ -26,14 +26,25 @@ public class NoticeDispatcherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String page = "1";
+        if (request.getParameter("page") != null) {
+            page = request.getParameter("page");
+        }
+
         String uri = request.getRequestURI();
         String path = uri.substring(uri.lastIndexOf("/"));
+
+        request.setAttribute("currentPage", page);
 
         Controller ctrl = handlerMapping.getController(path);
 
         if (ctrl == null) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/errors/error.jsp");
             dispatcher.forward(request, response);
+        } else if (request.getMethod().equals("POST")) {
+            String view = ctrl.handleRequest(request, response);
+            response.sendRedirect(view);
         } else {
             String viewName = ctrl.handleRequest(request, response);
             String view = null;

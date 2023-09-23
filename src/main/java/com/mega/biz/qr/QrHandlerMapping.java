@@ -15,7 +15,7 @@ public class QrHandlerMapping extends HandlerMapping {
 
     public QrHandlerMapping() {
         mappings.put("/code.do", new QrController());
-        mappings.put("/qrImg", new QrImgController());
+            mappings.put("/qrImg", new QrImgController());
     }
 
     @Override

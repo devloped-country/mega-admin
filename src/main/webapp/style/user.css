@@ -1,4 +1,19 @@
 
+.all::-webkit-scrollbar {
+    width: 6px;
+}
+
+.all::-webkit-scrollbar-thumb {
+    height: 30%;
+    border-radius: 10px;
+    background-color: #a59e9e;
+}
+
+.all::-webkit-scrollbar-track {
+    background-color: #cacaca;
+}
+
+
 .UserWrapper {
     display: flex;
     padding: 0 48px 48px;
@@ -12,12 +27,21 @@
 }
 
 .UserWrapper .nav {
-    font-weight: bold;
-    font-size: 24px;
-    padding: 24px;
+    /*font-weight: bold;*/
+    /*font-size: 24px;*/
+    /*padding: 24px;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    padding: 32px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.UserWrapper .nav .title {
+    font-size: 24px;
+    font-weight: 600;
+
 }
 
 .UserWrapper .main {
@@ -47,9 +71,23 @@
 }
 
 .header-row {
-    padding: 24px;
+    /*padding: 24px;*/
     background-color: #000;
     color: #fff;
+    height: 54px;
+    margin: auto;
+    text-align: center;
+
+
+}
+
+.header-row th {
+    padding: 24px;
+
+    margin: auto;
+    text-align: center;
+
+
 }
 
 .header-row .header-col1 {
@@ -318,7 +356,7 @@ padding-top: 5px;
     margin-bottom: 32px;
     width: 100%;
     max-height: 95px;
-    /* background-color: #FFFFFF; */
+     background-color: #FFFFFF;
     border-radius: 0 0 20px 20px;
     display: inline-flex;
     justify-content: center;

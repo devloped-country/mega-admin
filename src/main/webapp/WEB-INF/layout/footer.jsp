@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="/home/home.do" class="menu-item-link">
+            <a href="/notice/getNoticeList.do" class="menu-item-link">
             <img src="../../../images/notice.svg" alt="공지사항" />
             <h4 class="menu-title">공지사항</h4>
             </a>
