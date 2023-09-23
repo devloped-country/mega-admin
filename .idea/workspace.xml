@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba6908e9-6326-45ea-a2ed-9a81e746ffce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/minus-Vector.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/updateForm_backup1.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/curriculum/controller/UpdateCurriculumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/curriculum/controller/UpdateCurriculumController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +26,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/dev/project/1_project/mega-admin/src/main/webapp/images"
+    "last_opened_file_path": "C:/dev/project/1_project/mega-admin/src/main/webapp/WEB-INF/view/curriculum"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\project\1_project\mega-admin\src\main\webapp\WEB-INF\view\curriculum" />
       <recent name="C:\dev\project\1_project\mega-admin\src\main\webapp\images" />
     </key>
   </component>
@@ -64,5 +64,21 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/curriculum/controller/UpdateCurriculumController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/curriculum/controller/UpdateCurriculumController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
