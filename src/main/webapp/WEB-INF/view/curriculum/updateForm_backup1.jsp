@@ -62,7 +62,7 @@
         <p>상세 교과 내용</p>
 
         <c:forEach var="detail" items="${curriculum.detailSubjectDTOList}" varStatus="status">
-          <div class="content-header default-detail-subject">
+          <div class="content-header">
             <div class="content-header-right">
               <input type="hidden" name="detailId" value="${detail.id}"/>
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요."
@@ -82,7 +82,7 @@
         <div id="additionalInputContainer">
         </div>
 
-        <div class="content-footer2">
+        <div class="content-footer">
           <div>
             <button type="button" class="content-add-btn" onclick="add_inputbox()">
               상세 교과 내용 추가
@@ -133,78 +133,82 @@
 
   <script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('updateForm');
+document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('updateForm');
 
-      form.addEventListener('submit', function (event) {
-        const subject = form['subject'].value;
-        const time = form['time'].value;
-        const startDate = form['startDate'].value;
-        const endDate = form['endDate'].value;
+        form.addEventListener('submit', function (event) {
+            const subject = form['subject'].value;
+            const time = form['time'].value;
+            const startDate = form['startDate'].value;
+            const endDate = form['endDate'].value;
 
-        let invalidInput = false;
+            let invalidInput = false;
 
-        // 기존의 빈 값 체크
-        if (!subject || !time || !startDate || !endDate) {
-          invalidInput = true;
-        }
+            // 기존의 빈 값 체크
+            if (!subject || !time || !startDate || !endDate) {
+                invalidInput = true;
+            }
 
-        // 숫자인지 체크
-        if (isNaN(time)) {
-          invalidInput = true;
-        }
+            // 숫자인지 체크
+            if (isNaN(time)) {
+                invalidInput = true;
+            }
 
-        if (invalidInput) {
-          event.preventDefault(); // form의 submit을 막습니다.
-          // ValidationModal을 띄웁니다.
-          document.querySelector(".ValidationModal .backdrop").classList.add("active");
-        }
-      });
-
-      // 모달의 "확인" 버튼에 이벤트 리스너를 추가
-      document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
-        // 모달을 닫습니다.
-        document.querySelector(".ValidationModal .backdrop").classList.remove("active");
-      });
-    });
-
-    function validateDate() {
-      const startDate = document.getElementById("startDate").value;
-      const endDate = document.getElementById("endDate").value;
-      const errorElement = document.getElementById("dateError");
-
-      if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
-        errorElement.textContent = "시작 기간은 종료 기간보다 빨라야 합니다";
-      } else {
-        errorElement.textContent = "";
-      }
-    }
-
-
-    function validateNumber(inputElement) {
-      const value = inputElement.value;
-      const errorElement = document.getElementById("timeError");
-
-      if (isNaN(value)) {
-        errorElement.textContent = "숫자를 입력하시오";
-      } else {
-        errorElement.textContent = "";
-      }
-    }
-
-    document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
-      document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
-    });
-
-    document.querySelector(
-      '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
-        "click", () => {
-          document.querySelector(".backdrop").classList.remove("active");
-
+            if (invalidInput) {
+                event.preventDefault(); // form의 submit을 막습니다.
+                // ValidationModal을 띄웁니다.
+                document.querySelector(".ValidationModal .backdrop").classList.add("active");
+            }
         });
 
-    document.querySelector(
-      '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+    // 모달의 "확인" 버튼에 이벤트 리스너를 추가
+    document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+        // 모달을 닫습니다.
+        document.querySelector(".ValidationModal .backdrop").classList.remove("active");
+    });
+});
+
+
+
+
+
+      function validateDate() {
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+        const errorElement = document.getElementById("dateError");
+
+        if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
+          errorElement.textContent = "시작 기간은 종료 기간보다 빨라야 합니다";
+        } else {
+          errorElement.textContent = "";
+        }
+      }
+
+
+      function validateNumber(inputElement) {
+        const value = inputElement.value;
+        const errorElement = document.getElementById("timeError");
+
+        if (isNaN(value)) {
+          errorElement.textContent = "숫자를 입력하시오";
+        } else {
+          errorElement.textContent = "";
+        }
+      }
+
+      document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
+        document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
+      });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
+          "click", () => {
+            document.querySelector(".backdrop").classList.remove("active");
+
+          });
+
+      document.querySelector(
+        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
         document.querySelector(".backdrop").classList.remove("active");
 
         window.location.href = "/curriculum/getCurriculumList.do";
@@ -227,19 +231,7 @@
       const newButton = document.createElement("img");
       newButton.src = "../../../images/minus-Vector.svg";
       newButton.alt = "제거";
-      newButton.onclick = function () {
-
-        const contentHeaderLength = document.querySelector('#additionalInputContainer').querySelectorAll('.content-header').length;
-        const defaultDetailSubject = document.querySelector('.default-detail-subject');
-
-        if(contentHeaderLength + (!!defaultDetailSubject && 1) <= 1) {
-          return;
-        }
-        if((!!defaultDetailSubject) && (contentHeaderLength === 0)) {
-          return;
-        }
-
-        remove_inputbox(newDiv); };
+      newButton.onclick = function () { remove_inputbox(newDiv); };
       newButton.style.cursor = "pointer";
 
       newLabel.appendChild(newInput);
@@ -262,7 +254,6 @@
       }
       divElement.remove();
     }
-
   </script>
 
 
