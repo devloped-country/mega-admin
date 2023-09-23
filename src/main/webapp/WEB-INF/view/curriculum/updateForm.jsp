@@ -67,7 +67,9 @@
               <input type="hidden" name="detailId" value="${detail.id}"/>
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요."
                 maxlength="50" value="${detail.content}" autofocus />
-              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')">
+
+              <img src="../../../images/minus-Vector.svg" alt="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')" style="cursor:pointer;">
+
             </div>
           </div>
         </c:forEach>
@@ -226,10 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
       newInput.placeholder = "상세교과내용을 입력해주세요.";
       newInput.maxLength = "50";
 
-      const newButton = document.createElement("input");
-      newButton.type = "button";
-      newButton.value = "제거";
+      const newButton = document.createElement("img");
+      newButton.src = "../../../images/minus-Vector.svg";
+      newButton.alt = "제거";
       newButton.onclick = function () { remove_inputbox(newDiv); };
+      newButton.style.cursor = "pointer";
 
       newLabel.appendChild(newInput);
       newLabel.appendChild(newButton);
