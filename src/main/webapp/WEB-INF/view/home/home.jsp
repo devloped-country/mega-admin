@@ -19,14 +19,14 @@
         </nav>
         <section class="content">
             <section class="attendance">
-                <h3 class="attendance-title">출결정보</h3>
+                <h3 class="attendance-title">입실정보</h3>
                 <ul class="attendance-list">
                     <li class="attendance-item">
-                        <h4 class="attendance-item-title">출결자</h4>
+                        <h4 class="attendance-item-title">입실자</h4>
                         <p class="attendance-item-desc">${attendance.attendance}명</p>
                     </li>
                     <li class="attendance-item">
-                        <h4 class="attendance-item-title">미출결자</h4>
+                        <h4 class="attendance-item-title">미입실자</h4>
                         <p class="attendance-item-desc">${attendance.unAttendance}명</p>
                     </li>
                 </ul>
