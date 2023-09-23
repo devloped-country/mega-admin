@@ -27,7 +27,7 @@
     <form id="createForm" action="createCurriculum.do" method="post" class="create-form">
       <div class="content">
         <h2>과목 추가</h2>
-        <h3>과목 정보를 입력해 주세요</h3>
+        <h6>과목 정보를 입력해 주세요</h6>
         <div class="content-header">
           <div class="content-header-right">
             <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
@@ -91,7 +91,7 @@
         <div id="additionalInputContainer">
         </div>
 
-        <div class="content-footer">
+        <div class="content-footer2">
           <div>
             <button type="button" class="content-add-btn" onclick="add_inputbox()">
               상세 교과 내용 추가
