@@ -9,25 +9,25 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="/home/home.do" class="menu-item-link">
+            <a href="/notice/getNoticeList.do" style="text-decoration: none; color: inherit;">
             <img src="../../../images/notice.svg" alt="공지사항" />
             <h4 class="menu-title">공지사항</h4>
             </a>
         </li>
         <li class="menu-item">
-            <a href="/curriculum/getCurriculumList.do" class="menu-item-link">
+            <a href="/curriculum/getCurriculumList.do" style="text-decoration: none; color: inherit;">
             <img src="../../../images/curriculum.svg" alt="커리큘럼" />
             <h4 class="menu-title">커리큘럼</h4>
             </a>
         </li>
         <li class="menu-item">
-            <a href="/user/getuserlist.do" class="menu-item-link">
+            <a href="/user/getuserlist.do" style="text-decoration: none; color: inherit;">
             <img src="../../../images/users.svg" alt="회원" />
             <h4 class="menu-title">회원</h4>
             </a>
         </li>
         <li class="menu-item">
-            <a href="/attendance/attendance.do" class="menu-item-link">
+            <a href="/attendance/attendance.do" style="text-decoration: none; color: inherit;">
                 <img src="../../../images/attendance.svg" alt="출결관리" />
                 <h4 class="menu-title">출결관리</h4>
             </a>
