@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="406503f2-41e6-410b-857b-f0f9b9d8b7dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/updateCurriculum.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/updateCurriculum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

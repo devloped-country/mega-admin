@@ -82,7 +82,7 @@
         <div id="additionalInputContainer">
         </div>
 
-        <div class="content-footer2">
+        <div class="content-footer">
           <div>
             <button type="button" class="content-add-btn" onclick="add_inputbox()">
               상세 교과 내용 추가
