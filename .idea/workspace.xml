@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="406503f2-41e6-410b-857b-f0f9b9d8b7dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/user.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/user.css" afterDir="false" />
     </list>
@@ -279,7 +276,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp</url>
-          <line>64</line>
+          <line>60</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
