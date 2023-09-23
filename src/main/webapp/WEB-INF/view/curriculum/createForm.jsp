@@ -68,7 +68,7 @@
           <div class="content-header-right">
             <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
-            <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
+              <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
         </div>
 
@@ -76,14 +76,14 @@
           <div class="content-header-right">
             <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
-            <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
+              <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
         </div>
         <div class="content-header">
           <div class="content-header-right">
             <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
-            <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'))">
+              <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
         </div>
 
@@ -222,37 +222,38 @@
 
 
     function add_inputbox() {
-      // 새로운 div 요소를 생성 (포장용)
-      const newDiv = document.createElement("div");
-      newDiv.className = "content-header";
+    // 새로운 div 요소를 생성 (포장용)
+    const newDiv = document.createElement("div");
+    newDiv.className = "content-header";
 
-      // 새로운 div 요소 내에 레이블과 input을 추가
-      const newLabel = document.createElement("div");
-      newLabel.className = "content-header-right";
+    // 새로운 div 요소 내에 레이블과 input을 추가
+    const newLabel = document.createElement("div");
+    newLabel.className = "content-header-right";
 
-      const newInput = document.createElement("input");
-      newInput.type = "text";
-      newInput.className = "notice-title";
-      newInput.name = "detail";
-      newInput.placeholder = "상세교과내용을 입력해주세요.";
-      newInput.maxLength = "50";
+    const newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.className = "notice-title";
+    newInput.name = "detail";
+    newInput.placeholder = "상세교과내용을 입력해주세요.";
+    newInput.maxLength = "50";
 
-      // "제거" 버튼을 생성
-      const newButton = document.createElement("input");
-      newButton.type = "button";
-      newButton.value = "제거";
-      newButton.onclick = function () { remove_inputbox(newDiv); };
+    // "제거" 이미지 버튼을 생성
+    const newImageButton = document.createElement("img");
+    newImageButton.src = "../../../images/minus-Vector.svg";
+    newImageButton.alt = "제거 버튼";
+    newImageButton.className = "remove-button";
+    newImageButton.onclick = function () { remove_inputbox(newDiv); };
 
-      // 레이블과 input, 버튼을 새로운 div에 추가
-      newLabel.appendChild(newInput);
-      newLabel.appendChild(newButton);
-      newDiv.appendChild(newLabel);
+    // 레이블과 input, 이미지 버튼을 새로운 div에 추가
+    newLabel.appendChild(newInput);
+    newLabel.appendChild(newImageButton);
+    newDiv.appendChild(newLabel);
 
-      // 추가할 컨테이너 선택
-      const container = document.getElementById("additionalInputContainer");
+    // 추가할 컨테이너 선택
+    const container = document.getElementById("additionalInputContainer");
 
-      // 컨테이너에 새로운 div 요소 추가
-      container.appendChild(newDiv);
+    // 컨테이너에 새로운 div 요소 추가
+    container.appendChild(newDiv);
     }
 
     function remove_inputbox(divElement) {
