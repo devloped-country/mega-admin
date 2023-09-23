@@ -6,9 +6,9 @@ public enum AttendanceQuery {
     ATTENDANCE_SEARCH_LIST(" SELECT * FROM user3 WHERE name like ? ORDER BY name LIMIT ? OFFSET ? "),
     ATTENDANCE_USER_COUNT(" SELECT count(*) FROM user3 "),
 
-    ATTENDANCE_DETAIL_LIST(" SELECT a.*, u.name FROM ( SELECT * FROM attendance WHERE email=? ) a LEFT JOIN user3 u ON a.email = u.email ORDER BY start_date LIMIT ? OFFSET ? "),
-    ATTENDANCE_STATUS_COUNT(" SELECT count(*) FROM attendance WHERE email=? "),
-    ATTENDANCE_UPDATE(" UPDATE attendance SET attendance_stat=?, start_date=?, end_date=?, reason=? WHERE id=? "),
+    ATTENDANCE_DETAIL_LIST(" SELECT a.*, u.name FROM ( SELECT * FROM attendance2 WHERE email=? ) a LEFT JOIN user3 u ON a.email = u.email ORDER BY start_date LIMIT ? OFFSET ? "),
+    ATTENDANCE_STATUS_COUNT(" SELECT count(*) FROM attendance2 WHERE email=? "),
+    ATTENDANCE_UPDATE(" UPDATE attendance2 SET attendance_stat=?, start_date=?, end_date=?, reason=? WHERE id=? "),
 
     ATTENDANCE_DATE_LIST(" SELECT a.*, u.name \n" +
             "FROM ( SELECT * FROM attendance \n" +
