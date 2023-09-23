@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="406503f2-41e6-410b-857b-f0f9b9d8b7dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/qr/QrHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/qr/QrHandlerMapping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/config/database/JedisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/config/database/JedisUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "fix-ub",
     "jdk.selected.JAVA_MODULE": "corretto-11",
     "last_opened_file_path": "C:/mega-admin-feature-attendance (2)",
     "node.js.detected.package.eslint": "true",
@@ -88,9 +85,6 @@
       <option name="catalinaBase" value="C:\Users\uBeom\.SmartTomcat\mega-admin\mega" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -286,11 +280,6 @@
           <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/userManagement.jsp</url>
           <line>64</line>
           <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/index.jsp</url>
-          <line>67</line>
-          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/user/model/UserDAO.java</url>
