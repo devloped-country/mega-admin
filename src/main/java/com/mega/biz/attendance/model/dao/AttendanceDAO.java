@@ -1,6 +1,7 @@
-package com.mega.biz.attendance.model;
+package com.mega.biz.attendance.model.dao;
 
 
+import com.mega.biz.attendance.model.AttendanceQuery;
 import com.mega.biz.attendance.model.dto.AttendanceDTO;
 import com.mega.biz.attendance.model.dto.PageDTO;
 import com.mega.config.database.JDBCUtils;

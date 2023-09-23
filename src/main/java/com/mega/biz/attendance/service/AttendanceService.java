@@ -1,6 +1,6 @@
 package com.mega.biz.attendance.service;
 
-import com.mega.biz.attendance.model.AttendanceDAO;
+import com.mega.biz.attendance.model.dao.AttendanceDAO;
 import com.mega.biz.attendance.model.dto.AttendanceDTO;
 import com.mega.biz.attendance.model.dto.PageDTO;
 
