@@ -54,29 +54,6 @@
             <label><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.endDate}" name="endDate" onchange="validateDate()" /></label>
           </div>
         </div>
-
-        <!-- <div class="content-header">
-          <div class="content-header-right">
-            <label>
-              시간
-              <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50" value="${curriculum.time}" oninput="validateNumber(this)" />
-              <span id="timeError"></span>
-            </label>
-
-          </div>
-        </div> -->
-
-        <!-- <div class="content-header">
-          <div class="content-header-right">
-            <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.startDate}" name="startDate" onchange="validateDate()" /></label>
-
-          </div>
-
-          <div class="content-header-right">
-            <label> ~ <input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.endDate}" name="endDate" onchange="validateDate()" /></label>
-          </div>
-
-        </div> -->
         <span id="dateError"></span>
 
         <p>상세 교과 내용</p>
