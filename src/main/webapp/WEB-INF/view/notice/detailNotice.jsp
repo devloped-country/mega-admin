@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
 <%@ include file="/WEB-INF/layout/header.jsp" %>
@@ -61,13 +62,17 @@
             <div class="content-header-bottom">
                 <div class="content-header-bottom-left">
                     <strong class="author">${ notice.author } 매니저님</strong>
-                    <p class="create-date">${ notice.createdDate }</p>
+                    <p class="create-date">
+                        <c:if test="${not empty notice.createdDate}">
+                            <fmt:formatDate value="${notice.createdDate}" pattern="yyyy-MM-dd HH:mm" />
+                        </c:if>
+                    </p>
                 </div>
                 <div class="content-header-bottom-right">
                     <img src="../../images/edit-btn.svg" alt="수정, 삭제 버튼" class="edit-btn"/>
                     <ul class="edit-list">
                         <li class="edit-item">
-                            <button class="menu-btn update-btn" type="button"
+                            <button id="updateButton" class="menu-btn update-btn" type="button"
                                     onclick="location.href='/notice/updateNoticeForm.do?id=${notice.id}'">
                                 수정
                             </button>
@@ -96,7 +101,10 @@
                 <p class="modal-desc">공지사항을 삭제하시겠어요?</p>
             </div>
             <div class="modal-btn-wrapper">
-                <button class="modal-btn modal-btn-confirm">확인</button>
+                <form action="/notice/deleteNotice.do" method="post">
+                    <input type="hidden" name="id" value="${notice.id}">
+                    <button class="modal-btn modal-btn-confirm" type="submit">확인</button>
+                </form>
                 <button class="modal-btn modal-btn-cancel" type="button">취소</button>
             </div>
         </div>
@@ -104,6 +112,17 @@
 </div>
 </form>
 <script>
+
+     // 모달 창을 보여주는 함수
+        function showDeleteModal() {
+            document.getElementById('deleteModal').classList.add('active');
+        }
+
+        // 모달 창을 숨기는 함수
+        function hideDeleteModal() {
+            document.getElementById('deleteModal').classList.remove('active');
+        }
+
   document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("click", ({target}) => {
       if(target.className !== 'edit-btn') {

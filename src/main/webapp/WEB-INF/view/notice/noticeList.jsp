@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 
 <%@ include file="/WEB-INF/layout/header.jsp" %>
@@ -120,7 +122,9 @@
                                   </td>
                                   <td class="notice-table-body-col notice-table-body-col-date">
                                       <div class="notice-table-body-cell notice-table-body-date">
-                                          ${notice.createdDate}
+                                          <c:if test="${not empty notice.createdDate}">
+                                            <fmt:formatDate value="${notice.createdDate}" pattern="yyyy-MM-dd HH:mm" />
+                                          </c:if>
                                       </div>
                                   </td>
                              </tr>
