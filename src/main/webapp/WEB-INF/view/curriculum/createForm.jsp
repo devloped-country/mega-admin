@@ -28,7 +28,7 @@
           <div class="content-header-right">
             <label class="content-header-label">교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
                 autofocus />
-              <span></span></label>
+             </label>
 
           </div>
 
@@ -65,21 +65,6 @@
       <div class="content-detail">
         <div class="detail-subject-title">
         상세 교과 내용
-        </div>
-        <div class="content-header content-header-custom">
-          <div class="content-header-right ">
-            <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-              autofocus />
-              <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
-          </div>
-        </div>
-
-        <div class="content-header content-header-custom content-detail-item">
-          <div class="content-header-right">
-            <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
-              autofocus />
-              <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
-          </div>
         </div>
         <div class="content-header content-header-custom content-detail-item">
           <div class="content-header-right">
