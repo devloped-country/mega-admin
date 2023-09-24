@@ -1,6 +1,5 @@
 package com.mega.biz.attendance.model.dto;
 
-import com.mega.biz.attendance.model.AttendanceDAO;
 import lombok.*;
 
 @Data

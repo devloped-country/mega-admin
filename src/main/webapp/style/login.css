@@ -1,14 +1,13 @@
 
 body{
-    padding-top: 15%;
     display: flex;
     justify-content: center;
-    /*align-content: center;*/
+    align-items: center;
 
 
 }
 .LoginWrapper2{
-    position: relative;
+    /*position: relative;*/
     text-align: center;
 
     display: flex;
@@ -32,12 +31,13 @@ body{
 
 /*.LoginWrapper2 .Main .loginTab */
 .alert-box{
+    font-size: 13px;
     color: red;
-    /*background-color: #ffd6d6;*/
+    /* background-color: #ffd6d6; */
     position: absolute;
-    /*    position: relative;*/
-    top: 148px;
-    left: 37.5px;
+    /* position: relative; */
+    top: 127px;
+    left: 35.5px;
 }
 
 .Mega .Main{
@@ -76,7 +76,7 @@ h1 {
 }
 
 .idBox2{
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
 .idBox3{
@@ -86,6 +86,7 @@ h1 {
     height: 48px;
     width: 495px;
     background-color: #f2f4f6;
+    font-size: 14px;
 }
 
 /*.idBox3 input{*/
@@ -131,7 +132,7 @@ h1 {
 .pwBox2
 {
 
-   padding-top: 20px;
+   /*padding-top: 20px;*/
 }
 
 .pwBox3
@@ -142,6 +143,7 @@ h1 {
     height: 48px;
     width: 495px;
     background-color: #f2f4f6;
+    font-size: 14px;
 }
 
 .loginBtn2{
@@ -156,5 +158,5 @@ h1 {
     height: 48px;
     width: 495px;
     cursor : pointer;
-
+    font-size: 14px;
 }

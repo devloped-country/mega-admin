@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../../../style/reset.css" />
     <link rel="stylesheet" href="../../../style/header.css" />
     <link rel="stylesheet" href="../../../style/footer.css" />
-    <link rel="stylesheet" href="../../../style/attendance.css" />
+    <link rel="stylesheet" href="../../../style/attendanceDetail.css" />
 </head>
 <body>
 <div class="body-wrapper">
@@ -96,20 +96,19 @@
         </div>
     </div>
     <div class="content-wrapper">
+        <div class="table-bar-2">
+            <div class="table-col-idx table-bar-2-item">연번</div>
+            <div class="table-col-name table-bar-2-item">이름</div>
+            <div class="table-col-email table-bar-2-item">이메일</div>
+            <div class="table-col-date table-bar-2-item">일시</div>
+            <div class="table-col-attendance-stat table-bar-2-item">출결</div>
+            <div class="table-col-start-time table-bar-2-item">입실 시간</div>
+            <div class="table-col-end-time table-bar-2-item">퇴실 시간</div>
+            <div class="table-col-reason table-bar-2-item">이유</div>
+            <div class="table-col-button-bar table-bar-2-item"></div>
+        </div>
         <div class="table-wrapper-2">
-            <div>
                 <table>
-                    <tr class="table-bar-2">
-                        <th class="table-col-idx">연번</th>
-                        <th class="table-col-name">이름</th>
-                        <th class="table-col-email">이메일</th>
-                        <th class="table-col-date">일시</th>
-                        <th class="table-col-attendance-stat">출결</th>
-                        <th class="table-col-start-time">입실 시간</th>
-                        <th class="table-col-end-time">퇴실 시간</th>
-                        <th class="table-col-reason">이유</th>
-                        <th class="table-col-button-bar"></th>
-                    </tr>
                     <c:set var="page" value="${ (param.page == null ) ? 1 : param.page }" />
                     <c:set var="index" value="${ (page - 1) * 9 + index + 1 }"/>
                     <c:forEach var="attendanceDTO" items="${ detailList }">
@@ -127,7 +126,6 @@
                         <c:set var="index" value="${ index + 1 }"></c:set>
                     </c:forEach>
                 </table>
-            </div>
         </div>
         <div class="page-wrapper">
             <div>

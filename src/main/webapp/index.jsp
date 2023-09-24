@@ -8,7 +8,7 @@
 <html>
 <head>
 
-    <title>JSP - Hello World</title>
+    <title>Mega - Login</title>
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
@@ -31,7 +31,7 @@
                 <%--        login_proc.jsp을 login.do로--%>
                 <table class="loginTab">
 
-                    <tr class="idBox1" >
+                    <tr class="idBox1">
                         <td class="idBox2">
                             <input type="text" class="idBox3" name="account" placeholder="아이디"></td>
                     </tr>
@@ -52,9 +52,57 @@
                             <input class="loginBtn3" type="submit" value="로그인"/>
                         </td>
                     </tr>
+
+<%--                    <form action="login.do" method="post" class="login-form">--%>
+
+<%--                    <form class="form-hoz" action="searchPwd.do" method="POST">--%>
+<%--                        <div class="form">--%>
+<%--                            <div class="row">--%>
+<%--                                <div class="row2">--%>
+<%--                                    <h2>비번찿기</h2>--%>
+<%--                                    <h6>회원가입에 사용한 비번은 <strong>${fn:substring(pw,0,4)}--%>
+<%--                                        <c:forEach begin="1" end="${fn:lenght(pw)-4}">--%>
+<%--                                            *--%>
+<%--                                        </c:forEach>--%>
+<%--                                    </strong>입니다</h6>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="back">--%>
+<%--                            <div class="col-md">--%>
+<%--                                <button type="button" class="btn btn-outlone-secondary loginbtn"--%>
+<%--                                        onclick="backToLogin()">--%>
+<%--                                    로그인 화면으로 돌아가기--%>
+<%--                                </button>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </form>--%>
                 </table>
             </form>
-            <br>
         </div>
+
+        <br>
     </div>
 </div>
+
+
+<%--<div class="password-container">--%>
+<%--    < class="form-hoz" role="form" method="POST">--%>
+<%--    <div class="form">--%>
+<%--        <div class="row">--%>
+<%--            <div class="row2">--%>
+<%--                <h2>비번찿기</h2>--%>
+<%--                <h6>회원가입에 사용한 비번은 <strong>${fn:substring(pw,0,4)}--%>
+<%--                    <c:forEach begin="1" end="${fn:lenght(pw)-4}">--%>
+<%--                        *--%>
+<%--                    </c:forEach>--%>
+<%--                </strong>입니다</h6>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--    <div class="back">--%>
+<%--        <button type="button" class="btn btn-outlone-secondary loginbtn" onclick="backToLogin()">--%>
+<%--            로그인 화면으로 돌아가기--%>
+<%--        </button>--%>
+<%--    </div>--%>
+<%--</div>--%>

@@ -19,7 +19,7 @@ public class UpdateCurriculumController implements Controller {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         // 디테일 삭제 로직
-        String[] parameterValues = request.getParameterValues("removeDetails");
+        String[] parameterValues = request.getParameterValues("removedDetails");
 
         if (parameterValues != null) {
             for (String parameterValue : parameterValues) {
