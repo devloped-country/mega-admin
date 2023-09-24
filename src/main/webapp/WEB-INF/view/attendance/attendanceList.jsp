@@ -53,6 +53,7 @@ change this template use File | Settings | File Templates. --%>
                                 name="getDuration"
                                 placeholder="ex) 15"
                         />
+                        <span id="getError"></span>
                         <div class="modal-button">
                             <button type="button" id="close-modal">취소</button>
                             <button type="submit" class="update-modal">확인</button>
@@ -207,6 +208,17 @@ change this template use File | Settings | File Templates. --%>
         let keyword = document.getElementById("keyword").value;
         location.href = '/attendance/attendance.do?keyword=' + keyword + '&page=1';
     };
+
+    function validDuration(inputDuration) {
+        const seeWarning = document.getElementById("getError");
+
+        if (isNaN(inputDuration.value)) {
+            seeWarning.textContent = "단위기간을 입력해주세요.";
+        } else {
+            seeWarning.textContent = "";
+        }
+
+    }
 </script>
 </body>
 </html>

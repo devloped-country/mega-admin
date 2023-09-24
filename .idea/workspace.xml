@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="">
+    <list default="true" id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceStat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceStat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dao/HomeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dao/HomeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dto/NoticeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dto/NoticeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/curriculumList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/curriculumList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendanceDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +53,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "fix-sh",
-    "last_opened_file_path": "C:/Users/user/Desktop/workplace/mega",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "라이브러리",
-    "project.structure.proportion": "0.14430016",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix-sh&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/workplace/mega&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;라이브러리&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.14430016&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\workplace\mega\mega-admin\src\main\webapp\style" />
@@ -106,9 +100,6 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -169,5 +160,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------" />
   </component>
 </project>

@@ -50,13 +50,6 @@ public class  GetAttendanceDetailListController implements Controller {
                 getYear = getYear-1;
             }
 
-//            String startMonth;
-//            if (getMonth < 10) {
-//                startMonth = endMonth.substring(0,5) + "0" +getMonth + "-" + duration;
-//            } else {
-//                startMonth = endMonth.substring(0,5) + getMonth + "-" + duration;
-//            }
-
             String startMonth =  getYear + "-" + getMonth + "-" + duration;
 
             log.info("getMonth : {}", getMonth);

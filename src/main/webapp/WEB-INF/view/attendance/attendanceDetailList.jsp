@@ -111,20 +111,28 @@
                 <table>
                     <c:set var="page" value="${ (param.page == null ) ? 1 : param.page }" />
                     <c:set var="index" value="${ (page - 1) * 9 + index + 1 }"/>
-                    <c:forEach var="attendanceDTO" items="${ detailList }">
-                        <tr class="table-content table-row-${page}${index}" data-id="${ attendanceDTO.id }">
-                            <td class="table-col-idx">${ index }</td>
-                            <td class="table-col-name">${ attendanceDTO.name }</td>
-                            <td class="table-col-email" data-email="${attendanceDTO.email}">${ attendanceDTO.email }</td>
-                            <td class="table-col-date">${ attendanceDTO.date }</td>
-                            <td class="table-col-attendance-stat">${ attendanceDTO.attendance_stat }</td>
-                            <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
-                            <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
-                            <td class="table-col-reason">${ attendanceDTO.reason }</td>
-                            <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}"><a>출결 관리</a></button></td>
-                        </tr>
-                        <c:set var="index" value="${ index + 1 }"></c:set>
-                    </c:forEach>
+                    <c:set var="endNum" value="${endNum}"/>
+                        <c:choose>
+                            <c:when test="${ endNum != 0 }">
+                                <c:forEach var="attendanceDTO" items="${ detailList }">
+                                <tr class="table-content table-row-${page}${index}" data-id="${ attendanceDTO.id }">
+                                    <td class="table-col-idx">${ index }</td>
+                                    <td class="table-col-name">${ attendanceDTO.name }</td>
+                                    <td class="table-col-email" data-email="${attendanceDTO.email}">${ attendanceDTO.email }</td>
+                                    <td class="table-col-date">${ attendanceDTO.date }</td>
+                                    <td class="table-col-attendance-stat">${ attendanceDTO.attendance_stat }</td>
+                                    <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
+                                    <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
+                                    <td class="table-col-reason">${ attendanceDTO.reason }</td>
+                                    <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}"><a>출결 관리</a></button></td>
+                                </tr>
+                                <c:set var="index" value="${ index + 1 }"></c:set>
+                                </c:forEach>
+                            </c:when>
+                            <c:otherwise>
+                                <p class="no-data">해당 데이터가 없습니다.</p>
+                            </c:otherwise>
+                        </c:choose>
                 </table>
         </div>
         <div class="page-wrapper">
