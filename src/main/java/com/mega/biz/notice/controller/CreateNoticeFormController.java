@@ -1,7 +1,6 @@
 package com.mega.biz.notice.controller;
 
 import com.mega.common.controller.Controller;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

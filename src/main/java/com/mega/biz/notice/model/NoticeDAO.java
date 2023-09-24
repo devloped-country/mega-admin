@@ -7,10 +7,7 @@ import com.mega.biz.notice.model.dto.PageDTO;
 import com.mega.config.database.JDBCUtils;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +54,12 @@ public class NoticeDAO {
                 noticeDTO.setTitle(rs.getString("title"));
                 noticeDTO.setContent(rs.getString("content"));
                 noticeDTO.setAuthor(rs.getString("author"));
-                noticeDTO.setCreatedDate(rs.getTimestamp("created_date"));
+//                noticeDTO.setCreatedDate(rs.getTimestamp("created_date"));
+
+                Timestamp dbTimestamp = rs.getTimestamp("created_date");
+                long nineHoursInMillis = 9 * 60 * 60 * 1000;
+                long adjustedTimeInMillis = dbTimestamp.getTime() - nineHoursInMillis;
+                noticeDTO.setCreatedDate(new Timestamp(adjustedTimeInMillis));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,7 +90,12 @@ public class NoticeDAO {
                 noticeDTO.setTitle(rs.getString("title"));
                 noticeDTO.setContent(rs.getString("content"));
                 noticeDTO.setAuthor(rs.getString("author"));
-                noticeDTO.setCreatedDate(rs.getTimestamp("created_date"));
+//                noticeDTO.setCreatedDate(rs.getTimestamp("created_date"));
+
+                Timestamp dbTimestamp = rs.getTimestamp("created_date");
+                long nineHoursInMillis = 9 * 60 * 60 * 1000;
+                long adjustedTimeInMillis = dbTimestamp.getTime() - nineHoursInMillis;
+                noticeDTO.setCreatedDate(new Timestamp(adjustedTimeInMillis));
 
                 noticeDTOList.add(noticeDTO);
             }
@@ -121,4 +128,41 @@ public class NoticeDAO {
 
         return count;
     }
+
+    public void deleteNotice(NoticeDTO dto) {
+        try (
+                Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(
+                        NoticeQuery.NOTICE_DELETE.getQuery())
+        ) {
+            pstmt.setLong(1, dto.getId());
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, psmt);
+        }
+    }
+
+    public void updateNotice(NoticeDTO dto) {
+        try (
+                Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(
+                        NoticeQuery.NOTICE_UPDATE.getQuery())) {
+
+            pstmt.setString(1, dto.getTitle());
+            pstmt.setLong(2, dto.getTagId());
+            pstmt.setString(3, dto.getContent());
+//            pstmt.setString(4, dto.getAuthor());
+            pstmt.setLong(4, dto.getId());
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.close(conn, psmt);
+        }
+    }
+
 }
