@@ -12,7 +12,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        var logoutButton = document.getElementById("logoutButton");
+        var logoutButton = document.querySelector(".logout-btn");
         logoutButton.addEventListener("click", function () {
             // 세션 무효화 요청을 서버로 보내는 함수를 호출합니다.
             invalidateSession();

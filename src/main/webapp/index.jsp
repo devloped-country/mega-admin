@@ -8,7 +8,7 @@
 <html>
 <head>
 
-    <title>JSP - Hello World</title>
+    <title>Mega - Login</title>
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">

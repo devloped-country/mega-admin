@@ -71,11 +71,12 @@ public class HomeDAO {
       while(rs.next()) {
         NoticeDTO dto = new NoticeDTO();
 
+        dto.setId(rs.getInt("id"));
         dto.setTag(rs.getInt("tag_id"));
         dto.setTitle(rs.getString("title"));
         dto.setContent(rs.getString("content"));
         dto.setAuthor(rs.getString("author"));
-        dto.setCreated_date(rs.getDate("createdDate"));
+        dto.setCreated_date(rs.getDate("created_date"));
 
         dtos.add(dto);
       }

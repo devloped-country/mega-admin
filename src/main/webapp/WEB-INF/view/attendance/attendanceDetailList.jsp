@@ -97,7 +97,6 @@
     </div>
     <div class="content-wrapper">
         <div class="table-wrapper-2">
-            <div>
                 <table>
                     <tr class="table-bar-2">
                         <th class="table-col-idx">연번</th>
@@ -127,7 +126,6 @@
                         <c:set var="index" value="${ index + 1 }"></c:set>
                     </c:forEach>
                 </table>
-            </div>
         </div>
         <div class="page-wrapper">
             <div>
