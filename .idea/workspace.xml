@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceDetail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -55,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "fix-sh",
     "last_opened_file_path": "C:/Users/user/Desktop/workplace/mega",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -69,6 +70,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\workplace\mega\mega-admin\src\main\webapp\style" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="mega-admin" />
@@ -137,7 +143,7 @@
       <workItem from="1695254414821" duration="13252000" />
       <workItem from="1695340834309" duration="5345000" />
       <workItem from="1695353298190" duration="124000" />
-      <workItem from="1695529940504" duration="2548000" />
+      <workItem from="1695529940504" duration="3962000" />
     </task>
     <servers />
   </component>
