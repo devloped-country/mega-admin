@@ -2,18 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
-
-<%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Mega - Curriculum</title>
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/curriculum/notice.css" type="text/css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">
 </head>
 <body>
-    <form action="/curriculum/deleteCurriculum.do" method="post">
+    <%@ include file="/WEB-INF/layout/header.jsp" %>
+    <form action="/curriculum/deleteCurriculum.do" method="post" class="notice-form">
         <div class="NoticeWrapper">
             <div class="nav">
                 <h1 class="title">커리큘럼</h1>
@@ -150,6 +149,7 @@
             </div>
         </div>
     </form>
+    <%@ include file="/WEB-INF/layout/footer.jsp" %>
     <script>
 
         function sendUpdateRequest() {
@@ -211,5 +211,3 @@
 </body>
 
 </html>
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>

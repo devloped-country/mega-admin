@@ -9,6 +9,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dao/HomeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dao/HomeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dto/NoticeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/home/model/dto/NoticeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/createForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/curriculumList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/curriculumList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/notice.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +97,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "fix-ub",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
     <configuration name="mega" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\uBeom\.SmartTomcat\mega-admin\mega" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions">
@@ -104,7 +120,7 @@
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.79" />
-          <option name="path" value="$PROJECT_DIR$/../../../../../../Program Files/apache-tomcat-9.0.79" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../apache-tomcat-9.0.79" />
           <option name="version" value="9.0.79.0" />
         </TomcatInfo>
       </option>

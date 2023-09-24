@@ -2,16 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
-
-<%@ include file="/WEB-INF/layout/header.jsp" %>
-
-
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>커리큘럼</title>
+  <title>Mega - Curriculum</title>
   <link />
   <link rel="stylesheet" href="../../../style/reset.css">
   <link rel="stylesheet" href="../../../style/curriculum/createNotice.css" type="text/css">
@@ -20,6 +15,7 @@
 </head>
 
 <body>
+  <%@ include file="/WEB-INF/layout/header.jsp" %>
   <div class="CreateNoticeWrapper">
     <div class="nav">
       <h1 class="title">커리큘럼</h1>
@@ -30,12 +26,14 @@
         <h6 class="add-text-info">과목 정보를 입력해 주세요</h6>
         <div class="content-header">
           <div class="content-header-right">
-            <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
-                autofocus /></label>
+            <label class="content-header-label">교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요." maxlength="50"
+                autofocus />
+              <span></span></label>
+
           </div>
 
           <div class="content-header-right">
-            <label>
+            <label class="content-header-label">
               시간
               <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50"
                 oninput="validateNumber(this)" />
@@ -44,41 +42,48 @@
 
           </div>
 
+          <div class="content-header-date">
+            기간
+          <div class="content-date">
           <div class="content-header-right">
-            <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
+            <label class="content-header-label"><input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
                 name="startDate" onchange="validateDate()" /></label>
-
           </div>
 
           <p class="center">~</p>
 
           <div class="content-header-right">
-            <label><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
+            <label class="content-header-label"><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25"
                 name="endDate" onchange="validateDate()" /></label>
+
           </div>
+            </div><span id="dateError"></span>
         </div>
-        <span id="dateError"></span>
+      </div>
 
 
+      <div class="content-detail">
+        <div class="detail-subject-title">
         상세 교과 내용
-        <div class="content-header">
-          <div class="content-header-right">
-            <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
+        </div>
+        <div class="content-header content-header-custom">
+          <div class="content-header-right ">
+            <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
               <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
         </div>
 
-        <div class="content-header">
+        <div class="content-header content-header-custom content-detail-item">
           <div class="content-header-right">
-            <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
+            <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
               <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
         </div>
-        <div class="content-header">
+        <div class="content-header content-header-custom content-detail-item">
           <div class="content-header-right">
-            <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
+            <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요." maxlength="50"
               autofocus />
               <img src="../../../images/minus-Vector.svg" alt="제거 버튼" class="remove-button" onclick="remove_inputbox(this.closest('.content-header'))">
           </div>
@@ -103,7 +108,7 @@
           <button type="submit" class="content-btn">추가</button>
         </div>
       </div>
-
+      </div>
       <div class="CreateNoticeModal">
         <div class="backdrop">
           <div class="modal-wrapper">
@@ -134,8 +139,7 @@
       </div>
     </form>
   </div>
-
-
+  <%@ include file="/WEB-INF/layout/footer.jsp" %>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('createForm');
@@ -221,7 +225,7 @@
     function add_inputbox() {
     // 새로운 div 요소를 생성 (포장용)
     const newDiv = document.createElement("div");
-    newDiv.className = "content-header";
+    newDiv.className = "content-header content-header-custom content-detail-item";
 
     // 새로운 div 요소 내에 레이블과 input을 추가
     const newLabel = document.createElement("div");
@@ -229,7 +233,7 @@
 
     const newInput = document.createElement("input");
     newInput.type = "text";
-    newInput.className = "notice-title";
+    newInput.className = "notice-title notice-title-custom";
     newInput.name = "detail";
     newInput.placeholder = "상세교과내용을 입력해주세요.";
     newInput.maxLength = "50";
@@ -254,15 +258,12 @@
     }
 
     function remove_inputbox(divElement) {
+      if(document.querySelectorAll(".content-detail-item").length <= 1) {
+        return;
+      }
+
       divElement.remove();
     }
-
   </script>
-
-
 </body>
-
 </html>
-
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>
