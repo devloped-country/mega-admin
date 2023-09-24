@@ -1,29 +1,36 @@
 
-.all::-webkit-scrollbar {
+.content::-webkit-scrollbar {
     width: 6px;
 }
 
-.all::-webkit-scrollbar-thumb {
+.content::-webkit-scrollbar-thumb {
     height: 30%;
     border-radius: 10px;
     background-color: #a59e9e;
 }
 
-.all::-webkit-scrollbar-track {
+.content::-webkit-scrollbar-track {
     background-color: #cacaca;
 }
 
 
 .UserWrapper {
-    display: flex;
-    padding: 0 48px 48px;
-    height: calc(100vh - 272px);
-    justify-content: center;
+    /*display: flex;*/
+    /*padding: 0 48px 48px;*/
+    height: 100%;
+    /*justify-content: center;*/
+    /*box-sizing: border-box;*/
+
 }
 
+
+.all{
+    height: 100%;
+
+}
 .UserWrapper .main {
     padding: 0 48px 48px;
-    height: calc(100vh - 190px);
+    height: 100%;
 }
 
 .UserWrapper .nav {
@@ -44,23 +51,30 @@
 
 }
 
-.UserWrapper .main {
-    /*font-size: 24px;*/
-    /*font-weight: 600;*/
-    width: 100%;
-}
+/*.UserWrapper .main {*/
+/*    !*font-size: 24px;*!*/
+/*    !*font-weight: 600;*!*/
+/*    width: 100%;*/
+/*    overflow-x: hidden;*/
+/*    !*overflow-y: hidden;*!*/
+/*    overflow-y: scroll;*/
+
+/*}*/
 
 
 .table {
     width: 100%;
+
 }
 
 .content2 {
     width: 100%;
     height: calc(100% - 84px - 80px - 48px);
     background-color: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    overflow: auto;
+    /*box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+    /*overflow: auto;*/
+
+
 }
 
 .UserWrapper .main .table {
@@ -68,51 +82,64 @@
     /*max-height: 600px;*/
     padding: 0 48px 48px;
     /*height: calc(100vh - 190px);*/
+    /*box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
 }
 
 .header-row {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
     /*padding: 24px;*/
     background-color: #000;
     color: #fff;
     height: 54px;
     margin: auto;
     text-align: center;
-
+    display: flex;
 
 }
 
-.header-row th {
-    padding: 24px;
+.header-row .header-col {
+    /*padding: 24px;*/
 
-    margin: auto;
+    /*margin: auto;*/
     text-align: center;
-
+    padding-top: 17px;
+    padding-bottom: 17px;
+    /*display: flex;*/
+    justify-content: center;
+    text-align: center;
 
 }
 
 .header-row .header-col1 {
     border-radius: 20px 0 0 0;
-    padding: 12px;
+    /*padding: 12px;*/
+    width:4%;
 }
+
+.header-col2{width:24%;}
+.header-col3{width:9%;}
+.header-col4{width:24%;}
+.header-col5{width:9%;}
+.header-col6{width:15%;}
+
+
 
 .header-row .header-col7 {
     border-radius: 0 20px 0 0;
     padding: 12px;
+    width: 15%;
 }
 
-.UserWrapper .main .table .content {
+.UserWrapper .main .content {
     width: 100%;
-    height: calc(100% - 84px - 80px - 48px);
+    height: calc(100% - 233px);
     background-color: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    overflow: auto;
+    overflow-y:scroll ;
+
 }
 
-
-/*.UserWrapper*/
-/*.main*/
-/*.table*/
-/*!*.content*!*/
 .content-row .content-col {
     padding-top: 17px;
     padding-bottom: 17px;
@@ -125,8 +152,23 @@
 
 }
 
+.list-col1{width:4%;}
+.list-col2{width:24%;}
+.list-col3{width:9%;}
+.list-col4{width:24%;}
+.list-col5{width:9%;}
+.list-col6{width:15%;}
+.list-col7{width:15%;}
+
+.nextBtn4{margin-left: -30px}
+.nextBtn3{margin-left: -20px}
+.nextBtn2{margin-right: -20px}
+.nextBtn1{margin-right: -30px}
 
 .modal2 {
+    /* display: block; */
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -347,27 +389,29 @@ padding-top: 5px;
 
 
 .page-wrapper {
-    display: flex;
+    padding: 24px;
+    /*display: flex;*/
     /* align-content: center; */
     font-size: 28px;
-    margin: auto;
     /* justify-content: center; */
     /* margin-top: 32px; */
-    margin-bottom: 32px;
     width: 100%;
-    max-height: 95px;
      background-color: #FFFFFF;
     border-radius: 0 0 20px 20px;
     display: inline-flex;
     justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 }
 
 .page-number {
     margin-top: 7px;
     display: inline-flex;
+    /*box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+
 }
 
-.page-number .page-num li a {
+.page-number li a {
     padding: 7px 12px;
     width: 32px;
     height: 32px;
@@ -403,8 +447,9 @@ padding-top: 5px;
 }
 
 .current-page {
+    margin-top: 3px;
     padding: 7px 12px;
-    /*width: 32px;*/
+    /* width: 32px; */
     height: 32px;
     font-size: 16px;
     font-weight: 600;
