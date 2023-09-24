@@ -193,3 +193,106 @@
   color: #cacaca;
   cursor: pointer;
 }
+
+/* 모달창 구현 */
+#modal-wrapper {
+  display: none;
+}
+
+#modal-wrapper .modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 571px;
+  height: 296px;
+  background-color: #FFFFFF;
+  padding: 32px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+#modal-wrapper .modal-back {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.ex-text {
+  margin-top: 10px;
+  color: #BBBABA;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.get-date {
+  margin-top: 28px;
+}
+
+.star {
+  color: #FF0000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#insert-date {
+  width: 507px;
+  height: 48px;
+  padding: 15px 12px 15px 12px;
+  margin-top: 6px;
+  background-color: #F2F4F6;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 32px;
+  outline: none;
+}
+
+.modal-button .close-modal {
+  font-size: 18px;
+  width: 86px;
+  height: 43px;
+  border: black 1px solid;
+  border-radius: 3px;
+  color: black;
+  margin-left: 162px;
+  font-weight: 600;
+}
+
+.modal-button .update-modal {
+  font-size: 18px;
+  width: 86px;
+  height: 43px;
+  border: black 1px solid;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  margin-left: 11px;
+  font-weight: 600;
+}
+
+#close-modal {
+  background-color: #FFFFFF;
+  width: 86px;
+  height: 43px;
+  border-radius: 3px;
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.modal-button {
+  margin-top: 16px;
+  margin-left: 162px;
+}
+

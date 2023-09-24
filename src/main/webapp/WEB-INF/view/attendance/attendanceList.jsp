@@ -68,15 +68,15 @@ change this template use File | Settings | File Templates. --%>
             <button type="button" id="select-statics" onclick="location.href='/attendance/attendanceStat.do'">통계
             </button>
         </div>
+        <div class="table-bar-2">
+            <div class="tale-bar-2-item">순번</div>
+            <div class="tale-bar-2-item">이름</div>
+            <div class="tale-bar-2-item">전화번호</div>
+            <div class="tale-bar-2-item">이메일</div>
+        </div>
         <div class="table-wrapper">
             <div>
                 <table>
-                    <tr class="table-bar">
-                        <th>순번</th>
-                        <th>이름</th>
-                        <th>전화번호</th>
-                        <th>이메일</th>
-                    </tr>
                     <c:set var="page" value="${ (param.page == null ) ? 1 : param.page }"/>
                     <c:set var="index" value="${ (page - 1) * 9 + index + 1 }"></c:set>
                     <c:forEach var="attendanceDTO" items="${ attendanceList }">
