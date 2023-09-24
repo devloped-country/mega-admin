@@ -25,17 +25,15 @@
     </div>
     <form id="updateForm" action="updateCurriculum.do" method="post" class="create-form">
       <div class="content">
-        <h2>과목 추가</h2>
-        <h3>과목 정보를 입력해 주세요</h3>
+        <h2 class="add-text">과목 추가</h2>
+        <h3 class="add-text-info">과목 정보를 입력해 주세요</h3>
         <div class="content-header">
           <div class="content-header-right">
             <input type="hidden" name="curriculumId" value="${curriculum.id}"/>
             <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요."
                 maxlength="50" value="${curriculum.subject}" autofocus /></label>
           </div>
-        </div>
 
-        <div class="content-header">
           <div class="content-header-right">
             <label>
               시간
@@ -44,30 +42,31 @@
             </label>
 
           </div>
-        </div>
 
-        <div class="content-header">
           <div class="content-header-right">
             <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.startDate}" name="startDate" onchange="validateDate()" /></label>
 
           </div>
 
-          <div class="content-header-right">
-            <label> ~ <input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.endDate}" name="endDate" onchange="validateDate()" /></label>
-          </div>
+          <p class="center">~</p>
 
+          <div class="content-header-right">
+            <label><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.endDate}" name="endDate" onchange="validateDate()" /></label>
+          </div>
         </div>
         <span id="dateError"></span>
 
         <p>상세 교과 내용</p>
 
         <c:forEach var="detail" items="${curriculum.detailSubjectDTOList}" varStatus="status">
-          <div class="content-header">
+          <div class="content-header default-detail-subject">
             <div class="content-header-right">
               <input type="hidden" name="detailId" value="${detail.id}"/>
               <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요."
                 maxlength="50" value="${detail.content}" autofocus />
-              <input type="button" value="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')">
+
+              <img src="../../../images/minus-Vector.svg" alt="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')" style="cursor:pointer;">
+
             </div>
           </div>
         </c:forEach>
@@ -80,7 +79,7 @@
         <div id="additionalInputContainer">
         </div>
 
-        <div class="content-footer">
+        <div class="content-footer2">
           <div>
             <button type="button" class="content-add-btn" onclick="add_inputbox()">
               상세 교과 내용 추가
@@ -131,82 +130,78 @@
 
   <script>
 
-document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('updateForm');
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('updateForm');
 
-        form.addEventListener('submit', function (event) {
-            const subject = form['subject'].value;
-            const time = form['time'].value;
-            const startDate = form['startDate'].value;
-            const endDate = form['endDate'].value;
+      form.addEventListener('submit', function (event) {
+        const subject = form['subject'].value;
+        const time = form['time'].value;
+        const startDate = form['startDate'].value;
+        const endDate = form['endDate'].value;
 
-            let invalidInput = false;
+        let invalidInput = false;
 
-            // 기존의 빈 값 체크
-            if (!subject || !time || !startDate || !endDate) {
-                invalidInput = true;
-            }
-
-            // 숫자인지 체크
-            if (isNaN(time)) {
-                invalidInput = true;
-            }
-
-            if (invalidInput) {
-                event.preventDefault(); // form의 submit을 막습니다.
-                // ValidationModal을 띄웁니다.
-                document.querySelector(".ValidationModal .backdrop").classList.add("active");
-            }
-        });
-
-    // 모달의 "확인" 버튼에 이벤트 리스너를 추가
-    document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
-        // 모달을 닫습니다.
-        document.querySelector(".ValidationModal .backdrop").classList.remove("active");
-    });
-});
-
-
-
-
-
-      function validateDate() {
-        const startDate = document.getElementById("startDate").value;
-        const endDate = document.getElementById("endDate").value;
-        const errorElement = document.getElementById("dateError");
-
-        if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
-          errorElement.textContent = "시작 기간은 종료 기간보다 빨라야 합니다";
-        } else {
-          errorElement.textContent = "";
+        // 기존의 빈 값 체크
+        if (!subject || !time || !startDate || !endDate) {
+          invalidInput = true;
         }
-      }
 
-
-      function validateNumber(inputElement) {
-        const value = inputElement.value;
-        const errorElement = document.getElementById("timeError");
-
-        if (isNaN(value)) {
-          errorElement.textContent = "숫자를 입력하시오";
-        } else {
-          errorElement.textContent = "";
+        // 숫자인지 체크
+        if (isNaN(time)) {
+          invalidInput = true;
         }
-      }
 
-      document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
-        document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
+        if (invalidInput) {
+          event.preventDefault(); // form의 submit을 막습니다.
+          // ValidationModal을 띄웁니다.
+          document.querySelector(".ValidationModal .backdrop").classList.add("active");
+        }
       });
 
-      document.querySelector(
-        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
-          "click", () => {
-            document.querySelector(".backdrop").classList.remove("active");
+      // 모달의 "확인" 버튼에 이벤트 리스너를 추가
+      document.querySelector('.ValidationModal .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+        // 모달을 닫습니다.
+        document.querySelector(".ValidationModal .backdrop").classList.remove("active");
+      });
+    });
 
-          });
+    function validateDate() {
+      const startDate = document.getElementById("startDate").value;
+      const endDate = document.getElementById("endDate").value;
+      const errorElement = document.getElementById("dateError");
 
-      document.querySelector(
-        '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
+      if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
+        errorElement.textContent = "시작 기간은 종료 기간보다 빨라야 합니다";
+      } else {
+        errorElement.textContent = "";
+      }
+    }
+
+
+    function validateNumber(inputElement) {
+      const value = inputElement.value;
+      const errorElement = document.getElementById("timeError");
+
+      if (isNaN(value)) {
+        errorElement.textContent = "숫자를 입력하시오";
+      } else {
+        errorElement.textContent = "";
+      }
+    }
+
+    document.querySelector('.content-footer .content-btn').addEventListener("click", () => {
+      document.querySelector(".CreateNoticeModal .backdrop").classList.add("active");
+    });
+
+    document.querySelector(
+      '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-cancel').addEventListener(
+        "click", () => {
+          document.querySelector(".backdrop").classList.remove("active");
+
+        });
+
+    document.querySelector(
+      '.backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm').addEventListener("click", () => {
         document.querySelector(".backdrop").classList.remove("active");
 
         window.location.href = "/curriculum/getCurriculumList.do";
@@ -226,10 +221,23 @@ document.addEventListener('DOMContentLoaded', function () {
       newInput.placeholder = "상세교과내용을 입력해주세요.";
       newInput.maxLength = "50";
 
-      const newButton = document.createElement("input");
-      newButton.type = "button";
-      newButton.value = "제거";
-      newButton.onclick = function () { remove_inputbox(newDiv); };
+      const newButton = document.createElement("img");
+      newButton.src = "../../../images/minus-Vector.svg";
+      newButton.alt = "제거";
+      newButton.onclick = function () {
+
+        const contentHeaderLength = document.querySelector('#additionalInputContainer').querySelectorAll('.content-header').length;
+        const defaultDetailSubject = document.querySelector('.default-detail-subject');
+
+        if(contentHeaderLength + (!!defaultDetailSubject && 1) <= 1) {
+          return;
+        }
+        if((!!defaultDetailSubject) && (contentHeaderLength === 0)) {
+          return;
+        }
+
+        remove_inputbox(newDiv); };
+      newButton.style.cursor = "pointer";
 
       newLabel.appendChild(newInput);
       newLabel.appendChild(newButton);
@@ -251,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       divElement.remove();
     }
+
   </script>
 
 
