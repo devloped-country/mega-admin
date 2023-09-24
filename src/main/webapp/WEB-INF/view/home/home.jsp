@@ -38,7 +38,7 @@
                 <div class="notice-content">
                     <ul class="notice-list">
                         <c:forEach var="notice" items="${notices}">
-                            <li class="notice-item">
+                            <li class="notice-item" onclick="location.href='/notice/noticeDetail.do?id=' + ${notice.id}">
                                 <h4 class="notice-title">
                                     <c:choose>
                                         <c:when test="${notice.tag == 1}">[훈련비]</c:when>
