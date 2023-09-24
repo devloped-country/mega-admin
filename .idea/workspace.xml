@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722923b1-ab25-424e-9b0a-137b79511fb0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/DeleteNoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/UpdateNoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/UpdateNoticeFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/updateNotice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeHandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/NoticeHandlerMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/NoticeQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/dto/NoticeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/notice/model/dto/NoticeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/createNotice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/createNotice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/detailNotice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/detailNotice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/noticeList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/notice/noticeList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,5 +102,56 @@
       <updated>1695443006217</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mega/biz/notice/controller/CreateNoticeController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

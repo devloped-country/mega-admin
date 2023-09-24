@@ -19,7 +19,8 @@ public class NoticeHandlerMapping extends HandlerMapping {
         mappings.put("/createNoticeForm.do", new CreateNoticeFormController());
         mappings.put("/createNotice.do", new CreateNoticeController());
         mappings.put("/deleteNotice.do", new DeleteNoticeController());
-//        mappings.put("",);
+        mappings.put("/updateNoticeForm.do", new UpdateNoticeFormController());
+        mappings.put("/updateNotice.do", new UpdateNoticeController());
     }
 
     @Override

@@ -17,11 +17,33 @@
           document.querySelector(".tag-list").classList.toggle("active");
         });
 
-        document.querySelector(".tag-list").addEventListener("click", ({target}) => {
-          document.querySelector('.tag-btn').textContent = target.value;
-          document.querySelector(".tag-list").classList.remove("active");
-          document.querySelector(".tag-btn").style.color = '#000';
-        });
+        function updateTagValue(value) {
+                document.querySelector('.tag-btn').textContent = value;
+                document.querySelector(".tag-list").classList.remove("active");
+                document.querySelector(".tag-btn").style.color = '#000';
+            }
+
+            // 라디오 버튼 클릭 시 해당 value에 해당하는 값을 보여줌
+            document.querySelector(".tag-list").addEventListener("click", ({ target }) => {
+                const selectedTag = target.value;
+                if (selectedTag === "1") {
+                    updateTagValue("훈련비");
+                } else if (selectedTag === "2") {
+                    updateTagValue("시험");
+                } else if (selectedTag === "3") {
+                    updateTagValue("BIPA행사관련");
+                } else if (selectedTag === "4") {
+                    updateTagValue("BIPA전달사항");
+                } else if (selectedTag === "5") {
+                updateTagValue("BIPA채용공지");
+                } else if (selectedTag === "6") {
+                    updateTagValue("세미나");
+                } else if (selectedTag === "7") {
+                    updateTagValue("긴급");
+                } else if (selectedTag === "8") {
+                    updateTagValue("기타");
+                }
+            });
 
         document.querySelector(".CreateNoticeWrapper .create-form").addEventListener("submit", (e) => {
           if(document.querySelector('.tag-btn').textContent === '선택') {
@@ -49,6 +71,7 @@
           document.querySelector('.CreateNoticeModal .backdrop').classList.remove("active");
         })
       })
+
     </script>
 </head>
 <body>

@@ -14,4 +14,5 @@ public class NoticeDTO {
     private String content;
     private String author;
     private Timestamp createdDate;
+
 }
