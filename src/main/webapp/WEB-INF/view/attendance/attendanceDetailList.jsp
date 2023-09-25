@@ -23,62 +23,6 @@
 <body>
 <div class="body-wrapper">
     <div>
-        <form method="post" action="/attendance/attendanceUpdate.do?email=${ email }&page=${ page }&month=${month}">
-            <div id="modal-wrapper">
-                <div class="modal-back"></div>
-                <div class="modal-content-2">
-                    <div>
-                        <h2 class="modal-title">출결 관리 설정</h2>
-                        <p class="ex-text">
-                            출결 관리를 설정해주세요.
-                        </p>
-                    </div>
-                    <div>
-                        <div class="modal-attendance-row">
-                            <div class="modal-attendance-row-1">
-                                <p>출결<a class="star">*</a></p>
-                                <select name="updateAttendanceStat" class="modal-attendance-stat">
-                                    <option value="미출결">미출결</option>
-                                    <option value="출석">출석</option>
-                                    <option value="지각">지각</option>
-                                    <option value="조퇴">조퇴</option>
-                                    <option value="결석">결석</option>
-                                    <option value="공가">공가</option>
-                                    <option value="병가">병가</option>
-                                </select>
-                            </div>
-                            <input type="hidden" class="hidden-id" name="attendanceID" value="">
-                            <div class="modal-attendance-name">
-                                <p>이름<a class="star">*</a></p>
-                                <input type="text" class="modal-name" readonly>
-                            </div>
-                        </div>
-                        <div>
-                            <p>이메일<a class="star">*</a></p>
-                            <input type="text" class="modal-email" readonly>
-                        </div>
-                        <div>
-                            <p>입실시간<a class="star">*</a></p>
-                            <input type="text" name="updateStartDate" class="modal-start-date">
-                        </div>
-                        <div>
-                            <p>퇴실시간<a class="star">*</a></p>
-                            <input type="text" name="updateEndDate" class="modal-end-date">
-                        </div>
-                        <div>
-                            <p>이유<a class="star">*</a></p>
-                            <textarea name="updateReason" class="modal-reason"></textarea>
-                        </div>
-                        <div class="modal-button">
-                            <button id="close-modal" type="button">취소</button>
-                            <button type="submit" class="update-modal">수정</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div>
         <div>
             <form method="get" action="/attendance/attendanceDetail.do?email=${ email }&page=1&month=${month}">
                 <div>
@@ -111,21 +55,85 @@
                 <table>
                     <c:set var="page" value="${ (param.page == null ) ? 1 : param.page }" />
                     <c:set var="index" value="${ (page - 1) * 9 + index + 1 }"/>
-                    <c:forEach var="attendanceDTO" items="${ detailList }">
-                        <tr class="table-content table-row-${page}${index}" data-id="${ attendanceDTO.id }">
-                            <td class="table-col-idx">${ index }</td>
-                            <td class="table-col-name">${ attendanceDTO.name }</td>
-                            <td class="table-col-email" data-email="${attendanceDTO.email}">${ attendanceDTO.email }</td>
-                            <td class="table-col-date">${ attendanceDTO.date }</td>
-                            <td class="table-col-attendance-stat">${ attendanceDTO.attendance_stat }</td>
-                            <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
-                            <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
-                            <td class="table-col-reason">${ attendanceDTO.reason }</td>
-                            <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}"><a>출결 관리</a></button></td>
-                        </tr>
-                        <c:set var="index" value="${ index + 1 }"></c:set>
-                    </c:forEach>
+                    <c:set var="endNum" value="${endNum}"/>
+                        <c:choose>
+                            <c:when test="${ endNum != 0 }">
+                                <c:forEach var="attendanceDTO" items="${ detailList }">
+                                <tr class="table-content table-row-${page}${index}" data-id="${ attendanceDTO.id }">
+                                    <td class="table-col-idx">${ index }</td>
+                                    <td class="table-col-name">${ attendanceDTO.name }</td>
+                                    <td class="table-col-email" data-email="${attendanceDTO.email}">${ attendanceDTO.email }</td>
+                                    <td class="table-col-date">${ attendanceDTO.date }</td>
+                                    <td class="table-col-attendance-stat">${ attendanceDTO.attendance_stat }</td>
+                                    <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
+                                    <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
+                                    <td class="table-col-reason">${ attendanceDTO.reason }</td>
+                                    <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}">출결 관리</button></td>
+                                </tr>
+                                <c:set var="index" value="${ index + 1 }"></c:set>
+                                </c:forEach>
+                            </c:when>
+                            <c:otherwise>
+                                <p class="no-data">해당 데이터가 없습니다.</p>
+                            </c:otherwise>
+                        </c:choose>
                 </table>
+        </div>
+        <div>
+            <form method="post" action="/attendance/attendanceUpdate.do?email=${ email }&page=${ page }&month=${month}">
+                <div id="modal-wrapper">
+                    <div class="modal-back"></div>
+                    <div class="modal-content-2">
+                        <div>
+                            <h2 class="modal-title">출결 관리 설정</h2>
+                            <p class="ex-text">
+                                출결 관리를 설정해주세요.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="modal-attendance-row">
+                                <div class="modal-attendance-row-1">
+                                    <p>출결<a class="star">*</a></p>
+                                    <select name="updateAttendanceStat" class="modal-attendance-stat">
+                                        <option value="미출결">미출결</option>
+                                        <option value="출석">출석</option>
+                                        <option value="지각">지각</option>
+                                        <option value="조퇴">조퇴</option>
+                                        <option value="결석">결석</option>
+                                        <option value="공가">공가</option>
+                                        <option value="병가">병가</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" class="hidden-id" name="attendanceID" value="">
+                                <div class="modal-attendance-name">
+                                    <p>이름<a class="star">*</a></p>
+                                    <input type="text" class="modal-name" readonly>
+                                </div>
+                            </div>
+                            <div>
+                                <p>이메일<a class="star">*</a></p>
+                                <input type="text" class="modal-email" readonly>
+                            </div>
+                            <div>
+                                <p>입실시간<a class="star">*</a></p>
+                                <input type="text" name="updateStartDate" class="modal-start-date">
+                            </div>
+                            <div>
+                                <p>퇴실시간<a class="star">*</a></p>
+                                <input type="text" name="updateEndDate" class="modal-end-date">
+                            </div>
+                            <div>
+                                <p>이유<a class="star">*</a></p>
+                                <textarea name="updateReason" class="modal-reason"></textarea>
+                            </div>
+                            <div class="modal-button">
+                                <button id="close-modal" type="button">취소</button>
+                                <button type="submit" class="update-modal">수정</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="page-wrapper">
             <div>
@@ -219,6 +227,10 @@
 <script>
     document.querySelectorAll('.open-modal-2').forEach((el, index) => {
         el.addEventListener("click", ({target}) => {
+            if(!target.className) {
+                return;
+            }
+
             document.getElementById("modal-wrapper").style.display = "block";
 
             const email = target.parentNode.parentNode.querySelector(".table-col-email").textContent
@@ -239,23 +251,14 @@
             const attendanceStat = target.parentNode.parentNode.querySelector(".table-col-attendance-stat").textContent
             document.querySelector(".modal-attendance-stat").value = attendanceStat;
 
-            console.log(target.parentNode.parentNode.querySelector(".table-col-attendance-stat").textContent)
-
-            console.log(startDate);
-
             let id = target.parentElement.parentElement.dataset.id;
-
             document.querySelector(".hidden-id").value = id;
 
-            console.log(document.querySelector(".hidden-id").value);
         })
     })
     document.getElementById("close-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "none";
     };
-    document.getElementById("page-number-button").onclick = function () {
-        document.getElementById("modal-wrapper").style.display = "none";
-    }
 </script>
 </body>
 </html>

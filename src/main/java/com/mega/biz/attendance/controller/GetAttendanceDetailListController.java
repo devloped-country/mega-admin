@@ -22,16 +22,14 @@ public class  GetAttendanceDetailListController implements Controller {
         String currentPage = request.getAttribute("currentPage").toString();
         String month = request.getParameter("month");
 
-
-
         PageDTO pageDTO = new PageDTO();
 
         pageDTO.setStartIndex((Integer.parseInt(currentPage)-1)*pageDTO.POSTS_PER_PAGE);
         int endNum = 0;
         int currentPageBlock = ((Integer.parseInt(currentPage) - 1) / pageDTO.PAGES_PER_BLOCK) * pageDTO.PAGES_PER_BLOCK + 1;
 
-        log.info("currentPage : {}", currentPage);
-        log.info("currenPageBlock : {}", currentPageBlock);
+//        log.info("currentPage : {}", currentPage);
+//        log.info("currenPageBlock : {}", currentPageBlock);
 
         if (month == null || month.isEmpty() || month.equals(" ")) {
             endNum = ((int)Math.ceil((double)service.getAttendanceCount(email)/pageDTO.POSTS_PER_PAGE));
@@ -50,19 +48,12 @@ public class  GetAttendanceDetailListController implements Controller {
                 getYear = getYear-1;
             }
 
-//            String startMonth;
-//            if (getMonth < 10) {
-//                startMonth = endMonth.substring(0,5) + "0" +getMonth + "-" + duration;
-//            } else {
-//                startMonth = endMonth.substring(0,5) + getMonth + "-" + duration;
-//            }
-
             String startMonth =  getYear + "-" + getMonth + "-" + duration;
 
-            log.info("getMonth : {}", getMonth);
-            log.info("endMonth : {}", endMonth);
-            log.info("startMonth: {}", startMonth);
-            log.info("duration : {}", duration);
+//            log.info("getMonth : {}", getMonth);
+//            log.info("endMonth : {}", endMonth);
+//            log.info("startMonth: {}", startMonth);
+//            log.info("duration : {}", duration);
 
             request.setAttribute("startMonth", startMonth);
             request.setAttribute("endMonth", endMonth);
@@ -74,8 +65,8 @@ public class  GetAttendanceDetailListController implements Controller {
             currentPage = "1";
         }
 
-        log.info("endNum: {}", endNum);
-        log.info("page : {}", currentPage);
+//        log.info("endNum: {}", endNum);
+//        log.info("page : {}", currentPage);
 
         request.setAttribute("page", currentPage);
         request.setAttribute("email", email);

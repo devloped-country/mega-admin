@@ -3,7 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
     <title>JSP - Hello World</title>
@@ -14,12 +13,14 @@
 
 </head>
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
 <div class="UpdateNoticeWrapper">
     <div class="nav">
         <h1 class="title">공지사항</h1>
         <ul class="menu-list">
             <li class="menu-item">
-                <button class="menu-btn notice-list-btn" onclick="history.back()">목록
+                <button type="button" class="menu-btn notice-regi-btn"
+                    onclick="location.href='/notice/getNoticeList.do'">목록
                 </button>
             </li>
         </ul>
@@ -169,7 +170,7 @@
         </div>
     </div>
 </div>
-
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const tagRadios = document.querySelectorAll('.tag-radio');

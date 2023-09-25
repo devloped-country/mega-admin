@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
     <title>JSP - Hello World</title>
@@ -14,13 +13,15 @@
     <link rel="stylesheet" href="../../../style/footer.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
 <form action="/notice/deleteNotice.do" method="post">
 <div class="DetailNoticeWrapper">
     <div class="nav">
         <h1 class="title">공지사항</h1>
         <ul class="menu-list">
             <li class="menu-item">
-                <button class="menu-btn notice-list-btn" onclick="history.back()">목록
+                <button type="button" class="menu-btn notice-regi-btn"
+                    onclick="location.href='/notice/getNoticeList.do'">목록
                 </button>
             </li>
         </ul>
@@ -111,6 +112,7 @@
     </div>
 </div>
 </form>
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 <script>
 
      // 모달 창을 보여주는 함수
@@ -148,5 +150,3 @@
 
 </body>
 </html>
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>

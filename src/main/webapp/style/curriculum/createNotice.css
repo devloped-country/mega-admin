@@ -47,10 +47,12 @@
 
 .CreateNoticeWrapper .content::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 .CreateNoticeWrapper .content::-webkit-scrollbar-thumb {
   height: 30%;
+  width: 30%;
   border-radius: 10px;
   background-color: #a59e9e;
 }
@@ -149,6 +151,7 @@
 
 .CreateNoticeWrapper .content-header .content-header-right .content-header-label {
   display: flex;
+  flex-grow: 0.5;
   flex-direction: column;
   position : relative;
   gap: 12px;

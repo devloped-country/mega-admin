@@ -15,11 +15,11 @@ public class SetDurationController implements Controller {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
-        int getDuration = Integer.parseInt(request.getParameter("getDuration"));
+        String getDuration = request.getParameter("getDuration");
 
         log.info("getDuration : {}", getDuration);
 
-        service.updateDuration(getDuration);
+        service.updateDuration(Integer.parseInt(getDuration));
 
         return "attendance.do";
     }
