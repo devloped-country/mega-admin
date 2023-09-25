@@ -7,6 +7,7 @@ import com.mega.biz.login.model.LoginDTO;
 import com.mega.biz.user.model.UserDAO;
 import com.mega.biz.user.model.UserDTO;
 import com.mega.biz.user.model.UserPageDTO;
+import com.mega.biz.user.service.UserService;
 import com.mega.common.controller.Controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.util.List;
 
 
 public class UserDeleteController implements Controller {
+UserService service = new UserService();
 
     @Override
     public String handleRequest(HttpServletRequest request,
@@ -30,7 +32,7 @@ public class UserDeleteController implements Controller {
         vo.setEmail(email);
 
         UserDAO dao = new UserDAO();
-        dao.deleteUser(vo);
+        service.deleteUser(vo);
 
         // 3. 화면 이동
 
