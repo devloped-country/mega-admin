@@ -78,6 +78,12 @@
 <div class="CreateNoticeWrapper">
     <div class="nav">
         <h1 class="title">공지사항</h1>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <button class="menu-btn notice-list-btn" onclick="history.back()">목록
+                </button>
+            </li>
+        </ul>
     </div>
     <form action="/notice/createNotice.do" method="post" class="create-form">
         <div class="content">
