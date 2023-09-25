@@ -20,7 +20,6 @@ public class GetAttendanceListController implements Controller {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         String keyword = request.getParameter("keyword");
         String currentPage = request.getAttribute("currentPage").toString();
-//        int getDuration = Integer.parseInt(request.getParameter("getDuration"));
 
 //        log.info("keyword : {}", keyword);
 
