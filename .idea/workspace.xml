@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="">
+    <list default="true" id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/AttendanceDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/AttendanceDispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/UpdateAttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/UpdateAttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceDetailList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceStat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceStat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendance.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/attendanceStat.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -30,11 +42,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fix-sh",
+    "last_opened_file_path": "C:/Users/user/Desktop/workplace/mega/mega-admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\workplace\mega\mega-admin\src\main\webapp\style" />
@@ -49,11 +68,14 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="contextPath" value="/" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.79" />
-          <option name="path" value="$PROJECT_DIR$/../../../../../apache-tomcat-9.0.79" />
+          <option name="name" value="Apache Tomcat/9.0.79 (3)" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../../Program Files/apache-tomcat-9.0.79" />
           <option name="version" value="9.0.79.0" />
         </TomcatInfo>
       </option>
@@ -64,9 +86,10 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="" />
+      <changelist id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="" />
       <created>1694659684933</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -93,6 +116,7 @@
       <workItem from="1695353298190" duration="124000" />
       <workItem from="1695529940504" duration="3962000" />
       <workItem from="1695600105796" duration="911000" />
+      <workItem from="1695605662390" duration="3902000" />
     </task>
     <servers />
   </component>
@@ -109,6 +133,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

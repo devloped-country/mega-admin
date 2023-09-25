@@ -251,19 +251,11 @@ h2 {
   background-color: #F2F4F6;
   border: none;
   border-radius: 3px;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   outline: none;
 }
 
-.modal-button .close-modal {
-  /*font-size: 18px;*/
-  /*width: 86px;*/
-  /*height: 43px;*/
-  /*border: black 1px solid;*/
-  /*border-radius: 3px;*/
-  /*color: black;*/
-  /*margin-left: 162px;*/
-  /*font-weight: 600;*/
+#close-modal {
   width: 179px;
   height: 64px;
   padding: 21px 0px 22px 0px;
@@ -301,8 +293,12 @@ h2 {
 }
 
 .modal-button {
-  margin-top: 16px;
+  margin-top: 36px;
   display: flex;
   justify-content: space-evenly;
 }
 
+#getError {
+  color: red;
+  font-size: 14px;
+}

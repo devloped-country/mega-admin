@@ -68,7 +68,7 @@
                                     <td class="table-col-start-time">${ attendanceDTO.start_date }</td>
                                     <td class="table-col-end-time">${ attendanceDTO.end_date }</td>
                                     <td class="table-col-reason">${ attendanceDTO.reason }</td>
-                                    <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}"><a>출결 관리</a></button></td>
+                                    <td class="table-col-button"><button type="button" class="open-modal-2" data-idx="modal-${index}">출결 관리</button></td>
                                 </tr>
                                 <c:set var="index" value="${ index + 1 }"></c:set>
                                 </c:forEach>
@@ -227,6 +227,12 @@
 <script>
     document.querySelectorAll('.open-modal-2').forEach((el, index) => {
         el.addEventListener("click", ({target}) => {
+            if(!target.className) {
+                return;
+            }
+
+            document.getElementById("modal-wrapper").style.display = "block";
+
             const email = target.parentNode.parentNode.querySelector(".table-col-email").textContent
             document.querySelector(".modal-email").value = email;
 
@@ -245,26 +251,14 @@
             const attendanceStat = target.parentNode.parentNode.querySelector(".table-col-attendance-stat").textContent
             document.querySelector(".modal-attendance-stat").value = attendanceStat;
 
-            console.log(target.parentNode.parentNode.querySelector(".table-col-attendance-stat").textContent)
-
-            console.log(startDate);
-
             let id = target.parentElement.parentElement.dataset.id;
-
             document.querySelector(".hidden-id").value = id;
-
-            console.log(document.querySelector(".hidden-id").value);
-
-            document.getElementById("modal-wrapper").style.display = "block";
 
         })
     })
     document.getElementById("close-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "none";
     };
-    document.getElementById("page-number-button").onclick = function () {
-        document.getElementById("modal-wrapper").style.display = "none";
-    }
 </script>
 </body>
 </html>
