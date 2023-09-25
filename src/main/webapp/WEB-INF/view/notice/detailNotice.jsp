@@ -20,7 +20,8 @@
         <h1 class="title">공지사항</h1>
         <ul class="menu-list">
             <li class="menu-item">
-                <button class="menu-btn notice-list-btn" onclick="history.back()">목록
+                <button type="button" class="menu-btn notice-regi-btn"
+                    onclick="location.href='/notice/getNoticeList.do'">목록
                 </button>
             </li>
         </ul>
