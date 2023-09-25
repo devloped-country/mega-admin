@@ -3,7 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
     <title>JSP - Hello World</title>
@@ -75,6 +74,7 @@
     </script>
 </head>
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
 <div class="CreateNoticeWrapper">
     <div class="nav">
         <h1 class="title">공지사항</h1>
@@ -222,7 +222,6 @@
         </div>
     </div>
 </div>
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 </body>
 </html>
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>

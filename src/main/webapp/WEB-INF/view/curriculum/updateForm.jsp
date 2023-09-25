@@ -3,8 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
-
 <html>
 
 <head>
@@ -19,23 +17,24 @@
 </head>
 
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
   <div class="CreateNoticeWrapper">
     <div class="nav">
       <h1 class="title">커리큘럼</h1>
     </div>
     <form id="updateForm" action="updateCurriculum.do" method="post" class="create-form">
       <div class="content">
-        <h2 class="add-text">과목 추가</h2>
+        <h2 class="add-text">과목 수정</h2>
         <h3 class="add-text-info">과목 정보를 입력해 주세요</h3>
         <div class="content-header">
           <div class="content-header-right">
             <input type="hidden" name="curriculumId" value="${curriculum.id}"/>
-            <label>교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요."
+            <label class="content-header-label">교과목명 <input type="text" class="notice-title" name="subject" placeholder="과목을 입력해주세요."
                 maxlength="50" value="${curriculum.subject}" autofocus /></label>
           </div>
 
           <div class="content-header-right">
-            <label>
+            <label class="content-header-label">
               시간
               <input type="text" class="notice-title" name="time" placeholder="시간을 입력해주세요." maxlength="50" value="${curriculum.time}" oninput="validateNumber(this)" />
               <span id="timeError"></span>
@@ -43,8 +42,11 @@
 
           </div>
 
-          <div class="content-header-right">
-            <label>기간 <input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.startDate}" name="startDate" onchange="validateDate()" /></label>
+          <div class="content-header-date">
+            기간
+            <div class="content-date">
+            <div class="content-header-right">
+            <label><input id="startDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.startDate}" name="startDate" onchange="validateDate()" /></label>
 
           </div>
 
@@ -53,16 +55,18 @@
           <div class="content-header-right">
             <label><input id="endDate" type="date" class="notice-title" max="2023-12-31" min="2023-05-25" value="${curriculum.endDate}" name="endDate" onchange="validateDate()" /></label>
           </div>
+            </div>
+            <span id="dateError"></span>
+          </div>
         </div>
-        <span id="dateError"></span>
-
-        <p>상세 교과 내용</p>
+        <div class="content-detail">
+        <p class="detail-subject-title">상세 교과 내용</p>
 
         <c:forEach var="detail" items="${curriculum.detailSubjectDTOList}" varStatus="status">
           <div class="content-header default-detail-subject">
             <div class="content-header-right">
               <input type="hidden" name="detailId" value="${detail.id}"/>
-              <input type="text" class="notice-title" name="detail" placeholder="상세교과내용을 입력해주세요."
+              <input type="text" class="notice-title notice-title-custom" name="detail" placeholder="상세교과내용을 입력해주세요."
                 maxlength="50" value="${detail.content}" autofocus />
 
               <img src="../../../images/minus-Vector.svg" alt="제거" onclick="remove_inputbox(this.closest('.content-header'), '${detail.id}')" style="cursor:pointer;">
@@ -85,6 +89,7 @@
               상세 교과 내용 추가
             </button>
           </div>
+        </div>
         </div>
 
         <div class="content-footer">
@@ -126,7 +131,7 @@
       </div>
     </form>
   </div>
-
+<%@ include file="/WEB-INF/layout/footer.jsp" %>
 
   <script>
 
@@ -209,14 +214,14 @@
 
     function add_inputbox() {
       const newDiv = document.createElement("div");
-      newDiv.className = "content-header";
+      newDiv.className = "content-header default-detail-subject";
 
       const newLabel = document.createElement("div");
       newLabel.className = "content-header-right";
 
       const newInput = document.createElement("input");
       newInput.type = "text";
-      newInput.className = "notice-title";
+      newInput.className = "notice-title notice-title-custom";
       newInput.name = "addDetail";
       newInput.placeholder = "상세교과내용을 입력해주세요.";
       newInput.maxLength = "50";
@@ -248,6 +253,10 @@
     }
 
     function remove_inputbox(divElement, detailId) {
+      if(document.querySelectorAll(".default-detail-subject").length <= 1) {
+        return;
+      }
+
       if (detailId) {
         const hiddenInput = document.createElement("input");
         hiddenInput.type = "hidden";
@@ -267,6 +276,3 @@
   </body>
 
 </html>
-
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>

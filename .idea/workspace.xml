@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정" />
-=======
     <list default="true" id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/updateForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/curriculum/updateForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/createNotice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/curriculum/updateCurriculum.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/curriculum/updateCurriculum.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/AttendanceDispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/AttendanceDispatcherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/GetAttendanceDetailListController.java" afterDir="false" />
@@ -21,21 +21,17 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/SetDurationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mega/biz/attendance/controller/SetDurationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/attendance/attendanceList.jsp" afterDir="false" />
     </list>
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-<<<<<<< HEAD
-=======
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -52,10 +48,20 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2VMxK9sbH9WYuvQp0hDzqVdYTWn" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fix-ub",
+    "last_opened_file_path": "C:/Users/uBeom/Documents/ub/mega-admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -73,8 +79,6 @@
       <recent name="C:\Users\user\Desktop\workplace\mega\mega-admin\src\main\webapp\style" />
     </key>
   </component>
-  <component name="RunManager">
-<<<<<<< HEAD
     <configuration name="mega" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
@@ -93,7 +97,6 @@
       </option>
       <option name="vmOptions" value="" />
       <module name="mega" />
-=======
     <configuration default="true" type="JetRunConfigurationType">
       <module name="mega-admin" />
       <method v="2">
@@ -188,7 +191,6 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -201,6 +203,11 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
       <changelist id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="" />
+      <created>1695602936238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695602936238</updated>
+      <workItem from="1695602937952" duration="3619000" />
       <created>1694659684933</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -226,12 +233,9 @@
       <workItem from="1695340834309" duration="5345000" />
       <workItem from="1695353298190" duration="124000" />
       <workItem from="1695529940504" duration="3962000" />
-<<<<<<< HEAD
       <workItem from="1695600105796" duration="911000" />
       <workItem from="1695605662390" duration="4318000" />
-=======
       <workItem from="1695555432071" duration="2220000" />
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
     </task>
     <servers />
   </component>
@@ -249,7 +253,6 @@
       </map>
     </option>
   </component>
-<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정" />
     <option name="LAST_COMMIT_MESSAGE" value="squash! fix : 출걀관리 상세 모달 처음에 바로 안불러와지는 오류 수정" />
@@ -258,6 +261,4 @@
     <expand />
     <select />
   </component>
-=======
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
 </project>

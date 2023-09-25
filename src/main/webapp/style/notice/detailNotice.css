@@ -1,6 +1,6 @@
 .DetailNoticeWrapper {
   padding: 0 48px 48px;
-  height: calc(100vh - 190px);
+  height: calc(100vh - 208px);
 }
 
 .DetailNoticeWrapper .bar {
@@ -111,6 +111,7 @@
 }
 
 .DetailNoticeWrapper .content-header-bottom .content-header-bottom-right .edit-list.active {
+  z-index: 10000;
   position: absolute;
   top: 26px;
   right: 0;
@@ -165,6 +166,7 @@
 }
 
 .DetailNoticeModal .backdrop.active {
+  z-index: 10000;
   position: fixed;
   top: 0;
   left: 0;
