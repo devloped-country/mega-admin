@@ -6,7 +6,7 @@ change this template use File | Settings | File Templates. --%>
 <!DOCTYPE html>
 <html class="hide-scrollbar">
 <head>
-    <title>출결관리</title>
+    <title>Mega - Attendance</title>
     <link rel="stylesheet" href="../../../style/reset.css"/>
     <link rel="stylesheet" href="../../../style/header.css"/>
     <link rel="stylesheet" href="../../../style/footer.css"/>

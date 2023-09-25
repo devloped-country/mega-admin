@@ -7,7 +7,7 @@
 
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Mega - Notice</title>
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/notice/notice.css" type="text/css">
     <link rel="stylesheet" href="../../../style/header.css">

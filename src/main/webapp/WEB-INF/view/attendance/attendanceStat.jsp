@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mega - attendance-stat</title>
+    <title>Mega - Attendance</title>
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">

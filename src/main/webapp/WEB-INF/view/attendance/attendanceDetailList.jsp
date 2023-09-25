@@ -14,7 +14,7 @@
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
 <head>
-    <title>출결관리상세</title>
+    <title>Mega - Attendance</title>
     <link rel="stylesheet" href="../../../style/reset.css" />
     <link rel="stylesheet" href="../../../style/header.css" />
     <link rel="stylesheet" href="../../../style/footer.css" />

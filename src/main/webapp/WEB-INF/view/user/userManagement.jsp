@@ -7,7 +7,7 @@
 
 <html>
 <head>
-    <title>Mega - USER</title>
+    <title>Mega - User</title>
     <link rel="stylesheet" href="../../../style/reset.css">
     <link rel="stylesheet" href="../../../style/header.css">
     <link rel="stylesheet" href="../../../style/footer.css">

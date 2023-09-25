@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Mega - Curriculum</title>
 </head>
 <body>
 <c:set var="name" value="test-커리큘럼" />
