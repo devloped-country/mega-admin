@@ -37,11 +37,7 @@ change this template use File | Settings | File Templates. --%>
     <div id="modal-wrapper">
         <div class="modal-back"></div>
         <div class="modal-content">
-<<<<<<< HEAD
             <form method="post" action="/attendance/setDuration.do" class="duration-form">
-=======
-            <form id="createForm" method="post" action="/attendance/setDuration.do">
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
                 <div>
                     <h2>단위기간 설정</h2>
                     <p class="ex-text">
@@ -250,7 +246,6 @@ change this template use File | Settings | File Templates. --%>
         location.href = '/attendance/attendance.do?keyword=' + keyword + '&page=1';
     };
 
-<<<<<<< HEAD
     document.querySelector('.duration-form').addEventListener("submit", (e) => {
         const seeWarning = document.getElementById("getError");
         const duration = document.querySelector("#insert-date");
@@ -261,8 +256,6 @@ change this template use File | Settings | File Templates. --%>
             seeWarning.textContent = "단위기간을 입력해주세요.";
         }
     });
-=======
->>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
 </script>
 </body>
 </html>
