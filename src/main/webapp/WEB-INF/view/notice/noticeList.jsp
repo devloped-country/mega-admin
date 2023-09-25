@@ -5,7 +5,6 @@
 
 <!DOCTYPE html>
 
-<%@ include file="/WEB-INF/layout/header.jsp" %>
 <html>
 <head>
     <title>JSP - Hello World</title>
@@ -15,6 +14,7 @@
     <link rel="stylesheet" href="../../../style/footer.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/layout/header.jsp" %>
 <div class="NoticeWrapper">
         <div class="nav">
             <h1 class="title">공지사항</h1>
@@ -177,9 +177,9 @@
                 </div>
             </div>
         </div>
+</div>
+    <%@ include file="/WEB-INF/layout/footer.jsp" %>
 </body>
 
 
 </html>
-
-<%@ include file="/WEB-INF/layout/footer.jsp" %>
