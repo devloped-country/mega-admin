@@ -200,6 +200,7 @@ change this template use File | Settings | File Templates. --%>
     document.getElementById("open-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "block";
     };
+
     document.getElementById("close-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "none";
     };
