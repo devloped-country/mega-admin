@@ -326,6 +326,7 @@
 }
 
 .ValidationModal .backdrop .modal-wrapper .modal-desc-wrapper .modal-desc {
+  padding-top : 10px;
   color: rgba(102, 90, 90, 0.55);
   font-weight: 600;
 }
@@ -351,4 +352,5 @@
 .ValidationModal .backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm {
   color: #fff;
   background-color: #000;
+  width : 100%;
 }

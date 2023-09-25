@@ -150,6 +150,7 @@
 .CreateNoticeWrapper .content-header .content-header-right .content-header-label {
   display: flex;
   flex-direction: column;
+  position : relative;
   gap: 12px;
 }
 
@@ -161,6 +162,7 @@
 .CreateNoticeWrapper .content-header .content-header-date {
   display: flex;
   flex-direction: column;
+  position : relative;
   gap: 12px;
 }
 
@@ -270,6 +272,7 @@
 }
 
 .CreateNoticeModal .backdrop.active {
+  z-index : 10000;
   position: fixed;
   top: 0;
   left: 0;
@@ -380,6 +383,7 @@
 }
 
 .ValidationModal .backdrop .modal-wrapper .modal-desc-wrapper .modal-desc {
+  padding-top : 10px;
   color: rgba(102, 90, 90, 0.55);
   font-weight: 600;
 }
@@ -405,4 +409,15 @@
 .ValidationModal .backdrop .modal-wrapper .modal-btn-wrapper .modal-btn.modal-btn-confirm {
   color: #fff;
   background-color: #000;
+  width : 100%;
+}
+
+#timeError {
+ bottom : -22px;
+ position : absolute;
+}
+
+#dateError {
+ bottom : -22px;
+ position : absolute;
 }
