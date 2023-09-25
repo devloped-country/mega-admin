@@ -103,17 +103,14 @@ public class UserDAO {
 
 
     public List<UserDTO> selectAllMember(int page) {
-        //1번 페이지 1~10
-        //2번 페이지 11~20
+
         int startNum = (page - 1) * 10 + 1;
-//        int endNum = page * 10;
-//        String sql = "SELECT * FROM user1  ORDER BY name LIMIT 10 OFFSET ?";
+
         List<UserDTO> userList = new ArrayList<UserDTO>();
         try {
             conn = JDBCUtils.getDataSource().getConnection();
             pstmt = conn.prepareStatement(UserPageQuery.USER_LIST.getQuery());
             pstmt.setInt(1, startNum);
-//            pstmt.setInt(2, endNum);
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 UserDTO user = new UserDTO();
@@ -136,11 +133,6 @@ public class UserDAO {
         int count = 0;
 
         try {
-//            if (keyword != null) {
-//                conn = dataSource.getConnection();
-//                pstmt = conn.prepareStatement(UserPageQuery.ATTENDANCE_USER_COUNT.getQuery() + "WHERE name LIKE ?");
-//                pstmt.setString(1, "%" + keyword + "%");
-//            } else
             DataSource dataSource = getDataSource();
             conn = dataSource.getConnection();
             pstmt = conn.prepareStatement(UserPageQuery.USER_COUNT.getQuery());

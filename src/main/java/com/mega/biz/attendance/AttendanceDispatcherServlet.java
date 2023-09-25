@@ -46,7 +46,6 @@ public class AttendanceDispatcherServlet extends HttpServlet {
         String page = "1";
         if (request.getParameter("page") != null) {
             page = request.getParameter("page");
-//            log.info("page : {}", page);
         }
 
         String uri = request.getRequestURI();

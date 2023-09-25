@@ -40,13 +40,13 @@ public class UserDeleteController implements Controller {
         if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
-        System.out.println("page : " + page);
+//        System.out.println("page : " + page);
         // UserPageDTO를 사용하여 페이징 정보 설정
         UserPageDTO paging = new UserPageDTO();
         paging.setPage(page);
         // 전체 사용자 수를 설정 (이 값을 실제 DB에서 가져와야 함)
         int totalCount = dao.getTotalUser(); // 예시로 메서드 호출
-        System.out.println(totalCount);
+//        System.out.println(totalCount);
         paging.setTotalCount(totalCount);
 
         // 사용자 리스트를 페이징된 결과로 가져옴

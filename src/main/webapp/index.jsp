@@ -3,8 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 
-<%--<%@ include file="/WEB-INF/layout/header.jsp" %>--%>
-
 <html>
 <head>
 
@@ -53,56 +51,10 @@
                         </td>
                     </tr>
 
-<%--                    <form action="login.do" method="post" class="login-form">--%>
-
-<%--                    <form class="form-hoz" action="searchPwd.do" method="POST">--%>
-<%--                        <div class="form">--%>
-<%--                            <div class="row">--%>
-<%--                                <div class="row2">--%>
-<%--                                    <h2>비번찿기</h2>--%>
-<%--                                    <h6>회원가입에 사용한 비번은 <strong>${fn:substring(pw,0,4)}--%>
-<%--                                        <c:forEach begin="1" end="${fn:lenght(pw)-4}">--%>
-<%--                                            *--%>
-<%--                                        </c:forEach>--%>
-<%--                                    </strong>입니다</h6>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="back">--%>
-<%--                            <div class="col-md">--%>
-<%--                                <button type="button" class="btn btn-outlone-secondary loginbtn"--%>
-<%--                                        onclick="backToLogin()">--%>
-<%--                                    로그인 화면으로 돌아가기--%>
-<%--                                </button>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </form>--%>
                 </table>
             </form>
         </div>
-
         <br>
     </div>
 </div>
 
-
-<%--<div class="password-container">--%>
-<%--    < class="form-hoz" role="form" method="POST">--%>
-<%--    <div class="form">--%>
-<%--        <div class="row">--%>
-<%--            <div class="row2">--%>
-<%--                <h2>비번찿기</h2>--%>
-<%--                <h6>회원가입에 사용한 비번은 <strong>${fn:substring(pw,0,4)}--%>
-<%--                    <c:forEach begin="1" end="${fn:lenght(pw)-4}">--%>
-<%--                        *--%>
-<%--                    </c:forEach>--%>
-<%--                </strong>입니다</h6>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="back">--%>
-<%--        <button type="button" class="btn btn-outlone-secondary loginbtn" onclick="backToLogin()">--%>
-<%--            로그인 화면으로 돌아가기--%>
-<%--        </button>--%>
-<%--    </div>--%>
-<%--</div>--%>
