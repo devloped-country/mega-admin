@@ -29,10 +29,10 @@ public class UpdateAttendanceController implements Controller {
 
         int attendanceID = Integer.parseInt(request.getParameter("attendanceID"));
 
-        log.info("month : {}", month);
-        log.info("attendance_stat : {}", attendance_stat);
-        log.info("start_date : {}", start_date);
-        log.info("attendanceID : {}", attendanceID);
+//        log.info("month : {}", month);
+//        log.info("attendance_stat : {}", attendance_stat);
+//        log.info("start_date : {}", start_date);
+//        log.info("attendanceID : {}", attendanceID);
 
         switch (attendance_stat) {
             case "미출결":
@@ -66,7 +66,7 @@ public class UpdateAttendanceController implements Controller {
         attendanceDTO.setEnd_date(end_date);
         attendanceDTO.setReason(reason);
 
-        log.info("attendanceDto : {}", attendanceDTO);
+//        log.info("attendanceDto : {}", attendanceDTO);
 
         service.updateAttendance(attendanceDTO);
 

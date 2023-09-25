@@ -20,9 +20,8 @@ public class GetAttendanceListController implements Controller {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         String keyword = request.getParameter("keyword");
         String currentPage = request.getAttribute("currentPage").toString();
-//        int getDuration = Integer.parseInt(request.getParameter("getDuration"));
 
-        log.info("keyword : {}", keyword);
+//        log.info("keyword : {}", keyword);
 
         AttendanceDTO attendanceDTO = new AttendanceDTO();
         PageDTO pageDTO = new PageDTO();
@@ -31,9 +30,9 @@ public class GetAttendanceListController implements Controller {
         int endNum = ((int)Math.ceil((double)service.getTotalUser(keyword)/pageDTO.POSTS_PER_PAGE));
         int currentPageBlock = ((Integer.parseInt(currentPage) - 1) / pageDTO.PAGES_PER_BLOCK) * pageDTO.PAGES_PER_BLOCK + 1;
 
-        log.info("currentPage : {}", currentPage);
-        log.info("currenPageBlock : {}", currentPageBlock);
-        log.info("endNum: {}", endNum);
+//        log.info("currentPage : {}", currentPage);
+//        log.info("currenPageBlock : {}", currentPageBlock);
+//        log.info("endNum: {}", endNum);
 
         if (keyword == null) {
             List<AttendanceDTO> attendanceList = service.getAttendanceList(pageDTO);

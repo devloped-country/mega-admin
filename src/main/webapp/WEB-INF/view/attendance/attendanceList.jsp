@@ -37,7 +37,11 @@ change this template use File | Settings | File Templates. --%>
     <div id="modal-wrapper">
         <div class="modal-back"></div>
         <div class="modal-content">
-            <form method="post" action="/attendance/setDuration.do">
+<<<<<<< HEAD
+            <form method="post" action="/attendance/setDuration.do" class="duration-form">
+=======
+            <form id="createForm" method="post" action="/attendance/setDuration.do">
+>>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
                 <div>
                     <h2>단위기간 설정</h2>
                     <p class="ex-text">
@@ -52,7 +56,10 @@ change this template use File | Settings | File Templates. --%>
                                 id="insert-date"
                                 name="getDuration"
                                 placeholder="ex) 15"
+                                oninput="validateDuration(this)"
                         />
+                        <br>
+                        <span class="getError" id="getError"></span>
                         <div class="modal-button">
                             <button type="button" id="close-modal">취소</button>
                             <button type="submit" class="update-modal">확인</button>
@@ -193,12 +200,47 @@ change this template use File | Settings | File Templates. --%>
         </div>
     </div>
 </div>
-</div>
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('createForm');
+
+        form.addEventListener('submit', function (event) {
+            const subject = form['getDuration'].value;
+
+            let invalidInput = false;
+
+            // 기존의 빈 값 체크
+            if (!getDuration) {
+                invalidInput = true;
+            }
+
+            // 숫자인지 체크
+            if (isNaN(getDuration)) {
+                invalidInput = true;
+            }
+
+            if (invalidInput) {
+                event.preventDefault(); // form의 submit을 막습니다.
+            }
+        })
+    });
+
+        function validateDuration(inputElement) {
+            const value = inputElement.value;
+            const errorElement = document.getElementById("getErrorError");
+
+            if (isNaN(value)) {
+                errorElement.textContent = "단위기간을 입력하세요.";
+            } else {
+                errorElement.textContent = "";
+            }
+        };
+
     document.getElementById("open-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "block";
     };
+
     document.getElementById("close-modal").onclick = function () {
         document.getElementById("modal-wrapper").style.display = "none";
     };
@@ -207,6 +249,20 @@ change this template use File | Settings | File Templates. --%>
         let keyword = document.getElementById("keyword").value;
         location.href = '/attendance/attendance.do?keyword=' + keyword + '&page=1';
     };
+
+<<<<<<< HEAD
+    document.querySelector('.duration-form').addEventListener("submit", (e) => {
+        const seeWarning = document.getElementById("getError");
+        const duration = document.querySelector("#insert-date");
+
+        if(!duration.value || isNaN(duration.value)) {
+            e.preventDefault();
+            e.stopPropagation();
+            seeWarning.textContent = "단위기간을 입력해주세요.";
+        }
+    });
+=======
+>>>>>>> b7dd8b24651c0cca5a4a387bffb8eb5b354191fa
 </script>
 </body>
 </html>
