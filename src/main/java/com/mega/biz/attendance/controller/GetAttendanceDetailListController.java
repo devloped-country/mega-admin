@@ -22,7 +22,7 @@ public class  GetAttendanceDetailListController implements Controller {
         String currentPage = request.getAttribute("currentPage").toString();
         String month = request.getParameter("month");
 
-        log.info("email : {}", email);
+
 
         PageDTO pageDTO = new PageDTO();
 

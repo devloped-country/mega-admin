@@ -193,12 +193,6 @@
             target.disabled = true;
         }
 
-
-//모달1창에서 확인버튼 누를시 ->
-        function approveUser() {
-            //회원승인하는 userapprove.do 이런쪽으로 가게만듬
-        }
-
     }
 
 

@@ -2,9 +2,9 @@ package com.mega.biz.user.model;
 
 public enum UserPageQuery {
 
-    USER_LIST(" SELECT * FROM user1  ORDER BY name LIMIT 10 OFFSET ? "),
+    USER_LIST(" SELECT * FROM user3  ORDER BY name LIMIT 10 OFFSET ? "),
 
-    USER_COUNT(" SELECT count(*) FROM user1 ");
+    USER_COUNT(" SELECT count(*) FROM user3 ");
 
 
     private final String query;

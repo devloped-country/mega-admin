@@ -34,33 +34,6 @@ public class UserPageDTO {
         this.totalCount = totalCount;
         paging();
     }
-//    public int getDisplayRow() {
-//        return displayRow;
-//    }
-//    public void setDisplayRow(int displayRow) {
-//        this.displayRow = displayRow;
-//    }
-//    public int getDisplayPage() {
-//        return displayPage;
-//    }
-//    public void setDisplayPage(int displayPage) {
-//        this.displayPage = displayPage;
-//    }
-//    public int getBeginPage() {
-//        return beginPage;
-//    }
-//    public int getEndPage() {
-//        return endPage;
-//    }
-//    public boolean isPrev() {
-//        return prev;
-//    }
-//    public boolean isNext() {
-//        return next;
-//    }
-
-    ////////////////////////
-
 
 
     public int getFirstPage() {
@@ -80,8 +53,6 @@ public class UserPageDTO {
         int totalPage = (int) Math.ceil((double) totalCount / displayRow);
         return (page < totalPage) ? page + 1 : totalPage;
     }
-
-
 
 
     private void paging(){
