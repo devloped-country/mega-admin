@@ -25,6 +25,34 @@
             <h2 class="title">출결관리</h2>
             <button type="button" class="btn">단위기간 설정</button>
         </nav>
+        <div id="modal-wrapper">
+            <div class="modal-back"></div>
+            <div class="modal-content">
+                <form method="post" action="/attendance/setDuration.do">
+                    <div>
+                        <h2>단위기간 설정</h2>
+                        <p class="ex-text">
+                            ex) 15일은 5월 16일부터 6월 15일까지 기간을 조회합니다.
+                        </p>
+                    </div>
+                    <div class="get-date">
+                        <p>날짜<a class="star">*</a></p>
+                        <div>
+                            <input
+                                    type="text"
+                                    id="insert-date"
+                                    name="getDuration"
+                                    placeholder="ex) 15"
+                            />
+                            <div class="modal-button">
+                                <button type="button" id="close-modal">취소</button>
+                                <button type="submit" class="update-modal">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <section class="content">
             <ul class="tab-list">
                 <li class="tab-item">
@@ -86,6 +114,13 @@
 </div>
 <%@ include file="/WEB-INF/layout/footer.jsp" %>
 <script>
+    document.querySelector(".btn").onclick = function () {
+        document.getElementById("modal-wrapper").style.display = "block";
+    };
+    document.getElementById("close-modal").onclick = function () {
+        document.getElementById("modal-wrapper").style.display = "none";
+    };
+
   const tableHeaderList = document.querySelector('.table-header-list');
   const attendanceTableWrapper = document.querySelector(
       '.attendance-table-wrapper'
