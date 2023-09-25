@@ -28,7 +28,7 @@
         <div id="modal-wrapper">
             <div class="modal-back"></div>
             <div class="modal-content">
-                <form method="post" action="/attendance/setDuration.do">
+                <form method="post" action="/attendance/setDuration.do" class="duration-form">
                     <div>
                         <h2>단위기간 설정</h2>
                         <p class="ex-text">
@@ -44,6 +44,8 @@
                                     name="getDuration"
                                     placeholder="ex) 15"
                             />
+                            <br>
+                            <span class="getError" id="getError"></span>
                             <div class="modal-button">
                                 <button type="button" id="close-modal">취소</button>
                                 <button type="submit" class="update-modal">확인</button>
@@ -132,6 +134,17 @@
 
   attendanceTableWrapper.addEventListener('scroll', () => {
     tableHeaderList.scrollLeft = attendanceTableWrapper.scrollLeft;
+  });
+
+  document.querySelector('.duration-form').addEventListener("submit", (e) => {
+        const seeWarning = document.getElementById("getError");
+        const duration = document.querySelector("#insert-date");
+
+        if(!duration.value || isNaN(duration.value)) {
+            e.preventDefault();
+            e.stopPropagation();
+            seeWarning.textContent = "단위기간을 입력해주세요.";
+        }
   });
 </script>
 </body>
