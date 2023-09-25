@@ -16,7 +16,6 @@ public class UpdateNoticeFormController implements Controller {
 
         long updateId = Long.parseLong(request.getParameter("id"));
 
-
             try {
                 NoticeDTO noticeDTO = dao.getNoticeById(updateId);
 

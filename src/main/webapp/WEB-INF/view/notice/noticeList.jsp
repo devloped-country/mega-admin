@@ -117,7 +117,7 @@
                                   </td>
                                   <td class="notice-table-body-col notice-table-body-col-author">
                                       <div class="notice-table-body-cell notice-table-body-author">
-                                          ${notice.author}
+                                          ${notice.author} 매니저님
                                       </div>
                                   </td>
                                   <td class="notice-table-body-col notice-table-body-col-date">

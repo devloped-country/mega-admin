@@ -4,30 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------">
+    <list default="true" id="4f83daa3-4f0f-48a1-96fa-1681ceb89068" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Jsp File" />
-        <option value="Class" />
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="feature-attendance" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -49,22 +32,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fix-sh&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/workplace/mega&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;라이브러리&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14430016&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -73,19 +41,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="mega-admin" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="mega-admin" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="mega" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
@@ -98,7 +53,7 @@
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.79" />
-          <option name="path" value="$PROJECT_DIR$/../../../../../../Program Files/apache-tomcat-9.0.79" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../apache-tomcat-9.0.79" />
           <option name="version" value="9.0.79.0" />
         </TomcatInfo>
       </option>
@@ -109,7 +64,6 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
       <changelist id="58f55011-af15-4c8f-8c4d-0dc8b866f7c3" name="변경" comment="" />
@@ -156,8 +110,8 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;# -----------------------------------------------------------------------------&#10;#   &lt;타입&gt; 리스트  &#10;#   feat        : 기능 (새로운 기능)  &#10;#   fix         : 버그 (버그 수정)  &#10;#   refactor    : 리팩토링  &#10;#   design      : CSS 등 사용자 UI 디자인 변경  &#10;#   comment     : 필요한 주석 추가 및 변경  &#10;#   style       : 스타일 (코드 형식, 세미콜론 추가: 비즈니스 로직에 변경 없음)  &#10;#   docs        : 문서 수정 (문서 추가, 수정, 삭제, README)  &#10;#   test        : 테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)  &#10;#   chore       : 기타 변경사항 (빌드 스크립트 수정, assets, 패키지 매니저 등)  &#10;#   init        : 초기 생성  &#10;#   rename      : 파일 혹은 폴더명을 수정하거나 옮기는 작업만 한 경우  &#10;#   remove      : 파일을 삭제하는 작업만 수행한 경우  &#10;# -----------------------------------------------------------------------------" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
