@@ -26,7 +26,7 @@
                 <li class="header-col header-col1">연번</li>
                 <li class="header-col header-col2">이메일</li>
                 <li class="header-col header-col3">이름</li>
-                <li class="header-col header-col4">phone</li>
+                <li class="header-col header-col4">전화번호</li>
                 <li class="header-col header-col5">가입유무</li>
                 <li class="header-col header-col6"></li>
 
